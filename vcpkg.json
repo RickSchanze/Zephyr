@@ -1,28 +1,22 @@
 {
-  "name": "z",
-  "version-string": "1.0.0",
-  "builtin-baseline": "37c3e63a1306562f7f59c4c3c8892ddd50fdf992",
-  "dependencies": [
-    {
-      "name": "fmt",
-      "version>=": "10.2.1",
-      "$comment": "    find_package(fmt CONFIG REQUIRED)\n\n    target_link_libraries(main PRIVATE fmt::fmt)\n"
-    },
-    {
-      "name": "glad",
-      "version>=": "0.1.36"
-    },
-    {
-      "name": "glfw3",
-      "version>=": "3.3.8#2"
-    },
-    {
-      "name": "imgui",
-      "features": [
-        "glfw-binding",
-        "opengl3-binding",
-        "docking-experimental"
-      ]
-    }
-  ]
+  "name" : "z",
+  "version-string" : "1.0.0",
+  "builtin-baseline" : "37c3e63a1306562f7f59c4c3c8892ddd50fdf992",
+  "dependencies" : [ {
+    "name" : "fmt",
+    "version>=" : "10.2.1",
+    "$comment" : "    find_package(fmt CONFIG REQUIRED)\n\n    target_link_libraries(main PRIVATE fmt::fmt)\n"
+  }, {
+    "name" : "glad",
+    "version>=" : "0.1.36"
+  }, {
+    "name" : "glfw3",
+    "version>=" : "3.3.8#2"
+  }, {
+    "name" : "imgui",
+    "features" : [ "glfw-binding", "opengl3-binding", "docking-experimental" ]
+  }, {
+    "name" : "spdlog",
+    "version>=" : "1.13.0"
+  } ]
 }

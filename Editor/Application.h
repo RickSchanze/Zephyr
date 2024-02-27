@@ -7,6 +7,8 @@
 
 #ifndef Z_APPLICATION_H
 #define Z_APPLICATION_H
+
+#include "Core/Event/Event.h"
 struct GLFWwindow;
 
 class Application {
@@ -16,7 +18,7 @@ public:
      * @param width Application宽
      * @param height Application高
      */
-    Application(int width, int height) : m_width(width), m_height(height) {}
+    Application(int width, int height) : m_width(width), m_height(height), m_window(nullptr) {}
 
     /** 运行应用程序 */
     void Run();
@@ -59,6 +61,7 @@ private:
     int m_width;                // 窗口宽
     int m_height;               // 窗口高
 
+    Delegate<> a{[]{}};
 };
 
 
