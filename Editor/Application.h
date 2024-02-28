@@ -9,6 +9,7 @@
 #define Z_APPLICATION_H
 
 #include "Event/Event.h"
+#include "Logger/Logger.h"
 struct GLFWwindow;
 
 class Application {

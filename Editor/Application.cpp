@@ -7,14 +7,14 @@
 
 #include "Application.h"
 
-#include <string>
-
 #include "glad/glad.h"
 
 #include "GLFW/glfw3.h"
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
+
+#include "Logger/Logger.h"
 
 
 void Application::InitializeImGui() {
@@ -58,7 +58,6 @@ void Application::InitializeGLFW() {
     // TODO: 鼠标回调
     //    glfwSetCursorPosCallback(m_window, &Application::MouseMoveCallback_GLFW);
     if (!gladLoadGLLoader(reinterpret_cast<GLADloadproc>(glfwGetProcAddress))) {
-        // TODO: Log Here
         glfwTerminate();
     }
 }
@@ -75,13 +74,19 @@ void Application::ShutdownOther() {
 }
 
 void Application::Run() {
+    g_logger.Info("Begin initialize application with width: {}, height: {}...", m_width, m_height);
     InitializeGLFW();
     InitializeImGui();
     InitializeOther();
+    g_logger.Info("Initialize application complete.");
+    g_logger.Info("Application loop start.");
     MainLoop();
+    g_logger.Info("Application loop end.");
+    g_logger.Info("Deinitialize application...");
     ShutdownOther();
     ShutdownImGui();
     ShutdownGLFW();
+    g_logger.Info("Deinitialize application complete.");
 }
 
 void Application::MainLoop() {

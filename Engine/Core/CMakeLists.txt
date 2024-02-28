@@ -4,6 +4,8 @@ add_library(${PROJECT_NAME}
         Event/Event.h
         Utils/Guid.h
         Utils/Guid.cpp
+        Logger/Logger.h
+        Logger/Logger.cpp
 )
 
 target_link_libraries(${PROJECT_NAME} spdlog::spdlog)
