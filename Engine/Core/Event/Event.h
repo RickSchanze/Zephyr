@@ -16,7 +16,7 @@
 
 #include "spdlog/spdlog.h"
 
-#include "Core/Utils/Guid.h"
+#include "Utils/Guid.h"
 
 
 template<typename... Args>

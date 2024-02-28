@@ -6,31 +6,15 @@ if (MSVC)
 endif ()
 
 set(CMAKE_CXX_STANDARD 20)
-
-file(GLOB SOURCES "Engine/*.cpp" "Editor/*.cpp")
-file(GLOB HEADERS "Engine/*.h" "Editor/*.h")
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+add_subdirectory(Editor)
+add_subdirectory(Engine)
+add_subdirectory(ThirdParty)
 
 add_executable(Zephyr
-    ${SOURCES}
-    ${HEADERS}
     "main.cpp"
-        Engine/Core/Utils/Guid.cpp
 )
 
-include_directories(Engine)
+target_link_libraries(${PROJECT_NAME} Engine::Core Editor)
 
-find_package(fmt CONFIG REQUIRED)
-target_link_libraries(Zephyr PRIVATE fmt::fmt)
-
-find_package(glad CONFIG REQUIRED)
-target_link_libraries(Zephyr PRIVATE glad::glad)
-
-find_package(glfw3 CONFIG REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE glfw)
-
-find_package(imgui CONFIG REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE imgui::imgui glfw)
-
-find_package(spdlog CONFIG REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE spdlog::spdlog)
 

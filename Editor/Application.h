@@ -8,7 +8,7 @@
 #ifndef Z_APPLICATION_H
 #define Z_APPLICATION_H
 
-#include "Core/Event/Event.h"
+#include "Event/Event.h"
 struct GLFWwindow;
 
 class Application {

@@ -18,7 +18,6 @@
 
 
 void Application::InitializeImGui() {
-    std::string version = reinterpret_cast<const char *>(glGetString(GL_VERSION));
     // TODO: Log OpenGL版本
     //    LOG_INFO("OpenGL版本: {}", version);
     IMGUI_CHECKVERSION();
