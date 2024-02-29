@@ -4,6 +4,8 @@ add_library(${PROJECT_NAME}
         Event/Event.h
         Utils/Guid.h
         Utils/Guid.cpp
+        Utils/TypeConverter.h
+        Utils/TypeConverter.cpp
         Logger/Logger.h
         Logger/Logger.cpp
 )

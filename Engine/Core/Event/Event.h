@@ -136,14 +136,14 @@ public:
 
     /** 添加Delegate */
     template<typename ObjectType, typename ClassFunc>
-    void AddListener(std::string id, ObjectType *obj, ClassFunc func) {
+    void AddObjectListener(std::string id, ObjectType *obj, ClassFunc func) {
         m_event_listeners.emplace_back(id, obj, func);
     }
 
     /** 添加Delegate */
     template<typename ObjectType, typename ClassFunc>
         requires(!std::is_same_v<ObjectType, const char>)
-    void AddListener(ObjectType *obj, ClassFunc func) {
+    void AddObjectListener(ObjectType *obj, ClassFunc func) {
         m_event_listeners.emplace_back(obj, func);
     }
 

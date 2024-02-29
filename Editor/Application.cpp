@@ -16,7 +16,6 @@
 
 #include "Logger/Logger.h"
 
-
 void Application::InitializeImGui() {
     // TODO: Log OpenGL版本
     //    LOG_INFO("OpenGL版本: {}", version);
@@ -24,7 +23,7 @@ void Application::InitializeImGui() {
     ImGui::CreateContext();
     auto &io = ImGui::GetIO();
     (void) io;
-    io.Fonts->AddFontFromFileTTF("c:/windows/fonts/msyh.ttc", 24.0f, nullptr, io.Fonts->GetGlyphRangesChineseSimplifiedCommon());
+    io.Fonts->AddFontFromFileTTF("c:/windows/fonts/consola.ttf", 24.0f, nullptr, io.Fonts->GetGlyphRangesChineseSimplifiedCommon());
     io.FontDefault = io.Fonts->Fonts[0];
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;// Enable Keyboard Controls
                                                          //    io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad; //
@@ -68,6 +67,7 @@ void Application::ShutdownGLFW() {
 }
 
 void Application::InitializeOther() {
+    console_window = std::make_shared<ConsoleWindow>();
 }
 
 void Application::ShutdownOther() {
@@ -79,7 +79,12 @@ void Application::Run() {
     InitializeImGui();
     InitializeOther();
     g_logger.Info("Initialize application complete.");
+    g_logger.Trace("Application loop start.");
+    g_logger.Debug("Application loop start.");
     g_logger.Info("Application loop start.");
+    g_logger.Warning("Application loop start.");
+    g_logger.Error("Application loop start.");
+    g_logger.Critical("Application loop start.");
     MainLoop();
     g_logger.Info("Application loop end.");
     g_logger.Info("Deinitialize application...");
@@ -125,7 +130,9 @@ void Application::TickFrameLogicBegin() {
 void Application::TickFrameLogicEnd() {
     glfwPollEvents();
 }
+
 void Application::TickFrameRender() {
     bool show = true;
     ImGui::ShowDemoWindow(&show);
+    console_window->Render();
 }

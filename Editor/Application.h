@@ -5,11 +5,13 @@
  * @brief 应用入口
  */
 
-#ifndef Z_APPLICATION_H
-#define Z_APPLICATION_H
+#ifndef ZEPHYR_APPLICATION_H
+#define ZEPHYR_APPLICATION_H
 
 #include "Event/Event.h"
 #include "Logger/Logger.h"
+#include "Widgets/ConsoleWindow.h"
+
 struct GLFWwindow;
 
 class Application {
@@ -62,8 +64,8 @@ private:
     int m_width;                // 窗口宽
     int m_height;               // 窗口高
 
-    Delegate<> a{[]{}};
+    std::shared_ptr<ConsoleWindow> console_window;
 };
 
 
-#endif//Z_APPLICATION_H
+#endif // ZEPHYR_APPLICATION_H
