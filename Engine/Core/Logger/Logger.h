@@ -27,37 +27,37 @@ public:
 
     /** 输出Info级别信息 */
     template <typename... Args>
-    void Info(spdlog::format_string_t<Args...> fmt, Args &&...args) {
+    void Info(spdlog::format_string_t<Args...> fmt, Args &&...args) const  {
         m_logger->info(fmt, std::forward<Args>(args)...);
     }
 
     /** 输出Warning级别信息 */
     template <typename... Args>
-    void Warning(spdlog::format_string_t<Args...> fmt, Args &&...args) {
+    void Warning(spdlog::format_string_t<Args...> fmt, Args &&...args) const  {
         m_logger->warn(fmt, std::forward<Args>(args)...);
     }
 
     /** 输出Error级别信息 */
     template <typename... Args>
-    void Error(spdlog::format_string_t<Args...> fmt, Args &&...args) {
+    void Error(spdlog::format_string_t<Args...> fmt, Args &&...args) const  {
         m_logger->error(fmt, std::forward<Args>(args)...);
     }
 
     /** 输出Debug级别信息 */
     template <typename... Args>
-    void Debug(spdlog::format_string_t<Args...> fmt, Args &&...args) {
+    void Debug(spdlog::format_string_t<Args...> fmt, Args &&...args) const  {
         m_logger->debug(fmt, std::forward<Args>(args)...);
     }
 
     /** 输出Trace级别信息 */
     template <typename... Args>
-    void Trace(spdlog::format_string_t<Args...> fmt, Args &&...args) {
+    void Trace(spdlog::format_string_t<Args...> fmt, Args &&...args) const  {
         m_logger->trace(fmt, std::forward<Args>(args)...);
     }
 
     /** 输出Critical级别信息 */
     template <typename... Args>
-    void Critical(spdlog::format_string_t<Args...> fmt, Args &&...args) {
+    void Critical(spdlog::format_string_t<Args...> fmt, Args &&...args) const {
         m_logger->critical(fmt, std::forward<Args>(args)...);
     }
 
@@ -65,13 +65,34 @@ public:
      * 增加消息回调
      * @param sink
      */
-    void AddCallback(const std::shared_ptr<spdlog::sinks::sink>& sink);
+    void AddCallback(const std::shared_ptr<spdlog::sinks::sink>& sink) const;
 
 private:
     std::shared_ptr<spdlog::logger> m_logger;
     std::string m_pattern_string;
 };
 
-extern Logger g_logger;
+extern const Logger g_logger;
+
+#ifndef ZEPHYR_DEBUG
+#define ZEPHYR_LOG_INFO(...) g_logger.Info(__VA_ARGS__);
+#define ZEPHYR_LOG_WARNING(...) g_logger.Warning(__VA_ARGS__);
+#define ZEPHYR_LOG_ERROR(...) g_logger.Error(__VA_ARGS__);
+#define ZEPHYR_LOG_DEBUG(...) g_logger.Debug(__VA_ARGS__);
+#define ZEPHYR_LOG_TRACE(...) g_logger.Trace(__VA_ARGS__);
+#define ZEPHYR_LOG_CRITICAL(...) g_logger.Critical(__VA_ARGS__);
+#else
+
+#ifndef ZEPHYR_PATH_H
+#include "Path/Path.h"
+#endif
+
+#define ZEPHYR_LOG_INFO(Message, ...)      g_logger.Info("[{}:{}] [{}] " Message, Path::ExtractFileName(__FILE__), __LINE__, __FUNCTION__, ##__VA_ARGS__)
+#define ZEPHYR_LOG_WARNING(Message, ...)   g_logger.Warning("[{}:{}] [{}] " Message, Path::ExtractFileName(__FILE__), __LINE__, __FUNCTION__, ##__VA_ARGS__)
+#define ZEPHYR_LOG_ERROR(Message, ...)     g_logger.Error("[{}:{}] [{}] " Message, Path::ExtractFileName(__FILE__), __LINE__, __FUNCTION__, ##__VA_ARGS__)
+#define ZEPHYR_LOG_TRACE(Message, ...)     g_logger.Trace("[{}:{}] [{}] " Message, Path::ExtractFileName(__FILE__), __LINE__, __FUNCTION__, ##__VA_ARGS__)
+#define ZEPHYR_LOG_DEBUG(Message, ...)     g_logger.Debug("[{}:{}] [{}] " Message, Path::ExtractFileName(__FILE__), __LINE__, __FUNCTION__, ##__VA_ARGS__)
+#define ZEPHYR_LOG_CRITICAL(Message, ...)  g_logger.Critical("[{}:{}] [{}] " Message, Path::ExtractFileName(__FILE__), __LINE__, __FUNCTION__, ##__VA_ARGS__)
+#endif
 
 #endif // ZEPHYR_LOGGER_H

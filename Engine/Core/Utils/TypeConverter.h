@@ -5,8 +5,8 @@
  * @brief
  */
 
-#ifndef ZEPHYR_TYPECONVERTER_H
-#define ZEPHYR_TYPECONVERTER_H
+#ifndef ZEPHYR_TYPE_CONVERTER_H
+#define ZEPHYR_TYPE_CONVERTER_H
 
 #include <string>
 

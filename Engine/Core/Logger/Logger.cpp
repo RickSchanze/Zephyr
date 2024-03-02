@@ -12,10 +12,11 @@
 
 #define DEFAULT_LOGGER_PATTERN "%^[%Y-%m-%d %H:%M:%S] [%-8l] [%-n] [thread:%t] %v%$"
 
-Logger g_logger = Logger("Main");
+const Logger g_logger = Logger("Main");
 
 Logger::Logger() : Logger("Temp")
 {
+
 }
 
 Logger::Logger(const std::string &logger_name) : Logger(logger_name, DEFAULT_LOGGER_PATTERN)
@@ -31,7 +32,7 @@ Logger::Logger(const std::string &logger_name, const std::string &pattern_string
     m_logger->set_level(spdlog::level::trace);
 }
 
-void Logger::AddCallback(const std::shared_ptr<spdlog::sinks::sink>& sink)
+void Logger::AddCallback(const std::shared_ptr<spdlog::sinks::sink>& sink) const
 {
     m_logger->sinks().emplace_back(sink);
 }
