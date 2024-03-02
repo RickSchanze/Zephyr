@@ -1,6 +1,6 @@
 /**
  * @file Guid.h
- * @author Echo 
+ * @author Echo
  * @Date 2024/2/27
  * @brief 生成GUID 目前只可用在Windows
  * TODO: 多平台支持
@@ -24,7 +24,7 @@ public:
 
 private:
     GUID m_guid{};
-    inline static const int GUID_LENGTH = 64;
+    static constexpr int GUID_LENGTH = 64;
 };
 
 #endif//ZEPHYR_GUID_H

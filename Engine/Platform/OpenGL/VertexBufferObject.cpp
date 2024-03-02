@@ -37,14 +37,14 @@ VertexBufferObject::~VertexBufferObject()
     glDeleteBuffers(1, &m_id);
 }
 
-void VertexBufferObject::SetData(const void *data, uint32_t size, uint32_t usage, uint32_t target)
+void VertexBufferObject::SetData(const void *data, const uint32_t size, const uint32_t usage, const uint32_t target)
 {
     glBufferData(target, size, data, usage);
 }
 
-VertexBufferObject& VertexBufferObject::BindVertexAttributePointer(int32_t count, uint32_t data_type, bool normalize)
+VertexBufferObject &VertexBufferObject::BindVertexAttributePointer(const int32_t count, const uint32_t data_type, const bool normalize)
 {
-    glVertexAttribPointer(m_enabled_attribute_count, count, data_type, normalize, (int)(count * sizeof(float)), reinterpret_cast<void*>(offset));
+    glVertexAttribPointer(m_enabled_attribute_count, count, data_type, normalize, static_cast<int>(count * sizeof(float)), reinterpret_cast<void *>(offset));
     offset += count * sizeof(float);
     m_enabled_attribute_count++;
     return *this;

@@ -49,9 +49,9 @@ public:
     VertexBufferObject &BindVertexAttributePointer(int32_t count, uint32_t data_type = GL_FLOAT, bool normalize = false);
 
 private:
-    uint32_t m_id{};                      // VBO ID
-    uint32_t m_enabled_attribute_count{}; // 由glEnableVertexAttribArray启用的属性数量
-    uint32_t offset;
+    uint32_t m_id{0};                      // VBO ID
+    uint32_t m_enabled_attribute_count{0}; // 由glEnableVertexAttribArray启用的属性数量
+    uint32_t offset{0};
 };
 
 } // namespace Platform::GL

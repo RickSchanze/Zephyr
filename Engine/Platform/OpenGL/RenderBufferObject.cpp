@@ -31,14 +31,16 @@ void RenderBufferObject::Bind() const
     glBindRenderbuffer(GL_RENDERBUFFER, m_id);
 }
 
-void RenderBufferObject::AllocateStorage(int32_t width, int32_t height, uint32_t target, uint32_t internalFormat)
+void RenderBufferObject::AllocateStorage(const int32_t width, const int32_t height, const uint32_t target, const uint32_t internalFormat)
 {
-    if (width <= 0 || width >= GL_MAX_RENDERBUFFER_SIZE) {
+    if (width <= 0 || width >= GL_MAX_RENDERBUFFER_SIZE)
+    {
         ZEPHYR_LOG_ERROR("width is invalid.");
         return;
     }
 
-    if (height <= 0 || height >= GL_MAX_RENDERBUFFER_SIZE) {
+    if (height <= 0 || height >= GL_MAX_RENDERBUFFER_SIZE)
+    {
         ZEPHYR_LOG_ERROR("height is invalid");
         return;
     }

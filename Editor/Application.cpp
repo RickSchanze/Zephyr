@@ -66,7 +66,7 @@ void Application::InitializeGLFW()
     }
 }
 
-void Application::ShutdownGLFW()
+void Application::ShutdownGLFW() const
 {
     glfwDestroyWindow(m_window);
     glfwTerminate();
@@ -88,6 +88,7 @@ void Application::Run()
     InitializeImGui();
     InitializeOther();
     ZEPHYR_LOG_INFO("Initialize application complete.");
+    ZEPHYR_LOG_ERROR("Initialize application complete.");
     ZEPHYR_LOG_INFO("Application loop start.");
     MainLoop();
     ZEPHYR_LOG_INFO("Application loop end.");

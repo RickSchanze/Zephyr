@@ -7,7 +7,6 @@
 
 #include "FrameBufferObject.h"
 
-
 namespace Platform::GL
 {
 
@@ -27,4 +26,3 @@ uint32_t FrameBufferObject::GetId() const
 }
 
 } // namespace Platform::GL
-

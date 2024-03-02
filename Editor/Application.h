@@ -1,6 +1,6 @@
 /**
  * @file Application.h
- * @author Echo 
+ * @author Echo
  * @Date 2024/2/26
  * @brief 应用入口
  */
@@ -14,14 +14,18 @@
 
 struct GLFWwindow;
 
-class Application {
+class Application
+{
 public:
     /**
      * 构造Application
      * @param width Application宽
      * @param height Application高
      */
-    Application(int width, int height) : m_width(width), m_height(height), m_window(nullptr) {}
+    Application(const int width, const int height)
+        : m_window(nullptr), m_width(width), m_height(height)
+    {
+    }
 
     /** 运行应用程序 */
     void Run();
@@ -37,7 +41,7 @@ protected:
     /** 初始化GLFW */
     void InitializeGLFW();
     /** 结束GLFW部分并进行清理工作 */
-    void ShutdownGLFW();
+    void ShutdownGLFW() const;
 
     /** 初始化其他部分 */
     void InitializeOther();
@@ -60,7 +64,7 @@ protected:
     void TickFrameLogicEnd();
 
 private:
-    GLFWwindow* m_window;       // 此Application对应GLFWWindow
+    GLFWwindow *m_window;       // 此Application对应GLFWWindow
     int m_width;                // 窗口宽
     int m_height;               // 窗口高
 

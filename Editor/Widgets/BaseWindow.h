@@ -16,10 +16,21 @@ class BaseWindow : public WidgetBase
 {
 public:
     /** BaseWindow构造函数,唯一区别就是默认draw_as_window为true */
-    BaseWindow(std::string name, bool visible) : WidgetBase(std::move(name), visible, true) {}
-    explicit BaseWindow(std::string name) : BaseWindow(std::move(name), true) {}
-    BaseWindow() : BaseWindow(std::format("Window{}", s_widget_count)) {}
+    BaseWindow(std::string name, const bool visible)
+        : WidgetBase(std::move(name), visible, true)
+    {
+    }
 
+    explicit BaseWindow(std::string name)
+        : BaseWindow(std::move(name), true)
+    {
+    }
+    BaseWindow()
+        : BaseWindow(std::format("Window{}", s_widget_count))
+    {
+    }
+
+    ~BaseWindow() override = default;
 };
 
 #endif // ZEPHYR_BASEWINDOW_H

@@ -18,4 +18,4 @@ public:
     static std::string ToString(spdlog::string_view_t str);
 };
 
-#endif // ZEPHYR_TYPECONVERTER_H
+#endif // ZEPHYR_TYPE_CONVERTER_H

@@ -13,19 +13,38 @@
 #include "imgui.h"
 
 // {66, 186, 144, 1}}
-#define LOG_COLOR_INFO {0.2588235294117f, 0.7294117647058f, 0.5647058823529f, 1.0f}
+#define LOG_COLOR_INFO                                             \
+    {                                                              \
+        0.2588235294117f, 0.7294117647058f, 0.5647058823529f, 1.0f \
+    }
 // {164, 132, 75, 1}
-#define LOG_COLOR_WARNING {0.643137254902f, 0.5176470588235f, 0.2941176470588f, 1.0f}
+#define LOG_COLOR_WARNING                                         \
+    {                                                             \
+        0.643137254902f, 0.5176470588235f, 0.2941176470588f, 1.0f \
+    }
 // {179, 63, 57, 1}
-#define LOG_COLOR_ERROR {0.7019607843137f, 0.2470588235294f, 0.2235294117647f, 1.0f}
+#define LOG_COLOR_ERROR                                            \
+    {                                                              \
+        0.7019607843137f, 0.2470588235294f, 0.2235294117647f, 1.0f \
+    }
 // {77, 199, 228, 1}
-#define LOG_COLOR_DEBUG {0.3019607843137f, 0.7803921568627f, 0.8941176470588f, 1.0f}
+#define LOG_COLOR_DEBUG                                            \
+    {                                                              \
+        0.3019607843137f, 0.7803921568627f, 0.8941176470588f, 1.0f \
+    }
 // {183, 185, 162, 1}
-#define LOG_COLOR_TRACE {0.7176470588235f, 0.7254901960784f, 0.6352941176471f, 1.0f}
+#define LOG_COLOR_TRACE                                            \
+    {                                                              \
+        0.7176470588235f, 0.7254901960784f, 0.6352941176471f, 1.0f \
+    }
 // 红色
-#define LOG_COLOR_CRITICAL {1, 0, 0, 1}
+#define LOG_COLOR_CRITICAL \
+    {                      \
+        1, 0, 0, 1         \
+    }
 
-ImVec4 GetLogColor(int log_level) {
+ImVec4 GetLogColor(const int log_level)
+{
     switch (log_level)
     {
     case 0:
@@ -41,11 +60,12 @@ ImVec4 GetLogColor(int log_level) {
     case 5:
         return LOG_COLOR_CRITICAL;
     default:
-        return {1,1,1,1};
+        return {1, 1, 1, 1};
     }
 }
 
-const char* GetLogLevelString(int log_level) {
+const char *GetLogLevelString(const int log_level)
+{
     switch (log_level)
     {
     case 0:

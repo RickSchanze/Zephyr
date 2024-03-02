@@ -24,7 +24,7 @@ struct LogMessage
     size_t thread_id;
     std::string logger_name;
 
-    LogMessage(std::string _message, int _level, size_t _thread_id, std::string _logger_name)
+    LogMessage(std::string _message, const int _level, const size_t _thread_id, std::string _logger_name)
         : message(std::move(_message)), level(_level), thread_id(_thread_id), logger_name(std::move(_logger_name))
     {
     }

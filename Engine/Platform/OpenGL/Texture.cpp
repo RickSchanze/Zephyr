@@ -30,7 +30,7 @@ void Texture::Bind() const
     glBindTexture(GL_TEXTURE_2D, m_id);
 }
 
-Texture& Texture::SetImageParam(const TextureParam &param)
+Texture &Texture::SetImageParam(const TextureParam &param)
 {
     if (param.width <= 0 || param.height <= 0)
     {
@@ -51,13 +51,13 @@ Texture& Texture::SetImageParam(const TextureParam &param)
     return *this;
 }
 
-Texture &Texture::SetParam(int32_t pname, int32_t param, uint32_t target)
+Texture &Texture::SetParam(const int32_t pname, const int32_t param, const uint32_t target)
 {
     glTexParameteri(target, pname, param);
     return *this;
 }
 
-Texture& Texture::Initialize(int32_t width, int32_t height)
+Texture &Texture::Initialize(const int32_t width, const int32_t height)
 {
     Bind();
     SetImageParam({.width = width, .height = height})

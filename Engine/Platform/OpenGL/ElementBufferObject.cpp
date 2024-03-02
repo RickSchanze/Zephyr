@@ -7,9 +7,6 @@
 
 #include "ElementBufferObject.h"
 
-namespace Platform
+namespace Platform::GL
 {
-namespace GL
-{
-} // namespace GL
-} // namespace Platform
+} // namespace Platform::GL

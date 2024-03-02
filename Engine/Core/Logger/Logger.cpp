@@ -14,12 +14,13 @@
 
 const Logger g_logger = Logger("Main");
 
-Logger::Logger() : Logger("Temp")
+Logger::Logger()
+    : Logger("Temp")
 {
-
 }
 
-Logger::Logger(const std::string &logger_name) : Logger(logger_name, DEFAULT_LOGGER_PATTERN)
+Logger::Logger(const std::string &logger_name)
+    : Logger(logger_name, DEFAULT_LOGGER_PATTERN)
 {
 }
 
@@ -32,7 +33,7 @@ Logger::Logger(const std::string &logger_name, const std::string &pattern_string
     m_logger->set_level(spdlog::level::trace);
 }
 
-void Logger::AddCallback(const std::shared_ptr<spdlog::sinks::sink>& sink) const
+void Logger::AddCallback(const std::shared_ptr<spdlog::sinks::sink> &sink) const
 {
     m_logger->sinks().emplace_back(sink);
 }
