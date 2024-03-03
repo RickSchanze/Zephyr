@@ -34,8 +34,8 @@ public:
      * @brief 设置VBO数据
      * @param data 数据指针
      * @param size 数据大小
-     * @param usage 数据用途 GL_STATIC_DRAW...
-     * @param target 数据目标 GL_ARRAY_BUFFER...
+     * @param usage 数据用途 默认GL_STATIC_DRAW
+     * @param target 数据目标 默认GL_ARRAY_BUFFER
      */
     void SetData(const void *data, uint32_t size, uint32_t usage = GL_STATIC_DRAW, uint32_t target = GL_ELEMENT_ARRAY_BUFFER);
 

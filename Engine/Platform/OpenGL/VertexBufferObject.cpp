@@ -45,6 +45,7 @@ void VertexBufferObject::SetData(const void *data, const uint32_t size, const ui
 VertexBufferObject &VertexBufferObject::BindVertexAttributePointer(const int32_t count, const uint32_t data_type, const bool normalize)
 {
     glVertexAttribPointer(m_enabled_attribute_count, count, data_type, normalize, static_cast<int>(count * sizeof(float)), reinterpret_cast<void *>(offset));
+    glEnableVertexAttribArray(m_enabled_attribute_count);
     offset += count * sizeof(float);
     m_enabled_attribute_count++;
     return *this;

@@ -7,10 +7,13 @@ add_library(${PROJECT_NAME}
         BaseWindow.cpp
         ConsoleWindow.h
         ConsoleWindow.cpp
+        ViewportWindow.h
+        ViewportWindow.cpp
 )
 
 target_link_libraries(${PROJECT_NAME}
         imgui
         spdlog
         Engine::Core
+        Engine::Platform
 )

@@ -16,6 +16,7 @@
 
 #include "Logger/Logger.h"
 #include "Path/Path.h"
+#include "Widgets/ViewportWindow.h"
 
 void Application::InitializeImGui()
 {
@@ -75,6 +76,7 @@ void Application::ShutdownGLFW() const
 void Application::InitializeOther()
 {
     console_window = std::make_shared<ConsoleWindow>();
+    viewport_window = std::make_shared<ViewportWindow>();
 }
 
 void Application::ShutdownOther()
@@ -88,7 +90,6 @@ void Application::Run()
     InitializeImGui();
     InitializeOther();
     ZEPHYR_LOG_INFO("Initialize application complete.");
-    ZEPHYR_LOG_ERROR("Initialize application complete.");
     ZEPHYR_LOG_INFO("Application loop start.");
     MainLoop();
     ZEPHYR_LOG_INFO("Application loop end.");
@@ -122,6 +123,7 @@ void Application::TickFrameRenderBegin()
 void Application::TickFrameRenderEnd()
 {
     ImGui::Render();
+
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
     if (ImGui::GetIO().ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
     {
@@ -143,9 +145,11 @@ void Application::TickFrameLogicEnd()
     glfwPollEvents();
 }
 
+
 void Application::TickFrameRender()
 {
     bool show = true;
     ImGui::ShowDemoWindow(&show);
     console_window->Render();
+    viewport_window->Render();
 }

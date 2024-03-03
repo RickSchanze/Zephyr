@@ -25,16 +25,17 @@ uint32_t Texture::GetId() const
     return m_id;
 }
 
-void Texture::Bind() const
+void Texture::Bind(const uint32_t target)
 {
-    glBindTexture(GL_TEXTURE_2D, m_id);
+    glBindTexture(target, m_id);
+    m_target = target;
 }
 
 Texture &Texture::SetImageParam(const TextureParam &param)
 {
     if (param.width <= 0 || param.height <= 0)
     {
-        g_logger.Error("Texture::SetImageParam: width or height is invalid");
+        ZEPHYR_LOG_ERROR("Width or height is invalid");
         return *this;
     }
     glTexImage2D(
@@ -64,6 +65,16 @@ Texture &Texture::Initialize(const int32_t width, const int32_t height)
         .SetParam(GL_TEXTURE_MIN_FILTER, GL_LINEAR)
         .SetParam(GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     return *this;
+}
+
+const TextureParam &Texture::GetParam() const
+{
+    return m_param;
+}
+
+uint32_t Texture::GetTarget() const
+{
+    return m_target;
 }
 
 } // namespace Platform::GL

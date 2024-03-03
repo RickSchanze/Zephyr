@@ -46,6 +46,8 @@ void RenderBufferObject::AllocateStorage(const int32_t width, const int32_t heig
     }
 
     glRenderbufferStorage(target, internalFormat, width, height);
+    m_width = width;
+    m_height = height;
 }
 
 } // namespace Platform::GL

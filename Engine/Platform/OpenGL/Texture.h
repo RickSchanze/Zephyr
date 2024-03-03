@@ -37,9 +37,9 @@ public:
     ~Texture();
 
     /** 获取id */
-    inline uint32_t GetId() const;
+    uint32_t GetId() const;
     /** 绑定texture */
-    void Bind() const;
+    void Bind(uint32_t target = GL_TEXTURE_2D);
 
     /**
      * 设定texture参数
@@ -65,9 +65,22 @@ public:
      */
     Texture &Initialize(int32_t width, int32_t height);
 
+    /**
+     * 获取纹理参数
+     * @return
+     */
+    const TextureParam &GetParam() const;
+
+    /**
+     * 获取绑定的target
+     * @return
+     */
+    uint32_t GetTarget() const;
+
 private:
     uint32_t m_id = 0;
     TextureParam m_param;
+    uint32_t m_target = 0;
 };
 
 } // namespace Platform::GL

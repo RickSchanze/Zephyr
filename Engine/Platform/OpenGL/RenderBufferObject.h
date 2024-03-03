@@ -23,15 +23,15 @@ public:
     RenderBufferObject();
     ~RenderBufferObject();
     /** 获取id */
-    inline uint32_t GetId() const;
+    uint32_t GetId() const;
     /** 绑定RenderBuffer */
-    inline void Bind() const;
+    void Bind() const;
 
     /**
      * 为RenderBuffer分配内存
      * @note 使用前请先Bind
-     * @param target 目标
-     * @param internalFormat 内部格式
+     * @param target 目标 默认GL_RENDERBUFFER
+     * @param internalFormat 内部格式 默认GL_DEPTH24_STENCIL8
      * @param width
      * @param height
      */

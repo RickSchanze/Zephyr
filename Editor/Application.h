@@ -12,6 +12,7 @@
 #include "Logger/Logger.h"
 #include "Widgets/ConsoleWindow.h"
 
+class ViewportWindow;
 struct GLFWwindow;
 
 class Application
@@ -25,6 +26,7 @@ public:
     Application(const int width, const int height)
         : m_window(nullptr), m_width(width), m_height(height)
     {
+
     }
 
     /** 运行应用程序 */
@@ -68,7 +70,9 @@ private:
     int m_width;                // 窗口宽
     int m_height;               // 窗口高
 
+    // TODO: 删除并整理Window
     std::shared_ptr<ConsoleWindow> console_window;
+    std::shared_ptr<ViewportWindow> viewport_window;
 };
 
 
