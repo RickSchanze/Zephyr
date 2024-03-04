@@ -13,11 +13,11 @@
 #endif
 
 #include "Logger/Logger.h"
-#include "OpenGL/FrameRender.h"
+#include "OpenGL/Renderer/FrameRenderer.h"
 
 ViewportWindow::ViewportWindow()
 {
-    m_frame_render = new Platform::GL::FrameRender();
+    m_frame_render = new Platform::GL::FrameRenderer();
     m_frame_render->Initialize(1920, 1080);
     m_name = "Viewport";
 }

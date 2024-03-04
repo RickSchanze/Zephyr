@@ -5,8 +5,8 @@
  * @brief
  */
 
-#ifndef ZEPHYR_ELEMENT_BUFFER_OBJECT_H
-#define ZEPHYR_ELEMENT_BUFFER_OBJECT_H
+#ifndef ZEPHYR_ELEMENTBUFFEROBJECT_H
+#define ZEPHYR_ELEMENTBUFFEROBJECT_H
 #include <cstdint>
 
 #ifndef __glad_h_
@@ -43,4 +43,4 @@ private:
 
 } // namespace Platform::GL
 
-#endif // ZEPHYR_ELEMENT_BUFFER_OBJECT_H
+#endif // ZEPHYR_ELEMENTBUFFEROBJECT_H

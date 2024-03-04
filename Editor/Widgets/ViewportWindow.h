@@ -11,7 +11,7 @@
 
 namespace Platform::GL
 {
-class FrameRender;
+class FrameRenderer;
 }
 class ViewportWindow : public BaseWindow
 {
@@ -23,7 +23,7 @@ public:
     void Resize(int width, int height);
 
 private:
-    Platform::GL::FrameRender* m_frame_render{};
+    Platform::GL::FrameRenderer * m_frame_render{};
     int m_width;
     int m_height;
 };

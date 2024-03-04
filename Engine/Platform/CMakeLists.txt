@@ -11,10 +11,16 @@ add_library(${PROJECT_NAME}
         OpenGL/RenderBufferObject.cpp
         OpenGL/Texture.h
         OpenGL/Texture.cpp
-        OpenGL/FrameRender.h
-        OpenGL/FrameRender.cpp
+        OpenGL/Renderer/FrameRenderer.h
+        OpenGL/Renderer/FrameRenderer.cpp
+        OpenGL/Renderer/StaticMeshRenderer.h
+        OpenGL/Renderer/StaticMeshRenderer.cpp
         OpenGL/FrameBufferObject.h
         OpenGL/FrameBufferObject.cpp
+        OpenGL/Renderer/BaseRenderer.h
+        OpenGL/Renderer/BaseRenderer.cpp
+        OpenGL/Shader.h
+        OpenGL/Shader.cpp
 )
 
 target_link_libraries(${PROJECT_NAME}

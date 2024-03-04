@@ -5,8 +5,8 @@
  * @brief OpenGL VBO封装
  */
 
-#ifndef ZEPHYR_VERTEX_BUFFER_OBJECT_H
-#define ZEPHYR_VERTEX_BUFFER_OBJECT_H
+#ifndef ZEPHYR_VERTEXBUFFEROBJECT_H
+#define ZEPHYR_VERTEXBUFFEROBJECT_H
 
 #include <cstdint>
 
@@ -37,7 +37,7 @@ public:
      * @param usage 数据用途 默认GL_STATIC_DRAW
      * @param target 数据目标 默认GL_ARRAY_BUFFER
      */
-    void SetData(const void *data, uint32_t size, uint32_t usage = GL_STATIC_DRAW, uint32_t target = GL_ELEMENT_ARRAY_BUFFER);
+    void SetData(const void *data, uint32_t size, uint32_t usage = GL_STATIC_DRAW, uint32_t target = GL_ARRAY_BUFFER);
 
     /**
      * @brief 绑定顶点属性指针，用于告诉OpenGL如何解析定点数据
@@ -51,9 +51,9 @@ public:
 private:
     uint32_t m_id{0};                      // VBO ID
     uint32_t m_enabled_attribute_count{0}; // 由glEnableVertexAttribArray启用的属性数量
-    uint32_t offset{0};
+    uint32_t m_offset{0};                  // 顶点属性偏移
 };
 
 } // namespace Platform::GL
 
-#endif // ZEPHYR_VERTEX_BUFFER_OBJECT_H
+#endif // ZEPHYR_VERTEXBUFFEROBJECT_H

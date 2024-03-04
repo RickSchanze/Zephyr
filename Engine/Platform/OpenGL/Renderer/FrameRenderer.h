@@ -1,28 +1,32 @@
 /**
- * @file FrameRender.h
+ * @file FrameRenderer.h
  * @author Echo
  * @Date 24-3-3
  * @brief 将图像渲染到帧缓冲区
  */
 
-#ifndef FRAMERENDER_H
-#define FRAMERENDER_H
-#include "ElementBufferObject.h"
-#include "FrameBufferObject.h"
-#include "VertexArrayObject.h"
-#include "VertexBufferObject.h"
-#include "Texture.h"
-#include "RenderBufferObject.h"
+#ifndef ZEPHYR_FRAMERENDERER_H
+#define ZEPHYR_FRAMERENDERER_H
+#include "OpenGL/ElementBufferObject.h"
+#include "OpenGL/FrameBufferObject.h"
+#include "OpenGL/RenderBufferObject.h"
+#include "OpenGL/Texture.h"
+#include "OpenGL/VertexArrayObject.h"
+#include "OpenGL/VertexBufferObject.h"
+#include "StaticMeshRenderer.h"
 
 #include <memory>
 
 namespace Platform::GL
 {
 
-class FrameRender
+/**
+ * 帧渲染器,渲染的入口
+ */
+class FrameRenderer final
 {
 public:
-    FrameRender() = default;
+    FrameRenderer() = default;
 
     /**
      * 初始化FrameRender
@@ -54,12 +58,9 @@ private:
     std::unique_ptr<Texture> m_render_texture;
 
     // TODO: vao vbo ebo为具体渲染对象所有，不应放在这里
-    std::unique_ptr<VertexArrayObject> m_vao;
-    std::unique_ptr<VertexBufferObject> m_vbo;
-    std::unique_ptr<ElementBufferObject> m_ebo;
-    uint32_t m_shader{};
+    std::unique_ptr<StaticMeshRenderer> renderer;
 };
 
-} // namespace Platmform::GL
+} // namespace Platform::GL
 
-#endif // FRAMERENDER_H
+#endif // ZEPHYR_FRAMERENDERER_H

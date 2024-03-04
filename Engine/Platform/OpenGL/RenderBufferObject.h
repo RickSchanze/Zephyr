@@ -5,8 +5,8 @@
  * @brief
  */
 
-#ifndef ZEPHYR_RENDER_BUFFER_OBJECT_H
-#define ZEPHYR_RENDER_BUFFER_OBJECT_H
+#ifndef ZEPHYR_RENDERBUFFEROBJECT_H
+#define ZEPHYR_RENDERBUFFEROBJECT_H
 
 #include <cstdint>
 
@@ -45,4 +45,4 @@ private:
 
 } // namespace Platform::GL
 
-#endif // ZEPHYR_RENDER_BUFFER_OBJECT_H
+#endif // ZEPHYR_RENDERBUFFEROBJECT_H
