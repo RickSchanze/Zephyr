@@ -15,7 +15,6 @@
 #include "imgui_impl_opengl3.h"
 
 #include "Logger/Logger.h"
-#include "Path/Path.h"
 #include "Widgets/ViewportWindow.h"
 
 void Application::InitializeImGui()

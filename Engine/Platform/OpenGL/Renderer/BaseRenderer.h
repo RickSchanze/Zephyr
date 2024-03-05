@@ -40,7 +40,7 @@ protected:
     VertexArrayObject *m_vao{};   // vao
     VertexBufferObject *m_vbo{};  // vbo
     ElementBufferObject *m_ebo{}; // ebo
-    int32_t m_vertex_count{0};   // 顶点数量
+    int32_t m_vertex_count{0};    // 顶点数量
 };
 } // namespace Platform::GL
 

@@ -82,15 +82,13 @@ extern const Logger g_logger;
 #define ZEPHYR_LOG_TRACE(...) g_logger.Trace(__VA_ARGS__);
 #define ZEPHYR_LOG_CRITICAL(...) g_logger.Critical(__VA_ARGS__);
 #else
-
-#ifndef ZEPHYR_PATH_H
-#include "Path/Path.h"
-#endif
-#define ZEPHYR_LOG_INFO(Message, ...)      g_logger.Info("[{}:{}] [{}] " Message, Path::ExtractFileName(__FILE__), __LINE__, __FUNCTION__, ##__VA_ARGS__)
-#define ZEPHYR_LOG_WARNING(Message, ...)   g_logger.Warning("[{}:{}] [{}] " Message, Path::ExtractFileName(__FILE__), __LINE__, __FUNCTION__, ##__VA_ARGS__)
-#define ZEPHYR_LOG_ERROR(Message, ...)     g_logger.Error("[{}:{}] [{}] " Message, Path::ExtractFileName(__FILE__), __LINE__, __FUNCTION__, ##__VA_ARGS__)
-#define ZEPHYR_LOG_TRACE(Message, ...)     g_logger.Trace("[{}:{}] [{}] " Message, Path::ExtractFileName(__FILE__), __LINE__, __FUNCTION__, ##__VA_ARGS__)
-#define ZEPHYR_LOG_DEBUG(Message, ...)     g_logger.Debug("[{}:{}] [{}] " Message, Path::ExtractFileName(__FILE__), __LINE__, __FUNCTION__, ##__VA_ARGS__)
-#define ZEPHYR_LOG_CRITICAL(Message, ...)  g_logger.Critical("[{}:{}] [{}] " Message, Path::ExtractFileName(__FILE__), __LINE__, __FUNCTION__, ##__VA_ARGS__)
+#include <filesystem>
+#include "Formatter.h"
+#define ZEPHYR_LOG_INFO(Message, ...)      g_logger.Info("[{}:{}] [{}] " Message, std::filesystem::path(__FILE__).filename(), __LINE__, __FUNCTION__, ##__VA_ARGS__)
+#define ZEPHYR_LOG_WARNING(Message, ...)   g_logger.Warning("[{}:{}] [{}] " Message, std::filesystem::path(__FILE__).filename(), __LINE__, __FUNCTION__, ##__VA_ARGS__)
+#define ZEPHYR_LOG_ERROR(Message, ...)     g_logger.Error("[{}:{}] [{}] " Message, std::filesystem::path(__FILE__).filename(), __LINE__, __FUNCTION__, ##__VA_ARGS__)
+#define ZEPHYR_LOG_TRACE(Message, ...)     g_logger.Trace("[{}:{}] [{}] " Message, std::filesystem::path(__FILE__).filename(), __LINE__, __FUNCTION__, ##__VA_ARGS__)
+#define ZEPHYR_LOG_DEBUG(Message, ...)     g_logger.Debug("[{}:{}] [{}] " Message, std::filesystem::path(__FILE__).filename(), __LINE__, __FUNCTION__, ##__VA_ARGS__)
+#define ZEPHYR_LOG_CRITICAL(Message, ...)  g_logger.Critical("[{}:{}] [{}] " Message, std::filesystem::path(__FILE__).filename(), __LINE__, __FUNCTION__, ##__VA_ARGS__)
 #endif
 #endif // ZEPHYR_LOGGER_H

@@ -89,7 +89,7 @@ void ConsoleWindow::Draw()
 {
     for (const auto &msg : m_messages)
     {
-        std::string output_string = std::format("[{:<8}] [{}] [thread:{}] {}", GetLogLevelString(msg.level), msg.logger_name, msg.thread_id, msg.message);
+        std::string output_string = std::format("[{:%Y-%m-%d %H:%M}] [{:<8}] [{}] [Thread:{}] {}", msg.time ,GetLogLevelString(msg.level), msg.logger_name, msg.thread_id, msg.message);
         ImGui::TextColored(GetLogColor(msg.level), "%s", output_string.c_str());
     }
 }

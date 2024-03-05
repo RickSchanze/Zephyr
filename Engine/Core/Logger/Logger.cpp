@@ -10,7 +10,7 @@
 #include "spdlog/sinks/callback_sink.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
 
-#define DEFAULT_LOGGER_PATTERN "%^[%Y-%m-%d %H:%M:%S] [%-8l] [%-n] [thread:%t] %v%$"
+#define DEFAULT_LOGGER_PATTERN "%^[%Y-%m-%d %H:%M:%S] [%-8l] [%-n] [Thread:%t] %v%$"
 
 const Logger g_logger = Logger("Main");
 

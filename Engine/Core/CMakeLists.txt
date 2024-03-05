@@ -8,8 +8,7 @@ add_library(${PROJECT_NAME}
         Utils/TypeConverter.cpp
         Logger/Logger.h
         Logger/Logger.cpp
-        Path/Path.cpp
-        Path/Path.h
+        Logger/Formatter.h
 )
 
 target_link_libraries(${PROJECT_NAME} spdlog::spdlog)
