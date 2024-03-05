@@ -13,9 +13,15 @@
 
 namespace Platform::GL
 {
+class ShaderProgram;
+}
 
 class StaticMeshRenderer : public BaseRenderer
 {
+    typedef Platform::GL::ShaderProgram ShaderProgram;
+    typedef Platform::GL::VertexShader VertexShader;
+    typedef Platform::GL::FragmentShader FragmentShader;
+
 public:
     /**
      * 构造函数
@@ -31,11 +37,8 @@ public:
 protected:
     VertexShader* m_vertex_shader;
     FragmentShader* m_fragment_shader;
+    ShaderProgram* m_shader_program{};
     bool m_initialized{false};
-    uint32_t m_program_id{};
 };
-
-} // namespace Platform::GL
-
 
 #endif // ZEPHYR_STATICMESHRENDERER_H

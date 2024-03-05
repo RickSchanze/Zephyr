@@ -9,8 +9,7 @@
 
 #include <iostream>
 
-namespace Platform::GL
-{
+using namespace Platform::GL;
 
 float vertices[] = {
     0.5f, 0.5f, 0.0f,   // top right
@@ -77,5 +76,3 @@ void FrameRenderer::Resize(const int width, const int height) const
 uint32_t FrameRenderer::GetAttachTextureId() const{
     return m_render_texture->GetId();
 }
-
-} // namespace Platform::GL

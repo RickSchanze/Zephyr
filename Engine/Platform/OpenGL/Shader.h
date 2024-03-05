@@ -19,6 +19,9 @@
 
 #include "Logger/Logger.h"
 
+namespace Platform::GL
+{
+
 enum class EShaderType
 {
     Vertex,
@@ -133,7 +136,7 @@ public:
         return "";
     };
 
-    uint32_t GetId()
+    uint32_t GetId() const
     {
         return m_id;
     }
@@ -147,5 +150,7 @@ protected:
 
 typedef Shader<EShaderType::Vertex> VertexShader;
 typedef Shader<EShaderType::Fragment> FragmentShader;
+
+}
 
 #endif // ZEPHYR_SHADER_H

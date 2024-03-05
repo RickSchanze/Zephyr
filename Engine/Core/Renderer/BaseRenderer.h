@@ -19,10 +19,15 @@ namespace Platform::GL
 class VertexArrayObject;
 class VertexBufferObject;
 class ElementBufferObject;
+}
 
 class BaseRenderer
 {
 public:
+    typedef Platform::GL::VertexArrayObject VertexArrayObject;
+    typedef Platform::GL::VertexBufferObject VertexBufferObject;
+    typedef Platform::GL::ElementBufferObject ElementBufferObject;
+
     BaseRenderer();
     virtual ~BaseRenderer();
 
@@ -42,6 +47,5 @@ protected:
     ElementBufferObject *m_ebo{}; // ebo
     int32_t m_vertex_count{0};    // 顶点数量
 };
-} // namespace Platform::GL
 
 #endif // ZEPHYR_BASERENDERER_H

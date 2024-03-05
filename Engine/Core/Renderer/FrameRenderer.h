@@ -17,8 +17,13 @@
 
 #include <memory>
 
-namespace Platform::GL
-{
+namespace Platform::GL {
+
+class FrameBufferObject;
+class RenderBufferObject;
+class Texture;
+
+}
 
 /**
  * 帧渲染器,渲染的入口
@@ -52,15 +57,11 @@ public:
     uint32_t GetAttachTextureId() const;
 
 private:
+    std::unique_ptr<Platform::GL::FrameBufferObject> m_fbo;
+    std::unique_ptr<Platform::GL::RenderBufferObject> m_rbo;
+    std::unique_ptr<Platform::GL::Texture> m_render_texture;
 
-    std::unique_ptr<FrameBufferObject> m_fbo;
-    std::unique_ptr<RenderBufferObject> m_rbo;
-    std::unique_ptr<Texture> m_render_texture;
-
-    // TODO: vao vbo ebo为具体渲染对象所有，不应放在这里
     std::unique_ptr<StaticMeshRenderer> renderer;
 };
-
-} // namespace Platform::GL
 
 #endif // ZEPHYR_FRAMERENDERER_H

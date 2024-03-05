@@ -11,8 +11,8 @@
 #include "OpenGL/VertexArrayObject.h"
 #include "OpenGL/VertexBufferObject.h"
 
-namespace Platform::GL
-{
+using namespace Platform::GL;
+
 BaseRenderer::BaseRenderer()
 {
     m_vao = new VertexArrayObject();
@@ -52,5 +52,3 @@ BaseRenderer &BaseRenderer::BindVertexAttributePointer(int32_t count, uint32_t d
     m_vao->Unbind();
     return *this;
 }
-
-} // namespace Platform::GL
