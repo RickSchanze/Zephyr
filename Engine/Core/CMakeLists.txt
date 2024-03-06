@@ -13,8 +13,8 @@ add_library(${PROJECT_NAME}
         Renderer/BaseRenderer.cpp
         Renderer/FrameRenderer.h
         Renderer/FrameRenderer.cpp
-        Renderer/StaticMeshRenderer.h
-        Renderer/StaticMeshRenderer.cpp
+        Renderer/StaticModelRenderer.h
+        Renderer/StaticModelRenderer.cpp
         Math/BasicType.h
 )
 

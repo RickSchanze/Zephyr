@@ -42,7 +42,7 @@ bool FrameRenderer::Initialize(const int width, const int height)
     m_fbo->AttachRenderBuffer(*m_rbo);
 
     // TODO: 删除vao和vbo
-    renderer = std::make_unique<StaticMeshRenderer>(R"(C:\Users\Echo\BaiduSyncDisk\Work\Projects\Zephyr\Engine\Platform\OpenGL\Shader\test.vert)", R"(C:\Users\Echo\BaiduSyncDisk\Work\Projects\Zephyr\Engine\Platform\OpenGL\Shader\test.frag)");
+    renderer = std::make_unique<StaticModelRenderer>(R"(C:\Users\Echo\BaiduSyncDisk\Work\Projects\Zephyr\Engine\Platform\OpenGL\Shader\test.vert)", R"(C:\Users\Echo\BaiduSyncDisk\Work\Projects\Zephyr\Engine\Platform\OpenGL\Shader\test.frag)");
     renderer->SetVertexBufferData(vertices, sizeof(vertices), GL_STATIC_DRAW, GL_ARRAY_BUFFER);
     renderer->BindVertexAttributePointer(3, GL_FLOAT, false);
     renderer->SetElementBufferData(indices, sizeof(indices));

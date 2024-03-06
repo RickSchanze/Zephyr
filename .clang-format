@@ -1,3 +1,4 @@
 # Generated from CLion C/C++ Code Style settings
 BasedOnStyle: LLVM
 ColumnLimit: 0
+AlignTrailingComments: true

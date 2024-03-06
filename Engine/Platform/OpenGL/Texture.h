@@ -53,7 +53,14 @@ public:
    * @param image 一个已经加载好的Image
    * @return
    */
-  Texture& SetImageParam(const Resource::Image& image);
+  Texture &SetImageParam(const Resource::Image &image);
+
+  /**
+   * 设置此纹理的用途
+   * @param usage
+   * @return
+   */
+  Texture& SetUsage(ETextureUsage usage);
 
   /**
    * 设定纹理参数
@@ -86,10 +93,14 @@ public:
    */
   uint32_t GetTarget() const;
 
+  /** 获取纹理用途 */
+  ETextureUsage GetUsage() const {return m_usage;}
+
 private:
   uint32_t m_id = 0;
   TextureParam m_param;
   uint32_t m_target = 0;
+  ETextureUsage m_usage = ETextureUsage::Max;
 };
 
 } // namespace Platform::GL

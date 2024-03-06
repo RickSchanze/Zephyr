@@ -9,6 +9,7 @@
 #define ZEPHYR_IMAGE_H
 
 #include <cstdint>
+#include <memory>
 #include <string>
 
 namespace Resource {
@@ -32,7 +33,7 @@ public:
    * @param path 图像路径
    * @return 如果加载失败或路径不存在则返回nullptr
    */
-  static Image *Create(const std::string &path);
+  static std::shared_ptr<Image> Create(const std::string &path);
 
   /**
    * 加载一个图像
@@ -41,11 +42,11 @@ public:
   void Load(const std::string &path);
 
 private:
-  std::string m_path; // 图像路径
-  int m_width;        // 图像宽度
-  int m_height;       // 图像高度
-  int m_channels;     // 图像通道数
-  uint8_t *m_data;    // 图像数据
+  std::string m_path;        // 图像路径
+  int m_width = 0;           // 图像宽度
+  int m_height = 0;          // 图像高度
+  int m_channels = 0;        // 图像通道数
+  uint8_t *m_data = nullptr; // 图像数据
 };
 } // namespace Resource
 

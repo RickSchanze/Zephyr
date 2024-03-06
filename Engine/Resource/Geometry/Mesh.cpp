@@ -7,8 +7,6 @@
 
 #include "Mesh.h"
 
-#include <filesystem>
-
 #include "Logger/Logger.h"
 
 namespace fs = std::filesystem;

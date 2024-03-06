@@ -13,7 +13,7 @@
 #include "OpenGL/Texture.h"
 #include "OpenGL/VertexArrayObject.h"
 #include "OpenGL/VertexBufferObject.h"
-#include "StaticMeshRenderer.h"
+#include "StaticModelRenderer.h"
 
 #include <memory>
 
@@ -61,7 +61,7 @@ private:
     std::unique_ptr<Platform::GL::RenderBufferObject> m_rbo;
     std::unique_ptr<Platform::GL::Texture> m_render_texture;
 
-    std::unique_ptr<StaticMeshRenderer> renderer;
+    std::unique_ptr<StaticModelRenderer> renderer;
 };
 
 #endif // ZEPHYR_FRAMERENDERER_H

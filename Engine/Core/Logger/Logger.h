@@ -13,6 +13,9 @@
 
 #include "spdlog/spdlog.h"
 
+// 请不要删去这行，这行是为了一些类型的格式化输出
+#include "Formatter.h"
+
 namespace spdlog
 {
 class logger;
@@ -83,7 +86,7 @@ extern const Logger g_logger;
 #define ZEPHYR_LOG_CRITICAL(...) g_logger.Critical(__VA_ARGS__);
 #else
 #include <filesystem>
-#include "Formatter.h"
+
 #define ZEPHYR_LOG_INFO(Message, ...)      g_logger.Info("[{}:{}] [{}] " Message, std::filesystem::path(__FILE__).filename(), __LINE__, __FUNCTION__, ##__VA_ARGS__)
 #define ZEPHYR_LOG_WARNING(Message, ...)   g_logger.Warning("[{}:{}] [{}] " Message, std::filesystem::path(__FILE__).filename(), __LINE__, __FUNCTION__, ##__VA_ARGS__)
 #define ZEPHYR_LOG_ERROR(Message, ...)     g_logger.Error("[{}:{}] [{}] " Message, std::filesystem::path(__FILE__).filename(), __LINE__, __FUNCTION__, ##__VA_ARGS__)

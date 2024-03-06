@@ -8,11 +8,13 @@
 #ifndef ZEPHYR_MESH_H
 #define ZEPHYR_MESH_H
 
-#include <string>
+#include "Image.h"
+
 #include <vector>
 
 #include "Math/BasicType.h"
-#include "OpenGL/Texture.h"
+
+#include <memory>
 
 namespace Resource {
 
@@ -22,6 +24,21 @@ struct Vertex {
   Vector2 tex_coords;
 };
 
+enum class ETextureUsage : uint8_t {
+  Diffuse,  // 漫反射贴图
+  Specular, // 镜面反射贴图
+  Normal,   // 法线贴图
+  Height,   // 高度贴图
+
+  Max,      // 未初始化
+};
+
+/** 用于保存具体数据的texture */
+struct Texture {
+  std::shared_ptr<Image> image;
+  ETextureUsage usage = ETextureUsage::Max;
+};
+
 // TODO: 集中资源管理类
 class Mesh {
   friend class Model;
@@ -29,12 +46,12 @@ class Mesh {
 public:
   inline const std::vector<Vertex> &GetVertices() const { return m_vertices; }
   inline const std::vector<uint32_t> &GetIndices() const { return m_indices; }
-  inline const std::vector<Platform::GL::Texture> &GetTextures() const { return m_textures; }
+  inline const std::vector<Texture> &GetTextures() const { return m_textures; }
 
 private:
   std::vector<Vertex> m_vertices;
   std::vector<uint32_t> m_indices;
-  std::vector<Platform::GL::Texture> m_textures;
+  std::vector<Texture> m_textures;
 };
 
 }

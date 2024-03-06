@@ -72,6 +72,12 @@ Texture &Texture::SetImageParam(const Image &image) {
   m_param.format = image.GetChannels() == 3 ? GL_RGB : GL_RGBA;
   m_param.internal_format = m_param.format;
   SetImageParam(m_param);
+  return *this;
+}
+
+Texture &Texture::SetUsage(const ETextureUsage usage) {
+  m_usage = usage;
+  return *this;
 }
 
 } // namespace Platform::GL

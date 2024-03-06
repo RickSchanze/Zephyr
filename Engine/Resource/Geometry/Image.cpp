@@ -35,12 +35,12 @@ bool Image::IsValid() const {
   return m_data != nullptr;
 }
 
-Image *Image::Create(const std::string &path) {
+std::shared_ptr<Image> Image::Create(const std::string &path) {
   if (!fs::exists(path)) {
     ZEPHYR_LOG_ERROR("Image not found: {}", path);
     return nullptr;
   }
-  auto rtn = new Image();
+  auto rtn = std::make_shared<Image>();
   rtn->Load(path);
   return rtn;
 }

@@ -18,8 +18,10 @@
 namespace fs = std::filesystem;
 
 namespace Resource {
-Mesh *Model::ProcessMesh(aiMesh *mesh, const aiScene *scene) {
-  Mesh *result = new Mesh();
+Mesh *Model::ProcessMesh(const aiMesh *mesh, const aiScene *scene) const {
+  const auto result = new Mesh();
+  // 处理顶点
+  result->m_vertices.reserve(mesh->mNumVertices);
   for (uint32_t i = 0; i < mesh->mNumVertices; i++) {
     Vertex vertex{};
     vertex.position.x = mesh->mVertices[i].x;
@@ -30,16 +32,64 @@ Mesh *Model::ProcessMesh(aiMesh *mesh, const aiScene *scene) {
     vertex.normal.y = mesh->mNormals[i].y;
     vertex.normal.z = mesh->mNormals[i].z;
 
-    if (mesh->mTextureCoords[0]) {
-      // TODO: 填充剩余的纹理坐标
+    // 这里只使用第一组纹理坐标
+    if (mesh->mTextureCoords[0]) { // 网格是否有纹理坐标？
+      vertex.tex_coords.x = mesh->mTextureCoords[0][i].x;
+      vertex.tex_coords.y = mesh->mTextureCoords[0][i].y;
+    } else {
+      vertex.tex_coords = glm::vec2(0.0f, 0.0f);
     }
+    result->m_vertices[i] = vertex;
+  }
+
+  // 处理索引
+  result->m_indices.reserve(mesh->mNumFaces * 3);
+  for (size_t i = 0; i < mesh->mNumFaces; i++) {
+    const aiFace face = mesh->mFaces[i];
+    for (size_t j = 0; j < face.mNumIndices; j++) {
+      result->m_indices[i * 3 + j] = face.mIndices[j];
+    }
+  }
+
+  // 处理纹理
+  const aiMaterial *material = scene->mMaterials[mesh->mMaterialIndex];
+  // 漫反射贴图
+  std::vector<Texture> diffuse;
+  LoadMaterialTextures(material, aiTextureType_DIFFUSE, ETextureUsage::Diffuse, diffuse);
+  result->m_textures.insert(result->m_textures.end(), diffuse.begin(), diffuse.end());
+  // 高光
+  std::vector<Texture> specular;
+  LoadMaterialTextures(material, aiTextureType_SPECULAR, ETextureUsage::Specular, specular);
+  result->m_textures.insert(result->m_textures.end(), specular.begin(), specular.end());
+  // 法线
+  std::vector<Texture> normal;
+  LoadMaterialTextures(material, aiTextureType_HEIGHT, ETextureUsage::Normal, normal);
+  result->m_textures.insert(result->m_textures.end(), normal.begin(), normal.end());
+  // 高度
+  std::vector<Texture> height;
+  LoadMaterialTextures(material, aiTextureType_AMBIENT, ETextureUsage::Height, height);
+  result->m_textures.insert(result->m_textures.end(), height.begin(), height.end());
+  return result;
+}
+
+void Model::LoadMaterialTextures(const aiMaterial *mat, const aiTextureType type, const ETextureUsage usage, OUT std::vector<Texture> &textures) const {
+  // 将纹理数组调整到合适大小
+  if (textures.size() < mat->GetTextureCount(type)) {
+    textures.resize(mat->GetTextureCount(type));
+  }
+  for (size_t i = 0; i < mat->GetTextureCount(type); i++) {
+    aiString str;
+    mat->GetTexture(type, i, &str);
+    // TODO: 优化，集中管理，不重复加载图像
+    // 加载纹理
+    textures[i] = Texture{Image::Create(m_directory + "/" + str.C_Str()), usage};
   }
 }
 
-void Model::ProcessNode(aiNode *node, const aiScene *scene) {
+void Model::ProcessNode(const aiNode *node, const aiScene *scene) {
   // 处理所有网格
   for (unsigned int i = 0; i < node->mNumMeshes; i++) {
-    aiMesh *mesh = scene->mMeshes[node->mMeshes[i]];
+    const aiMesh *mesh = scene->mMeshes[node->mMeshes[i]];
     m_meshes.push_back(ProcessMesh(mesh, scene));
   }
   // 然后对子节点重复
@@ -48,8 +98,14 @@ void Model::ProcessNode(aiNode *node, const aiScene *scene) {
   }
 }
 
-Model *Model::Create(const std::string &path) {
-  return nullptr;
+std::shared_ptr<Model> Model::Create(const std::string &path) {
+  auto rtn = std::make_shared<Model>();
+  rtn->Load(path);
+  return rtn;
+}
+
+bool Model::IsValid() const {
+  return m_valid;
 }
 
 void Model::Load(const std::string &path) {
@@ -66,5 +122,6 @@ void Model::Load(const std::string &path) {
   }
   m_directory = fs::path(path).parent_path().string();
   ProcessNode(scene->mRootNode, scene);
+  m_valid = true;
 }
 } // namespace Resource
