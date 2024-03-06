@@ -22,6 +22,7 @@ add_library(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME}
         glad
         Engine::Core
+        Engine::Resource
 )
 
 add_library(Engine::Platform ALIAS ${PROJECT_NAME})

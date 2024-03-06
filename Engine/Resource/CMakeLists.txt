@@ -1,9 +1,15 @@
 project(Resource)
 
 add_library(${PROJECT_NAME}
-        Geometry/GeometryType.h
-        Geometry/GeometryType.cpp
+        Geometry/Mesh.h
+        Geometry/Mesh.cpp
+        Geometry/Image.h
+        Geometry/Image.cpp
+        Geometry/Model.h
+        Geometry/Model.cpp
 )
+
+add_library(Engine::Resource ALIAS ${PROJECT_NAME})
 
 target_include_directories(${PROJECT_NAME}
         PUBLIC
@@ -11,4 +17,8 @@ target_include_directories(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME}
         PUBLIC
-        Engine::Core)
+        Engine::Core
+        Engine::Platform
+        stbimage
+        assimp
+)
