@@ -23,7 +23,7 @@ public:
     ~ElementBufferObject();
 
     /** 获取ebo id */
-    inline uint32_t GetId() const;
+    uint32_t GetId() const;
     /** 绑定EBO */
     void Bind() const;
     /** 解绑 */

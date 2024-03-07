@@ -39,6 +39,9 @@ public:
 
   void SetMatrix4(const std::string &name, const Matrix4 &matrix) const;
 
+  /** 设置int数值的uniform遍历 */
+  void SetInt(const std::string &name, int32_t value) const;
+
   uint32_t GetID() const { return m_id; }
 
 private:

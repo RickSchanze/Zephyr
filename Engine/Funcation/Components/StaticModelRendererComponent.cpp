@@ -64,7 +64,7 @@ void StaticModelRendererComponent::TickRender() {
   m_shader_program.SetMatrix4("projection", proj);
   m_shader_program.SetMatrix4("view", view);
   m_shader_program.SetMatrix4("model", model);
-  auto err1 = glGetError();
+
   for (auto *render : m_renders) {
     render->Draw(m_shader_program);
   }

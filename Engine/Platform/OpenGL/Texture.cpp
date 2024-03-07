@@ -52,7 +52,7 @@ void Texture::Apply() const {
   glTexImage2D(m_target, m_param.level, m_param.internal_format, m_param.width,
                m_param.height, m_param.border, m_param.format, m_param.type,
                m_param.data);
-  glGenerateMipmap(m_target);
+  // glGenerateMipmap(m_target);
 }
 
 void Texture::ApplyFrameBuffer() {
@@ -69,7 +69,7 @@ Texture &Texture::SetImageParam(const Image &image) {
   }
   m_param.width = image.GetWidth();
   m_param.height = image.GetHeight();
-  m_param.data = image.GetData();
+  m_param.data = &image.GetData()[0];
   m_param.format = image.GetChannels() == 3 ? GL_RGB : GL_RGBA;
   m_param.internal_format = m_param.format;
   SetImageParam(m_param);

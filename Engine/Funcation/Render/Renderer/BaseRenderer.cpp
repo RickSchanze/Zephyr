@@ -41,7 +41,6 @@ void BaseRenderer::SetElementBufferData(const void *indices_data, const int32_t 
     m_ebo->Bind();
     m_ebo->SetData(indices_data, size, usage);
     m_vao->Unbind();
-    m_vertex_count = size / type_size;
 }
 
 BaseRenderer &BaseRenderer::BindVertexAttributePointer(const int32_t count, uint32_t offset, const uint32_t data_type, const bool normalize)

@@ -7,6 +7,7 @@
 
 #include "VertexBufferObject.h"
 
+#include "Geometry/Model.h"
 #include "glad/glad.h"
 
 using namespace Platform::GL;
@@ -38,7 +39,7 @@ void VertexBufferObject::SetData(const void *data, const uint32_t size, const ui
 
 VertexBufferObject &VertexBufferObject::BindVertexAttributePointer(const int32_t count, const uint32_t offset, const uint32_t data_type, const bool normalize) {
   glEnableVertexAttribArray(m_enabled_attribute_count);
-  glVertexAttribPointer(m_enabled_attribute_count, count, data_type, normalize, static_cast<int>(count * sizeof(float)), reinterpret_cast<void *>(offset));
+  glVertexAttribPointer(m_enabled_attribute_count, count, data_type, normalize, static_cast<int>(sizeof(Resource::Vertex)), reinterpret_cast<void *>(offset));
   m_enabled_attribute_count++;
   return *this;
 }

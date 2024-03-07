@@ -24,7 +24,7 @@ public:
     ~VertexBufferObject();
 
     /** 获取OpenGL生成的VBO */
-    inline uint32_t GetId() const;
+    uint32_t GetId() const;
     /** 绑定当前VBO */
     void Bind() const;
     /** 解绑当前VBO */
