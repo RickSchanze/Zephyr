@@ -70,7 +70,6 @@ void StaticMeshRenderer::InitializeObjects() {
     // TODO: 优化这里的程序结构
     auto textures = m_mesh->GetTextures();
     for (auto &[image, usage] : textures) {
-      if (usage == Resource::ETextureUsage::Diffuse) {
         auto* t = new Platform::GL::Texture();
         t->SetImageParam(*image)
             .SetUsage(usage)
@@ -80,7 +79,6 @@ void StaticMeshRenderer::InitializeObjects() {
             .SetParam(GL_TEXTURE_WRAP_T, GL_REPEAT)
             .Apply();
         m_textures.emplace_back(t);
-      }
     }
 
     m_initialized = true;

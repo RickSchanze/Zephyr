@@ -28,7 +28,7 @@ bool FrameRenderer::Initialize(const int width, const int height) {
   m_fbo->AttachTexture(*m_render_texture);
   m_fbo->AttachRenderBuffer(*m_rbo);
 
-  m_static_model_renderer = std::make_unique<StaticModelRendererComponent>(LR"(C:\Users\Echo\Documents\BaiduSyncdisk\aaa\nanosuit.obj)",
+  m_static_model_renderer = std::make_unique<StaticModelRendererComponent>(LR"(C:\Users\Echo\Documents\BaiduSyncdisk\model.fbx)",
                                                                            LR"(C:\Users\Echo\BaiduSyncDisk\Work\Projects\Zephyr\Engine\Resource\Shaders\test.vert)",
                                                                            LR"(C:\Users\Echo\BaiduSyncDisk\Work\Projects\Zephyr\Engine\Resource\Shaders\test.frag)");
   m_static_model_renderer->Initialize();

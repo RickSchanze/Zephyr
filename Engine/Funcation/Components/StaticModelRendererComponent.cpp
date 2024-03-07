@@ -49,7 +49,8 @@ void StaticModelRendererComponent::Initialize() {
 }
 
 glm::vec3 translate(0.0f, 0.0f, 0.0f);
-glm::vec3 scale(1.0f, 1.0f, 1.0f);
+glm::vec3 scale(0.2f, 0.2f, 0.2f);
+glm::vec3 rotate(0.0f, 0.0f, 0.0f);
 
 void StaticModelRendererComponent::TickRender() {
   static auto proj = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
@@ -57,10 +58,12 @@ void StaticModelRendererComponent::TickRender() {
   auto model = glm::mat4(1.0f);
   model = glm::translate(model, translate); // translate it down so it's at the center of the scene
   model = glm::scale(model, scale);     // it's a bit too big for our scene, so scale it down
+  model = glm::rotate(model, glm::radians(rotate.x), glm::vec3(.0f, 1.0f, 0.0f));
 
   m_shader_program.Use();
-  ImGui::SliderFloat3("translate", &translate.x, -100.0f, 100.0f);
+  ImGui::SliderFloat3("translate", &translate.x, -1000.0f, 1000.0f);
   ImGui::SliderFloat3("scale", &scale.x, 0.0f, 10.0f);
+  ImGui::SliderFloat3("rotate", &rotate.x, -180.0f, 180.0f);
   m_shader_program.SetMatrix4("projection", proj);
   m_shader_program.SetMatrix4("view", view);
   m_shader_program.SetMatrix4("model", model);

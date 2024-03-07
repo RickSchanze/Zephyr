@@ -39,17 +39,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="feat(Engine::Function): 封装MeshRendere">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/BaseRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/BaseRenderer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/BaseRenderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/BaseRenderer.h" afterDir="false" />
+    <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="feat(Engine::Function): texture现在贴上去了">
+      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Components/StaticModelRendererComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Funcation/Components/StaticModelRendererComponent.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/FrameRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/FrameRenderer.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/StaticMeshRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/StaticMeshRenderer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/StaticMeshRenderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/StaticMeshRenderer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Platform/OpenGL/FrameBufferObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Platform/OpenGL/FrameBufferObject.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Platform/OpenGL/Texture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Platform/OpenGL/Texture.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Platform/OpenGL/Texture.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Platform/OpenGL/Texture.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Resource/Shaders/test.frag" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Resource/Shaders/test.frag" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +234,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709795363515</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat(Engine::Function): texture现在贴上去了">
+      <option name="closed" value="true" />
+      <created>1709810821211</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1709810821211</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VCPKGProject">
@@ -262,7 +263,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat(Engine::Function): 封装MeshRendere" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Engine::Function): 封装MeshRendere" />
+    <MESSAGE value="fix(Engine::Function): 修正模型顶点法线" />
+    <MESSAGE value="feat(Engine::Function): texture现在贴上去了" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(Engine::Function): texture现在贴上去了" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
