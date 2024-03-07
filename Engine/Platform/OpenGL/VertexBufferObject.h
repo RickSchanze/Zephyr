@@ -43,15 +43,15 @@ public:
      * @brief 绑定顶点属性指针，用于告诉OpenGL如何解析定点数据
      * @param count 顶点属性数量
      * @param data_type 顶点属性数据类型 GL_FLOAT...
+     * @param offset 数据偏移
      * @param normalize 是否归一化 若为true则数据或被归一化至0到1之间
      * @return 返回自己(可链式调用)
      */
-    VertexBufferObject &BindVertexAttributePointer(int32_t count, uint32_t data_type = GL_FLOAT, bool normalize = false);
+    VertexBufferObject &BindVertexAttributePointer(int32_t count, uint32_t offset,uint32_t data_type = GL_FLOAT,bool normalize = false);
 
 private:
     uint32_t m_id{0};                      // VBO ID
     uint32_t m_enabled_attribute_count{0}; // 由glEnableVertexAttribArray启用的属性数量
-    uint32_t m_offset{0};                  // 顶点属性偏移
 };
 
 } // namespace Platform::GL

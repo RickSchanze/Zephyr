@@ -14,31 +14,36 @@
 #include "glad/glad.h"
 #endif
 
-namespace Platform::GL
-{
+#include "Math/BasicType.h"
 
-class ShaderProgram
-{
+#include <string>
+
+namespace Platform::GL {
+
+class ShaderProgram {
 public:
-    ShaderProgram();
-    ~ShaderProgram();
+  ShaderProgram();
+  ~ShaderProgram();
 
-    /** 链接Shader */
-    void Link() const;
+  /** 链接Shader */
+  void Link() const;
 
-    /** 为此Program附加Shader */
-    template <typename... Shaders>
-    void AttachShader(const Shaders &...shaders)
-    {
-        (glAttachShader(m_id, shaders.GetId()), ...);
-    }
+  /** 为此Program附加Shader */
+  template <typename... Shaders>
+  void AttachShader(const Shaders &...shaders) {
+    (glAttachShader(m_id, shaders.GetId()), ...);
+  }
 
-    /** 使用当前ShaderProgram */
-    void Use() const;
+  /** 使用当前ShaderProgram */
+  void Use() const;
+
+  void SetMatrix4(const std::string &name, const Matrix4 &matrix) const;
+
+  uint32_t GetID() const { return m_id; }
 
 private:
-    uint32_t m_id;
+  uint32_t m_id;
 };
-}
+} // namespace Platform::GL
 
 #endif // ZEPHYR_SHADERPROGRAM_H

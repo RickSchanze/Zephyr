@@ -21,7 +21,7 @@ namespace Resource {
 Mesh *Model::ProcessMesh(const aiMesh *mesh, const aiScene *scene) const {
   const auto result = new Mesh();
   // 处理顶点
-  result->m_vertices.reserve(mesh->mNumVertices);
+  result->m_vertices.resize(mesh->mNumVertices);
   for (uint32_t i = 0; i < mesh->mNumVertices; i++) {
     Vertex vertex{};
     vertex.position.x = mesh->mVertices[i].x;
@@ -37,17 +37,17 @@ Mesh *Model::ProcessMesh(const aiMesh *mesh, const aiScene *scene) const {
       vertex.tex_coords.x = mesh->mTextureCoords[0][i].x;
       vertex.tex_coords.y = mesh->mTextureCoords[0][i].y;
     } else {
+      ZEPHYR_LOG_INFO("here");
       vertex.tex_coords = glm::vec2(0.0f, 0.0f);
     }
     result->m_vertices[i] = vertex;
   }
 
   // 处理索引
-  result->m_indices.reserve(mesh->mNumFaces * 3);
   for (size_t i = 0; i < mesh->mNumFaces; i++) {
     const aiFace face = mesh->mFaces[i];
     for (size_t j = 0; j < face.mNumIndices; j++) {
-      result->m_indices[i * 3 + j] = face.mIndices[j];
+      result->m_indices.push_back(face.mIndices[j]);
     }
   }
 
@@ -80,9 +80,11 @@ void Model::LoadMaterialTextures(const aiMaterial *mat, const aiTextureType type
   for (size_t i = 0; i < mat->GetTextureCount(type); i++) {
     aiString str;
     mat->GetTexture(type, i, &str);
+    std::wstring wstr;
+    utf8::utf8to16(str.C_Str(), str.C_Str() + str.length, std::back_inserter(wstr));
     // TODO: 优化，集中管理，不重复加载图像
     // 加载纹理
-    textures[i] = Texture{Image::Create(m_directory + "/" + str.C_Str()), usage};
+    textures[i] = Texture{Image::Create(m_directory + L"/" + wstr), usage};
   }
 }
 
@@ -98,9 +100,10 @@ void Model::ProcessNode(const aiNode *node, const aiScene *scene) {
   }
 }
 
-std::shared_ptr<Model> Model::Create(const std::string &path) {
+std::shared_ptr<Model> Model::Create(const std::wstring &path) {
   auto rtn = std::make_shared<Model>();
-  rtn->Load(path);
+  rtn->m_path = path;
+  rtn->Load();
   return rtn;
 }
 
@@ -108,19 +111,27 @@ bool Model::IsValid() const {
   return m_valid;
 }
 
-void Model::Load(const std::string &path) {
-  if (!fs::exists(path)) {
-    ZEPHYR_LOG_ERROR("Model not found: {}", path);
+Model::~Model() {
+  for (const auto &mesh : m_meshes) {
+    delete mesh;
+  }
+}
+
+void Model::Load() {
+  if (!fs::exists(m_path)) {
+    ZEPHYR_LOG_ERROR("Model not found: {}", m_path);
     return;
   }
-  m_path = path;
+
   Assimp::Importer importer;
-  const aiScene *scene = importer.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs);
+  const std::string model_path_char{m_path.begin(), m_path.end()};
+  const aiScene *scene = importer.ReadFile(model_path_char.c_str(), aiProcess_Triangulate | aiProcess_FlipUVs);
   if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) {
     ZEPHYR_LOG_ERROR("Failed to load model: {}", importer.GetErrorString());
     return;
   }
-  m_directory = fs::path(path).parent_path().string();
+  std::string directory_path_char = fs::path(m_path).parent_path().string();
+  m_directory = std::wstring{directory_path_char.begin(), directory_path_char.end()};
   ProcessNode(scene->mRootNode, scene);
   m_valid = true;
 }

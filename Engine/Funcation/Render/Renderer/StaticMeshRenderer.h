@@ -11,16 +11,17 @@
 #include "BaseRenderer.h"
 #include "Geometry/Mesh.h"
 #include "OpenGL/Shader.h"
+#include "OpenGL/Texture.h"
 
 namespace Platform::GL {
 class ShaderProgram;
 }
 
 namespace Resource {
-class Model;
+class Mesh;
 }
 
-class StaticModelRenderer : public BaseRenderer {
+class StaticMeshRenderer : public BaseRenderer {
   typedef Platform::GL::ShaderProgram ShaderProgram;
   typedef Platform::GL::VertexShader VertexShader;
   typedef Platform::GL::FragmentShader FragmentShader;
@@ -28,24 +29,18 @@ class StaticModelRenderer : public BaseRenderer {
 public:
   /**
    * 构造函数
-   * @param model_path 模型文件路径
-   * @param vertex_shader_path 顶点着色器路径
-   * @param fragment_shader_path 片元着色器路径
+   * @param mesh 一个Mesh
    */
-  StaticModelRenderer(const char* model_path, const char *vertex_shader_path, const char *fragment_shader_path);
+  explicit StaticMeshRenderer(Resource::Mesh* mesh);
 
-  void Draw() override;
+  void Draw(const Platform::GL::ShaderProgram &shader) override;
 
   /** 初始化各种OpenGL Object */
-  bool InitializeObjects();
-
-  ~StaticModelRenderer() override;
+  void InitializeObjects();
 
 protected:
-  VertexShader *m_vertex_shader;
-  FragmentShader *m_fragment_shader;
-  ShaderProgram *m_shader_program{};
-  std::shared_ptr<Resource::Model> m_model;
+  Resource::Mesh* m_mesh;
+  std::vector<Platform::GL::Texture> m_textures;
   bool m_initialized{false};
 };
 

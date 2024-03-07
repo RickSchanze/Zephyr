@@ -30,15 +30,6 @@ Texture &Texture::SetImageParam(const TextureParam &param) {
     ZEPHYR_LOG_ERROR("Width or height is invalid");
     return *this;
   }
-  glTexImage2D(param.target,
-               param.level,
-               param.internal_format,
-               param.width,
-               param.height,
-               param.border,
-               param.format,
-               param.type,
-               param.data);
   m_param = param;
   return *this;
 }
@@ -49,17 +40,27 @@ Texture &Texture::SetParam(const int32_t pname, const int32_t param,
   return *this;
 }
 
-Texture &Texture::Initialize(const int32_t width, const int32_t height) {
-  Bind();
-  SetImageParam({.width = width, .height = height})
-      .SetParam(GL_TEXTURE_MIN_FILTER, GL_LINEAR)
-      .SetParam(GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-  return *this;
-}
-
 const TextureParam &Texture::GetParam() const { return m_param; }
 
 uint32_t Texture::GetTarget() const { return m_target; }
+
+void Texture::Apply() const {
+  if (m_param.data == nullptr) {
+    ZEPHYR_LOG_ERROR("Texture data is nullptr");
+    return;
+  }
+  glTexImage2D(m_target, m_param.level, m_param.internal_format, m_param.width,
+               m_param.height, m_param.border, m_param.format, m_param.type,
+               m_param.data);
+  glGenerateMipmap(m_target);
+}
+
+void Texture::ApplyFrameBuffer() {
+  Bind();
+  glTexImage2D(m_target, m_param.level, m_param.internal_format, m_param.width,
+               m_param.height, m_param.border, m_param.format, m_param.type,
+               nullptr);
+}
 
 Texture &Texture::SetImageParam(const Image &image) {
   if (!image.IsValid()) {

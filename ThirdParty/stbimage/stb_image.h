@@ -1,5 +1,6 @@
 #ifndef STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_IMPLEMENTATION
+#define STBI_WINDOWS_UTF8
 #endif
 
 /* stb_image - v2.29 - public domain image loader - http://nothings.org/stb

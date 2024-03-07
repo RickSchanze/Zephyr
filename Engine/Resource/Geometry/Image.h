@@ -17,13 +17,15 @@ namespace Resource {
 // TODO: 加载优化，集中管理，加载相同的直接返回
 class Image {
 public:
+  explicit Image(const std::wstring& path);
+
   ~Image();
 
-  inline std::string GetPath() const { return m_path; }
-  inline int GetWidth() const { return m_width; }
-  inline int GetHeight() const { return m_height; }
-  inline int GetChannels() const { return m_channels; }
-  inline uint8_t *GetData() const { return m_data; }
+  std::wstring GetPath() const { return m_path; }
+  int GetWidth() const { return m_width; }
+  int GetHeight() const { return m_height; }
+  int GetChannels() const { return m_channels; }
+  uint8_t *GetData() const { return m_data; }
 
   /** 此图像是否有效 */
   bool IsValid() const;
@@ -33,16 +35,15 @@ public:
    * @param path 图像路径
    * @return 如果加载失败或路径不存在则返回nullptr
    */
-  static std::shared_ptr<Image> Create(const std::string &path);
+  static std::shared_ptr<Image> Create(const std::wstring &path);
 
   /**
    * 加载一个图像
-   * @param path 图像路径
    */
-  void Load(const std::string &path);
+  void Load();
 
 private:
-  std::string m_path;        // 图像路径
+  std::wstring m_path;        // 图像路径
   int m_width = 0;           // 图像宽度
   int m_height = 0;          // 图像高度
   int m_channels = 0;        // 图像通道数

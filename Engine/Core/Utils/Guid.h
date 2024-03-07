@@ -9,22 +9,21 @@
 #ifndef ZEPHYR_GUID_H
 #define ZEPHYR_GUID_H
 
-#include <experimental/string>
 #include <objbase.h>
+#include <string>
 
-class Guid
-{
+class Guid {
 public:
-    /** 随机生成GUID */
-    Guid();
-    /** 释放GUID */
-    ~Guid() = default;
-    /** 从GUID获取string */
-    std::string ToString() const;
+  /** 随机生成GUID */
+  Guid();
+  /** 释放GUID */
+  ~Guid() = default;
+  /** 从GUID获取string */
+  std::string ToString() const;
 
 private:
-    GUID m_guid{};
-    static constexpr int GUID_LENGTH = 64;
+  GUID m_guid{};
+  static constexpr int GUID_LENGTH = 64;
 };
 
 #endif//ZEPHYR_GUID_H

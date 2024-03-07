@@ -12,14 +12,18 @@
 #include <glad/glad.h>
 #endif
 
+#include "Components/StaticModelRendererComponent.h"
 #include "Logger/Logger.h"
-#include "Renderer/FrameRenderer.h"
+#include "Render/Renderer/FrameRenderer.h"
 
-ViewportWindow::ViewportWindow()
-{
-    m_frame_render = new FrameRenderer();
-    m_frame_render->Initialize(1920, 1080);
-    m_name = "Viewport";
+ViewportWindow::ViewportWindow() {
+  m_frame_render = new FrameRenderer();
+  m_frame_render->Initialize(1920, 1080);
+  m_name = "Viewport";
+}
+
+ViewportWindow::~ViewportWindow() {
+  delete m_frame_render;
 }
 
 void ViewportWindow::Draw()

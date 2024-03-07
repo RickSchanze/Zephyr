@@ -25,9 +25,13 @@ void ShaderProgram::Link() const
     glLinkProgram(m_id);
 }
 
-void ShaderProgram::Use() const
-{
-    glUseProgram(m_id);
+void ShaderProgram::Use() const {
+  glUseProgram(m_id);
 }
 
+void ShaderProgram::SetMatrix4(const std::string& name, const Matrix4 &matrix) const {
+  const auto location = glGetUniformLocation(m_id, name.c_str());
+  glUniformMatrix4fv(location, 1, GL_FALSE, &matrix[0][0]);
 }
+
+} // namespace Platform::GL

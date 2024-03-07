@@ -7,17 +7,13 @@
 
 #ifndef ZEPHYR_FRAMERENDERER_H
 #define ZEPHYR_FRAMERENDERER_H
-#include "OpenGL/ElementBufferObject.h"
 #include "OpenGL/FrameBufferObject.h"
 #include "OpenGL/RenderBufferObject.h"
 #include "OpenGL/Texture.h"
-#include "OpenGL/VertexArrayObject.h"
-#include "OpenGL/VertexBufferObject.h"
-#include "StaticModelRenderer.h"
 
 #include <memory>
 
-namespace Platform::GL {
+class StaticModelRendererComponent;namespace Platform::GL {
 
 class FrameBufferObject;
 class RenderBufferObject;
@@ -61,7 +57,7 @@ private:
     std::unique_ptr<Platform::GL::RenderBufferObject> m_rbo;
     std::unique_ptr<Platform::GL::Texture> m_render_texture;
 
-    std::unique_ptr<StaticModelRenderer> renderer;
+    std::unique_ptr<StaticModelRendererComponent> m_static_model_renderer;
 };
 
 #endif // ZEPHYR_FRAMERENDERER_H

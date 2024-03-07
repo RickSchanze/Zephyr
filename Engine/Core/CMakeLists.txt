@@ -9,16 +9,14 @@ add_library(${PROJECT_NAME}
         Logger/Logger.h
         Logger/Logger.cpp
         Logger/Formatter.h
-        Renderer/BaseRenderer.h
-        Renderer/BaseRenderer.cpp
-        Renderer/FrameRenderer.h
-        Renderer/FrameRenderer.cpp
-        Renderer/StaticModelRenderer.h
-        Renderer/StaticModelRenderer.cpp
         Math/BasicType.h
 )
 
-target_link_libraries(${PROJECT_NAME} spdlog::spdlog Platform glm)
+target_link_libraries(${PROJECT_NAME}
+        spdlog::spdlog
+        glm
+        utf8cpp
+)
 
 add_library(Engine::Core ALIAS ${PROJECT_NAME})
 

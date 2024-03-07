@@ -16,6 +16,7 @@
 
 namespace Platform::GL
 {
+class ShaderProgram;
 class VertexArrayObject;
 class VertexBufferObject;
 class ElementBufferObject;
@@ -32,14 +33,14 @@ public:
     virtual ~BaseRenderer();
 
     /** 这里应该绑定vao后调用glDrawElement */
-    virtual void Draw() = 0;
+    virtual void Draw(const Platform::GL::ShaderProgram& shader) = 0;
 
     /** 绑定VBO数据 */
     void SetVertexBufferData(const void *data, uint32_t size, uint32_t usage = GL_STATIC_DRAW, uint32_t target = GL_ARRAY_BUFFER);
     /** 绑定EBO数据 */
     void SetElementBufferData(const void *indices_data, int32_t size, int32_t type_size = sizeof(unsigned int), uint32_t usage = GL_STATIC_DRAW);
     /** 绑定顶点属性指针 */
-    BaseRenderer &BindVertexAttributePointer(int32_t count, uint32_t data_type = GL_FLOAT, bool normalize = false);
+    BaseRenderer &BindVertexAttributePointer(int32_t count, uint32_t offset, uint32_t data_type = GL_FLOAT, bool normalize = false);
 
 protected:
     VertexArrayObject *m_vao{};   // vao

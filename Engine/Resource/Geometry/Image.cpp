@@ -12,20 +12,20 @@
 #include "stb_image.h"
 
 #include "Logger/Logger.h"
+#include "Utils/TypeConverter.h"
 
 namespace fs = std::filesystem;
 
 namespace Resource {
-void Image::Load(const std::string &path) {
-  if (!fs::exists(path)) {
-    ZEPHYR_LOG_ERROR("Image not found: {}", path);
+void Image::Load() {
+  if (!fs::exists(m_path)) {
+    ZEPHYR_LOG_ERROR("Image not found: {}", m_path);
     return;
   }
-
-  m_path = path;
+  const std::string path = TypeConverter::UTF16WString2UTF8(m_path);
   uint8_t *data = stbi_load(path.c_str(), &m_width, &m_height, &m_channels, 0);
   if (!data) {
-    ZEPHYR_LOG_ERROR("Failed to load image: {}", path);
+    ZEPHYR_LOG_ERROR("Failed to load image: {}", m_path);
     return;
   }
   m_data = data;
@@ -35,14 +35,18 @@ bool Image::IsValid() const {
   return m_data != nullptr;
 }
 
-std::shared_ptr<Image> Image::Create(const std::string &path) {
+std::shared_ptr<Image> Image::Create(const std::wstring &path) {
   if (!fs::exists(path)) {
     ZEPHYR_LOG_ERROR("Image not found: {}", path);
     return nullptr;
   }
-  auto rtn = std::make_shared<Image>();
-  rtn->Load(path);
+  auto rtn = std::make_shared<Image>(path);
+  rtn->Load();
   return rtn;
+}
+
+Image::Image(const std::wstring &path) {
+  m_path = path;
 }
 
 Image::~Image() {

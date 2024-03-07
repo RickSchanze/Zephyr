@@ -20,4 +20,5 @@ target_link_libraries(${PROJECT_NAME}
         Engine::Core
         stbimage
         assimp
+        utf8cpp
 )

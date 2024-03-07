@@ -8,6 +8,8 @@
 #ifndef ZEPHYR_TEXTURE_H
 #define ZEPHYR_TEXTURE_H
 
+#include "Geometry/Mesh.h"
+
 #include <cstdint>
 
 #ifndef __glad_h_
@@ -33,13 +35,18 @@ struct TextureParam {
 };
 
 class Texture {
+  using ETextureUsage = Resource::ETextureUsage;
+
 public:
   Texture();
   ~Texture();
 
   /** 获取id */
   uint32_t GetId() const;
-  /** 绑定texture */
+  /**
+   * 绑定texture
+   * @param target 纹理类型 默认GL_TEXTURE_2D
+   */
   void Bind(uint32_t target = GL_TEXTURE_2D);
 
   /**
@@ -74,14 +81,6 @@ public:
                     uint32_t target = GL_TEXTURE_2D);
 
   /**
-   * 快速初始化方法，调用Bind->SetImageParam->SetParam
-   * @param width 图像宽
-   * @param height 图像高
-   * @return 返回自身
-   */
-  Texture &Initialize(int32_t width, int32_t height);
-
-  /**
    * 获取纹理参数
    * @return
    */
@@ -92,6 +91,12 @@ public:
    * @return
    */
   uint32_t GetTarget() const;
+
+  /** 调用glTexImage2D生成纹理 */
+  void Apply()const;
+
+  /** 为FrameBuffer生成纹理 */
+  void ApplyFrameBuffer();
 
   /** 获取纹理用途 */
   ETextureUsage GetUsage() const {return m_usage;}
@@ -104,5 +109,6 @@ private:
 };
 
 } // namespace Platform::GL
+
 
 #endif // ZEPHYR_TEXTURE_H

@@ -13,7 +13,7 @@
 #include <fstream>
 #include <string>
 
-#ifdef __glad_h_
+#ifndef __glad_h_
 #include "glad/glad.h"
 #endif
 
@@ -36,7 +36,7 @@ public:
      * 构造shader
      * @param shader_path shader文件路径
      */
-    explicit Shader(const char *shader_path)
+    explicit Shader(const std::wstring_view shader_path)
     {
         m_shader_type = shaderType;
         m_shader_path = shader_path;
@@ -109,22 +109,22 @@ public:
         m_initialized = true;
     }
 
-    EShaderType GetShaderType()
+    EShaderType GetShaderType()const
     {
         return m_shader_type;
     }
 
-    std::string GetShaderPath()
+    std::wstring GetShaderPath()
     {
         return m_shader_path;
     }
 
-    bool IsValid()
+    bool IsValid()const
     {
         return m_initialized;
     }
 
-    std::string GetShaderTypeString()
+    std::string GetShaderTypeString()const
     {
         switch (m_shader_type)
         {
@@ -144,7 +144,7 @@ public:
 protected:
     uint32_t m_id{0};
     EShaderType m_shader_type;
-    std::string m_shader_path;
+    std::wstring m_shader_path;
     bool m_initialized = false;
 };
 
