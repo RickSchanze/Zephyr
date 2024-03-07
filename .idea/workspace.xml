@@ -39,10 +39,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="feat(Engine::Function): texture现在贴上去了">
-      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Components/StaticModelRendererComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Funcation/Components/StaticModelRendererComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/FrameRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/FrameRenderer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/StaticMeshRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/StaticMeshRenderer.cpp" afterDir="false" />
+    <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="fix(Engine::Function): 修补贴图漏洞">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +60,17 @@
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/xmemory" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/xstring" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/xutility" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Engine/Funcation/Render/Renderer/BaseRenderer.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Engine/Funcation/Render/Renderer/BaseRenderer.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Funcation/Render/Renderer/StaticMeshRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Engine/Platform/OpenGL/Texture.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Engine/Platform/OpenGL/Texture.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Engine/Platform/OpenGL/Texture.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Engine/Platform/OpenGL/Texture.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Engine/Platform/OpenGL/Texture.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Engine/Platform/OpenGL/Texture.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ThirdParty/glfw/deps/glad/gles2.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ThirdParty/glfw/src/wl_window.c" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -242,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709810821211</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix(Engine::Function): 修补贴图漏洞">
+      <option name="closed" value="true" />
+      <created>1709811251178</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709811251178</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VCPKGProject">
@@ -265,7 +281,8 @@
     <MESSAGE value="feat(Engine::Function): 封装MeshRendere" />
     <MESSAGE value="fix(Engine::Function): 修正模型顶点法线" />
     <MESSAGE value="feat(Engine::Function): texture现在贴上去了" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Engine::Function): texture现在贴上去了" />
+    <MESSAGE value="fix(Engine::Function): 修补贴图漏洞" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(Engine::Function): 修补贴图漏洞" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

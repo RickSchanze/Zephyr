@@ -8,6 +8,8 @@
 #ifndef ZEPHYR_IMAGE_H
 #define ZEPHYR_IMAGE_H
 
+#include "AssetBase.h"
+
 #include <cstdint>
 #include <memory>
 #include <string>
@@ -15,17 +17,19 @@
 namespace Resource {
 
 // TODO: 加载优化，集中管理，加载相同的直接返回
-class Image {
+class Image : public AssetBase {
 public:
+  Image() = default;
   explicit Image(const std::wstring& path);
 
-  ~Image();
+  ~Image() override;
 
   std::wstring GetPath() const { return m_path; }
   int GetWidth() const { return m_width; }
   int GetHeight() const { return m_height; }
   int GetChannels() const { return m_channels; }
   uint8_t *GetData() const { return m_data; }
+
 
   /** 此图像是否有效 */
   bool IsValid() const;
@@ -40,10 +44,11 @@ public:
   /**
    * 加载一个图像
    */
-  void Load();
+  void Load() override;
+
+  bool IsValid() override;
 
 private:
-  std::wstring m_path;        // 图像路径
   int m_width = 0;           // 图像宽度
   int m_height = 0;          // 图像高度
   int m_channels = 0;        // 图像通道数

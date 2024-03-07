@@ -31,6 +31,10 @@ void Image::Load() {
   m_data = data;
 }
 
+bool Image::IsValid() {
+  return m_data != nullptr && m_width > 0 && m_height > 0 && m_channels > 0;
+}
+
 bool Image::IsValid() const {
   return m_data != nullptr;
 }

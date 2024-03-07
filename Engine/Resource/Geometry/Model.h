@@ -7,6 +7,8 @@
 
 #ifndef ZEPHYR_MODEL_H
 #define ZEPHYR_MODEL_H
+#include "AssetBase.h"
+
 #include <string>
 
 #include "assimp/scene.h"
@@ -21,15 +23,19 @@ namespace Resource {
 
 class Mesh;
 
-class Model {
+class Model : public AssetBase {
 public:
-  ~Model();
+  Model() = default;
+  ~Model() override;
 
-  void Load();
+  /** 加载Model资源 */
+  void Load() override;
+
   static std::shared_ptr<Model> Create(const std::wstring &path);
 
   /** 此模型是否有效 */
   bool IsValid() const;
+
   const std::vector<Mesh *> &GetMeshes() const {return m_meshes;}
 
 protected:
@@ -39,10 +45,8 @@ protected:
   void LoadMaterialTextures(const aiMaterial *mat, aiTextureType type, ETextureUsage usage, OUT std::vector<Texture> &textures) const;
 
 private:
-  std::wstring m_path;
   std::wstring m_directory;
   std::vector<Mesh *> m_meshes;
-  bool m_valid = false;
 };
 } // namespace Resource
 

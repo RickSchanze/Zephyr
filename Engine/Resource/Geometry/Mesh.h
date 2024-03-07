@@ -44,6 +44,7 @@ class Mesh {
   friend class Model;
 
 public:
+  Mesh() = default;
   inline const std::vector<Vertex> &GetVertices() const { return m_vertices; }
   inline const std::vector<uint32_t> &GetIndices() const { return m_indices; }
   inline const std::vector<Texture> &GetTextures() const { return m_textures; }

@@ -7,6 +7,10 @@ add_library(${PROJECT_NAME}
         Geometry/Image.cpp
         Geometry/Model.h
         Geometry/Model.cpp
+        AssetManager.h
+        AssetManager.cpp
+        Interface/Asset.h
+        AssetBase.h
 )
 
 add_library(Engine::Resource ALIAS ${PROJECT_NAME})

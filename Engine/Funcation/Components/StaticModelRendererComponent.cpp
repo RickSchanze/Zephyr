@@ -7,11 +7,12 @@
 
 #include "StaticModelRendererComponent.h"
 
-#include "imgui.h"
+#include "AssetManager.h"
 #include "Geometry/Model.h"
 #include "Render/Renderer/StaticMeshRenderer.h"
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
+#include "imgui.h"
 
 using namespace Platform::GL;
 
@@ -23,7 +24,7 @@ StaticModelRendererComponent::StaticModelRendererComponent(std::wstring_view mod
 
 void StaticModelRendererComponent::Initialize() {
   // TODO: 统一管理
-  m_model = Resource::Model::Create(m_model_path);
+  m_model = AssetManager::Get().Request<Resource::Model>(m_model_path);
   if (m_model) {
     auto &meshs = m_model->GetMeshes();
     for (auto &mesh : meshs) {

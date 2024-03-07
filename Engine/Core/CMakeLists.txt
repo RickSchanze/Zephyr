@@ -6,10 +6,12 @@ add_library(${PROJECT_NAME}
         Utils/Guid.cpp
         Utils/TypeConverter.h
         Utils/TypeConverter.cpp
+        Utils/Singleton.h
         Logger/Logger.h
         Logger/Logger.cpp
         Logger/Formatter.h
         Math/BasicType.h
+        CommonMacro.h
 )
 
 target_link_libraries(${PROJECT_NAME}

@@ -23,7 +23,7 @@ void Application::InitializeImGui() {
   IMGUI_CHECKVERSION();
   ImGui::CreateContext();
   auto &io = ImGui::GetIO();
-  io.Fonts->AddFontFromFileTTF("c:/windows/fonts/consola.ttf", 24.0f, nullptr, io.Fonts->GetGlyphRangesChineseSimplifiedCommon());
+  io.Fonts->AddFontFromFileTTF(R"(C:\Users\Echo\AppData\Local\Microsoft\Windows\Fonts\Maple_UI.ttf)", 24.0f, nullptr, io.Fonts->GetGlyphRangesChineseSimplifiedCommon());
   io.FontDefault = io.Fonts->Fonts[0];
   io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard; // Enable Keyboard Controls
                                                         //    io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad; //

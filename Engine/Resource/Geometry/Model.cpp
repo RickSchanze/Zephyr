@@ -7,6 +7,8 @@
 
 #include "Model.h"
 
+#include "AssetManager.h"
+
 #include <filesystem>
 
 #include "assimp/Importer.hpp"
@@ -84,7 +86,8 @@ void Model::LoadMaterialTextures(const aiMaterial *mat, const aiTextureType type
     utf8::utf8to16(str.C_Str(), str.C_Str() + str.length, std::back_inserter(wstr));
     // TODO: 优化，集中管理，不重复加载图像
     // 加载纹理
-    textures[i] = Texture{Image::Create(m_directory + L"/" + wstr), usage};
+    const auto image = AssetManager::Get().Request<Image>(m_directory + L"/" + wstr);
+    textures[i] = Texture{image, usage};
   }
 }
 
