@@ -31,7 +31,7 @@ uint32_t FrameBufferObject::GetId() const
 
 void FrameBufferObject::AttachTexture(const Texture &texture, const uint32_t attachment)
 {
-    glFramebufferTexture2D(GL_FRAMEBUFFER, attachment, texture.GetTarget(), texture.GetId(), texture.GetParam().level);
+    glFramebufferTexture2D(GL_FRAMEBUFFER, attachment, GL_TEXTURE_2D, texture.GetId(), texture.GetParam().level);
 }
 
 void FrameBufferObject::AttachRenderBuffer(const RenderBufferObject &render_buffer, const uint32_t attachment)

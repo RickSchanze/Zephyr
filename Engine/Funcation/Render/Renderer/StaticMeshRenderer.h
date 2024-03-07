@@ -40,7 +40,7 @@ public:
 
 protected:
   Resource::Mesh* m_mesh;
-  std::vector<Platform::GL::Texture> m_textures;
+  std::vector<std::shared_ptr<Platform::GL::Texture>> m_textures;
   bool m_initialized{false};
 };
 

@@ -16,13 +16,14 @@ namespace Platform::GL {
 
 Texture::Texture() { glGenTextures(1, &m_id); }
 
-Texture::~Texture() { glDeleteTextures(1, &m_id); }
+Texture::~Texture() {
+  glDeleteTextures(1, &m_id);
+}
 
 uint32_t Texture::GetId() const { return m_id; }
 
-void Texture::Bind(const uint32_t target) {
-  glBindTexture(target, m_id);
-  m_target = target;
+void Texture::Bind(const uint32_t target) const {
+  glBindTexture(GL_TEXTURE_2D, m_id);
 }
 
 Texture &Texture::SetImageParam(const TextureParam &param) {
@@ -36,28 +37,28 @@ Texture &Texture::SetImageParam(const TextureParam &param) {
 
 Texture &Texture::SetParam(const int32_t pname, const int32_t param,
                            const uint32_t target) {
-  glTexParameteri(target, pname, param);
+  // Bind();
+  glTexParameteri(GL_TEXTURE_2D, pname, param);
   return *this;
 }
 
 const TextureParam &Texture::GetParam() const { return m_param; }
-
-uint32_t Texture::GetTarget() const { return m_target; }
 
 void Texture::Apply() const {
   if (m_param.data == nullptr) {
     ZEPHYR_LOG_ERROR("Texture data is nullptr");
     return;
   }
-  glTexImage2D(m_target, m_param.level, m_param.internal_format, m_param.width,
+  Bind();
+  glTexImage2D(GL_TEXTURE_2D, m_param.level, m_param.internal_format, m_param.width,
                m_param.height, m_param.border, m_param.format, m_param.type,
                m_param.data);
-  // glGenerateMipmap(m_target);
+  // glGenerateMipmap(GL_TEXTURE_2D);
 }
 
 void Texture::ApplyFrameBuffer() {
   Bind();
-  glTexImage2D(m_target, m_param.level, m_param.internal_format, m_param.width,
+  glTexImage2D(GL_TEXTURE_2D, m_param.level, m_param.internal_format, m_param.width,
                m_param.height, m_param.border, m_param.format, m_param.type,
                nullptr);
 }

@@ -27,16 +27,14 @@ BaseRenderer::~BaseRenderer()
     delete m_ebo;
 }
 
-void BaseRenderer::SetVertexBufferData(const void *data, const uint32_t size, const uint32_t usage, const uint32_t target)
-{
+void BaseRenderer::SetVertexBufferData(const void *data, const uint32_t size, const uint32_t usage, const uint32_t target) const {
     m_vao->Bind();
     m_vbo->Bind();
     m_vbo->SetData(data, size, usage, target);
     m_vao->Unbind();
 }
 
-void BaseRenderer::SetElementBufferData(const void *indices_data, const int32_t size, const int32_t type_size, const uint32_t usage)
-{
+void BaseRenderer::SetElementBufferData(const void *indices_data, const int32_t size, const int32_t type_size, const uint32_t usage) const {
     m_vao->Bind();
     m_ebo->Bind();
     m_ebo->SetData(indices_data, size, usage);

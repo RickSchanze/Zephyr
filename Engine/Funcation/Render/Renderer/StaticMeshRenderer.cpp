@@ -12,7 +12,6 @@
 #include "OpenGL/ElementBufferObject.h"
 #include "OpenGL/ShaderProgram.h"
 #include "OpenGL/VertexArrayObject.h"
-#include "OpenGL/VertexBufferObject.h"
 #include "imgui.h"
 
 #include <GL/gl.h>
@@ -32,7 +31,7 @@ void StaticMeshRenderer::Draw(const Platform::GL::ShaderProgram &shader) {
   for (int32_t i = 0; i < m_textures.size(); i++) {
     glActiveTexture(GL_TEXTURE0 + i);
     std::string name;
-    switch (m_textures[i].GetUsage()) {
+    switch (m_textures[i]->GetUsage()) {
     case Resource::ETextureUsage::Diffuse:
       name = std::string("texture_diffuse") + std::to_string(diffuse_number++);
       break;
@@ -49,7 +48,7 @@ void StaticMeshRenderer::Draw(const Platform::GL::ShaderProgram &shader) {
     }
     // 设置纹理采样器
     shader.SetInt(name, i);
-    m_textures[i].Bind();
+    m_textures[i]->Bind();
   }
 
   m_vao->Bind();
@@ -63,8 +62,7 @@ void StaticMeshRenderer::Draw(const Platform::GL::ShaderProgram &shader) {
 void StaticMeshRenderer::InitializeObjects() {
   if (m_mesh) {
     SetVertexBufferData(&m_mesh->GetVertices()[0], m_mesh->GetVertices().size() * sizeof(Resource::Vertex));
-    SetElementBufferData(&m_mesh->GetIndices()[0], m_mesh->GetIndices().size() * sizeof(unsigned int));
-    auto a = glGetError();
+    SetElementBufferData(&m_mesh->GetIndices()[0], static_cast<int>(m_mesh->GetIndices().size() * sizeof(unsigned int)));
     this->BindVertexAttributePointer(3, offsetof(Resource::Vertex, position))   // position
         .BindVertexAttributePointer(3, offsetof(Resource::Vertex, normal))      // normal
         .BindVertexAttributePointer(2, offsetof(Resource::Vertex, tex_coords)); // tex_coords
@@ -73,15 +71,15 @@ void StaticMeshRenderer::InitializeObjects() {
     auto textures = m_mesh->GetTextures();
     for (auto &[image, usage] : textures) {
       if (usage == Resource::ETextureUsage::Diffuse) {
-        auto t = Platform::GL::Texture();
-        t.SetImageParam(*image)
+        auto* t = new Platform::GL::Texture();
+        t->SetImageParam(*image)
             .SetUsage(usage)
             .SetParam(GL_TEXTURE_MIN_FILTER, GL_LINEAR)
             .SetParam(GL_TEXTURE_MAG_FILTER, GL_LINEAR)
             .SetParam(GL_TEXTURE_WRAP_S, GL_REPEAT)
             .SetParam(GL_TEXTURE_WRAP_T, GL_REPEAT)
             .Apply();
-        m_textures.push_back(t);
+        m_textures.emplace_back(t);
       }
     }
 

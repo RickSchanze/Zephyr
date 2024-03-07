@@ -40,17 +40,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="feat(Engine::Function): 封装MeshRendere">
-      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Components/StaticModelRendererComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Funcation/Components/StaticModelRendererComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/BaseRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/BaseRenderer.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/BaseRenderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/BaseRenderer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/FrameRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/FrameRenderer.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/StaticMeshRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/StaticMeshRenderer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Platform/OpenGL/ElementBufferObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Platform/OpenGL/ElementBufferObject.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Platform/OpenGL/ShaderProgram.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Platform/OpenGL/ShaderProgram.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Platform/OpenGL/ShaderProgram.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Platform/OpenGL/ShaderProgram.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/StaticMeshRenderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/StaticMeshRenderer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Platform/OpenGL/FrameBufferObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Platform/OpenGL/FrameBufferObject.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Platform/OpenGL/Texture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Platform/OpenGL/Texture.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Platform/OpenGL/VertexBufferObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Platform/OpenGL/VertexBufferObject.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Platform/OpenGL/VertexBufferObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Platform/OpenGL/VertexBufferObject.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Platform/OpenGL/Texture.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Platform/OpenGL/Texture.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Resource/Shaders/test.frag" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Resource/Shaders/test.frag" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +274,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Engine/Funcation/Render/Renderer/BaseRenderer.cpp</url>
-          <line>49</line>
+          <line>47</line>
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">

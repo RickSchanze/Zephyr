@@ -9,8 +9,6 @@
 
 #include "Components/StaticModelRendererComponent.h"
 
-#include <iostream>
-
 using namespace Platform::GL;
 
 bool FrameRenderer::Initialize(const int width, const int height) {

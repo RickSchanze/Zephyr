@@ -23,7 +23,6 @@ class Image;
 namespace Platform::GL {
 
 struct TextureParam {
-  uint32_t target = GL_TEXTURE_2D;  // 应用的纹理目标
   int32_t level = 0;                // 纹理的mipmap级别,如果target为GL_TEXTURE_RECTANGLE或GL_PROXY_TEXTURE_RECTANGLE，则level必须为0。
   int32_t internal_format = GL_RGB; // 纹理的内部格式
   int32_t width = 0;                // 纹理的宽度
@@ -47,7 +46,7 @@ public:
    * 绑定texture
    * @param target 纹理类型 默认GL_TEXTURE_2D
    */
-  void Bind(uint32_t target = GL_TEXTURE_2D);
+  void Bind(uint32_t target = GL_TEXTURE_2D)const;
 
   /**
    * 设定texture参数
@@ -86,12 +85,6 @@ public:
    */
   const TextureParam &GetParam() const;
 
-  /**
-   * 获取绑定的target
-   * @return
-   */
-  uint32_t GetTarget() const;
-
   /** 调用glTexImage2D生成纹理 */
   void Apply()const;
 
@@ -104,7 +97,6 @@ public:
 private:
   uint32_t m_id = 0;
   TextureParam m_param;
-  uint32_t m_target = 0;
   ETextureUsage m_usage = ETextureUsage::Max;
 };
 
