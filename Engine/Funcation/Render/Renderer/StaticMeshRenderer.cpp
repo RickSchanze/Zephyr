@@ -7,6 +7,7 @@
 
 #include "StaticMeshRenderer.h"
 
+#include "AssetManager.h"
 #include "Geometry/Mesh.h"
 #include "Geometry/Model.h"
 #include "OpenGL/ElementBufferObject.h"
@@ -23,33 +24,7 @@ StaticMeshRenderer::StaticMeshRenderer(Resource::Mesh *mesh) {
 }
 
 void StaticMeshRenderer::Draw(const Platform::GL::ShaderProgram &shader) {
-  uint32_t diffuse_number = 0;
-  uint32_t specular_number = 0;
-  uint32_t normal_number = 0;
-  uint32_t height_number = 0;
-
-  for (int32_t i = 0; i < m_textures.size(); i++) {
-    glActiveTexture(GL_TEXTURE0 + i);
-    std::string name;
-    switch (m_textures[i]->GetUsage()) {
-    case Resource::ETextureUsage::Diffuse:
-      name = std::string("texture_diffuse") + std::to_string(diffuse_number++);
-      break;
-    case Resource::ETextureUsage::Normal:
-      name = std::string("texture_normal") + std::to_string(normal_number++);
-      break;
-    case Resource::ETextureUsage::Specular:
-      name = std::string("texture_specular") + std::to_string(specular_number++);
-      break;
-    case Resource::ETextureUsage::Height:
-      name = std::string("texture_height") + std::to_string(height_number++);
-      break;
-    default:;
-    }
-    // 设置纹理采样器
-    shader.SetInt(name, i);
-    m_textures[i]->Bind();
-  }
+  m_material->Use(shader);
 
   m_vao->Bind();
   glDrawElements(GL_TRIANGLES, static_cast<int32_t>(m_mesh->GetIndices().size()), GL_UNSIGNED_INT, nullptr);
@@ -60,6 +35,7 @@ void StaticMeshRenderer::Draw(const Platform::GL::ShaderProgram &shader) {
 }
 
 void StaticMeshRenderer::InitializeObjects() {
+  static int a = 0;
   if (m_mesh) {
     SetVertexBufferData(&m_mesh->GetVertices()[0], m_mesh->GetVertices().size() * sizeof(Resource::Vertex));
     SetElementBufferData(&m_mesh->GetIndices()[0], static_cast<int>(m_mesh->GetIndices().size() * sizeof(unsigned int)));
@@ -69,6 +45,7 @@ void StaticMeshRenderer::InitializeObjects() {
     // 绑定texture
     // TODO: 优化这里的程序结构
     auto textures = m_mesh->GetTextures();
+    m_material = AssetManager::Get().Request<Material>(std::to_wstring(a++));
     for (const auto &[image, usage] : textures) {
       switch (usage) {
       case Resource::ETextureUsage::Diffuse:

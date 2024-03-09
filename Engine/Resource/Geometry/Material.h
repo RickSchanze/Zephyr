@@ -21,7 +21,11 @@ public:
 
   void Use(const Platform::GL::ShaderProgram& shader);
 
-  void SetDiffuseTexturePath(const std::wstring &path) { m_diffuse_texture_path1 = path; }
+  void Load() override { m_valid = true; }
+
+  void SetDiffuseTexturePath(const std::wstring &path) {
+    m_diffuse_texture_path1 = path;
+  }
   void SetNormalTexturePath(const std::wstring &path) { m_normal_texture_path1 = path; }
   void SetSpecularTexturePath(const std::wstring &path) { m_specular_texture_path1 = path; }
 

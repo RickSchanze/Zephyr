@@ -81,9 +81,10 @@ std::shared_ptr<Texture> Texture::GetOrCreateTexture(const std::wstring &image_p
   auto tex = GetTexture(image_path);
   if (tex)
     return tex;
-  const auto image = AssetManager::Request<Image>(image_path);
+  const auto image = AssetManager::Get().Request<Image>(image_path);
   auto new_texture = std::make_shared<Texture>();
   new_texture->SetImageParam(*image);
+  s_image_texture_map[image_path] = new_texture;
   return new_texture;
 }
 

@@ -32,7 +32,7 @@ public:
     if (asset->IsValid()) {
       m_assets[path] = asset;
       ZEPHYR_LOG_INFO("AssetManager: Load new Asset: {}", asset->GetPath());
-      return std::dynamic_pointer_cast<T>(m_assets.at(path));
+      return asset;
     }
     return nullptr;
   }
