@@ -54,7 +54,7 @@ void Texture::Apply() {
   glTexImage2D(GL_TEXTURE_2D, m_param.level, m_param.internal_format, m_param.width,
                m_param.height, m_param.border, m_param.format, m_param.type,
                m_param.data);
-  // glGenerateMipmap(GL_TEXTURE_2D);
+  glGenerateMipmap(GL_TEXTURE_2D);
   m_has_applied = true;
 }
 
