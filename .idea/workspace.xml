@@ -40,6 +40,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="fix(Engine::Function): 修补贴图漏洞">
+      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,15 +61,7 @@
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/xmemory" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/xstring" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/xutility" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Engine/Funcation/Render/Renderer/BaseRenderer.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Engine/Funcation/Render/Renderer/BaseRenderer.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Funcation/Render/Renderer/StaticMeshRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Engine/Platform/OpenGL/Texture.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Engine/Platform/OpenGL/Texture.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Engine/Platform/OpenGL/Texture.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Engine/Platform/OpenGL/Texture.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Engine/Platform/OpenGL/Texture.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Engine/Platform/OpenGL/Texture.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ThirdParty/glfw/deps/glad/gles2.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ThirdParty/glfw/src/wl_window.c" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -200,25 +193,25 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake 应用程序.Zephyr" />
-      <item itemvalue="CMake 应用程序.Editor" />
-      <item itemvalue="CMake 应用程序.Widgets" />
+      <item itemvalue="Google Test.unit" />
       <item itemvalue="CMake 应用程序.Core" />
+      <item itemvalue="CMake 应用程序.Editor" />
       <item itemvalue="CMake 应用程序.Funcation" />
       <item itemvalue="CMake 应用程序.Platform" />
       <item itemvalue="CMake 应用程序.Resource" />
       <item itemvalue="CMake 应用程序.UpdateAssimpLibsDebugSymbolsAndDLLs" />
+      <item itemvalue="CMake 应用程序.Widgets" />
+      <item itemvalue="CMake 应用程序.Zephyr" />
       <item itemvalue="CMake 应用程序.assimp" />
-      <item itemvalue="CMake 应用程序.zlibstatic" />
       <item itemvalue="CMake 应用程序.glad" />
-      <item itemvalue="CMake 应用程序.uninstall" />
       <item itemvalue="CMake 应用程序.glfw" />
-      <item itemvalue="CMake 应用程序.update_mappings" />
       <item itemvalue="CMake 应用程序.glm" />
       <item itemvalue="CMake 应用程序.imgui" />
       <item itemvalue="CMake 应用程序.spdlog" />
       <item itemvalue="CMake 应用程序.stbimage" />
-      <item itemvalue="Google Test.unit" />
+      <item itemvalue="CMake 应用程序.uninstall" />
+      <item itemvalue="CMake 应用程序.update_mappings" />
+      <item itemvalue="CMake 应用程序.zlibstatic" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
@@ -233,6 +226,8 @@
       <workItem from="1709777021350" duration="18057000" />
       <workItem from="1709796509224" duration="1249000" />
       <workItem from="1709800401297" duration="2073000" />
+      <workItem from="1709881410580" duration="747000" />
+      <workItem from="1709883346712" duration="244000" />
     </task>
     <task id="LOCAL-00001" summary="feat(Engine::Function): 封装MeshRendere">
       <option name="closed" value="true" />
@@ -294,7 +289,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Engine/Funcation/Render/Renderer/BaseRenderer.cpp</url>
-          <line>47</line>
+          <line>51</line>
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">

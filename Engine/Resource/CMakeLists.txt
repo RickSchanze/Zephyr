@@ -7,6 +7,8 @@ add_library(${PROJECT_NAME}
         Geometry/Image.cpp
         Geometry/Model.h
         Geometry/Model.cpp
+        Geometry/Material.h
+        Geometry/Material.cpp
         AssetManager.h
         AssetManager.cpp
         Interface/Asset.h
@@ -22,6 +24,7 @@ target_include_directories(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME}
         PUBLIC
         Engine::Core
+        Engine::Platform
         stbimage
         assimp
         utf8cpp

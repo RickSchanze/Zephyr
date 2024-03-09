@@ -9,9 +9,9 @@
 #define ZEPHYR_STATICMESHRENDERER_H
 
 #include "BaseRenderer.h"
+#include "Geometry/Material.h"
 #include "Geometry/Mesh.h"
 #include "OpenGL/Shader.h"
-#include "OpenGL/Texture.h"
 
 namespace Platform::GL {
 class ShaderProgram;
@@ -25,6 +25,7 @@ class StaticMeshRenderer : public BaseRenderer {
   typedef Platform::GL::ShaderProgram ShaderProgram;
   typedef Platform::GL::VertexShader VertexShader;
   typedef Platform::GL::FragmentShader FragmentShader;
+  typedef Resource::Material Material;
 
 public:
   /**
@@ -39,8 +40,8 @@ public:
   void InitializeObjects();
 
 protected:
-  Resource::Mesh* m_mesh;
-  std::vector<std::shared_ptr<Platform::GL::Texture>> m_textures;
+  Resource::Mesh *m_mesh;
+  std::shared_ptr<Material> m_material;
   bool m_initialized{false};
 };
 

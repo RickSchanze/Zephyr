@@ -69,16 +69,20 @@ void StaticMeshRenderer::InitializeObjects() {
     // 绑定texture
     // TODO: 优化这里的程序结构
     auto textures = m_mesh->GetTextures();
-    for (auto &[image, usage] : textures) {
-        auto* t = new Platform::GL::Texture();
-        t->SetImageParam(*image)
-            .SetUsage(usage)
-            .SetParam(GL_TEXTURE_MIN_FILTER, GL_LINEAR)
-            .SetParam(GL_TEXTURE_MAG_FILTER, GL_LINEAR)
-            .SetParam(GL_TEXTURE_WRAP_S, GL_REPEAT)
-            .SetParam(GL_TEXTURE_WRAP_T, GL_REPEAT)
-            .Apply();
-        m_textures.emplace_back(t);
+    for (const auto &[image, usage] : textures) {
+      switch (usage) {
+      case Resource::ETextureUsage::Diffuse:
+        m_material->SetDiffuseTexturePath(image->GetPath());
+        break;
+      case Resource::ETextureUsage::Specular:
+        m_material->SetSpecularTexturePath(image->GetPath());
+        break;
+      case Resource::ETextureUsage::Normal:
+        m_material->SetNormalTexturePath(image->GetPath());
+        break;
+      default:
+        break;
+      }
     }
 
     m_initialized = true;

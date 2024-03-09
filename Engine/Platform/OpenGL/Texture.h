@@ -11,6 +11,7 @@
 #include "Geometry/Mesh.h"
 
 #include <cstdint>
+#include <unordered_map>
 
 #ifndef __glad_h_
 #include "glad/glad.h"
@@ -62,13 +63,6 @@ public:
   Texture &SetImageParam(const Resource::Image &image);
 
   /**
-   * 设置此纹理的用途
-   * @param usage
-   * @return
-   */
-  Texture& SetUsage(ETextureUsage usage);
-
-  /**
    * 设定纹理参数
    * @note 内部调用glTexParameteri
    * @param pname 参数名
@@ -86,18 +80,21 @@ public:
   const TextureParam &GetParam() const;
 
   /** 调用glTexImage2D生成纹理 */
-  void Apply()const;
+  void Apply();
 
   /** 为FrameBuffer生成纹理 */
   void ApplyFrameBuffer();
 
-  /** 获取纹理用途 */
-  ETextureUsage GetUsage() const {return m_usage;}
+  bool HasApplied() const;
+
+  static std::shared_ptr<Texture> GetTexture(const std::wstring &image_path);
+  static std::shared_ptr<Texture> GetOrCreateTexture(const std::wstring &image_path);
 
 private:
   uint32_t m_id = 0;
   TextureParam m_param;
-  ETextureUsage m_usage = ETextureUsage::Max;
+  bool m_has_applied = false;
+  inline static std::unordered_map<std::wstring, std::shared_ptr<Texture>> s_image_texture_map; // 图像路径和Texture的对应
 };
 
 } // namespace Platform::GL
