@@ -11,6 +11,8 @@ add_library(${PROJECT_NAME}
         Logger/Logger.cpp
         Logger/Formatter.h
         Math/BasicType.h
+        Reflection/MetaType.h
+        Reflection/MetaType.cpp
         CommonMacro.h
 )
 
@@ -18,6 +20,7 @@ target_link_libraries(${PROJECT_NAME}
         spdlog::spdlog
         glm
         utf8cpp
+        rttr_core
 )
 
 add_library(Engine::Core ALIAS ${PROJECT_NAME})

@@ -12,24 +12,30 @@
   <component name="CMakeRunConfigurationManager">
     <generated>
       <config projectName="Zephyr" targetName="Funcation" />
-      <config projectName="Zephyr" targetName="Core" />
-      <config projectName="Zephyr" targetName="Editor" />
       <config projectName="Zephyr" targetName="Platform" />
-      <config projectName="Zephyr" targetName="glm" />
-      <config projectName="Zephyr" targetName="stbimage" />
       <config projectName="Zephyr" targetName="glfw" />
       <config projectName="Zephyr" targetName="zlibstatic" />
+      <config projectName="Zephyr" targetName="rttr_core" />
+      <config projectName="Zephyr" targetName="imgui" />
+      <config projectName="Zephyr" targetName="unit_test_plugin" />
+      <config projectName="Zephyr" targetName="uninstall" />
+      <config projectName="Zephyr" targetName="spdlog" />
+      <config projectName="Zephyr" targetName="Core" />
+      <config projectName="Zephyr" targetName="plugin_example" />
+      <config projectName="Zephyr" targetName="Editor" />
+      <config projectName="Zephyr" targetName="glm" />
+      <config projectName="Zephyr" targetName="stbimage" />
       <config projectName="Zephyr" targetName="Widgets" />
+      <config projectName="Zephyr" targetName="unit_tests" />
       <config projectName="Zephyr" targetName="UpdateAssimpLibsDebugSymbolsAndDLLs" />
       <config projectName="Zephyr" targetName="unit" />
       <config projectName="Zephyr" targetName="update_mappings" />
+      <config projectName="Zephyr" targetName="run_tests" />
       <config projectName="Zephyr" targetName="Resource" />
       <config projectName="Zephyr" targetName="assimp" />
       <config projectName="Zephyr" targetName="glad" />
-      <config projectName="Zephyr" targetName="imgui" />
       <config projectName="Zephyr" targetName="Zephyr" />
-      <config projectName="Zephyr" targetName="uninstall" />
-      <config projectName="Zephyr" targetName="spdlog" />
+      <config projectName="Zephyr" targetName="library_loader_example" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -40,15 +46,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="fix(Engine::Function): 修补贴图漏洞">
+      <change afterPath="$PROJECT_DIR$/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reflection/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reflection/Finder.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reflection/Finder.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reflection/ReflectedClass.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reflection/ReflectedClass.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reflection/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Zephyr.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Zephyr.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/CMakeLists.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="CMakeLists.txt" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
@@ -56,14 +82,28 @@
   <component name="GitLabMergeRequestsSettings">{}</component>
   <component name="GithubPullRequestsUISettings">{}</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../../../../Program Files (x86)/LLVM/include/clang/ASTMatchers/ASTMatchFinder.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../../Program Files (x86)/LLVM/include/clang/Tooling/Tooling.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/filesystem" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/utility" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/vector" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/xmemory" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/xstring" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/xutility" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/CommonMacro.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/MetaType.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Funcation/Render/Renderer/BaseRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Funcation/Render/Renderer/StaticMeshRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/Finder.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/Finder.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/ReflectedClass.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/ReflectedClass.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/Release/Test.generated.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/Release/Test.hpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/main.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ThirdParty/glfw/deps/glad/gles2.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ThirdParty/glfw/src/wl_window.c" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/main.cpp" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -92,10 +132,27 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="CMake 应用程序.Zephyr">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Echo\BaiduSyncDisk\Work\Projects\Zephyr\Engine\Core" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Catch.unit_tests">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="unit_tests" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="unit_tests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Zephyr" RUN_TARGET_NAME="unit_tests" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="unit" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="unit" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Zephyr" RUN_TARGET_NAME="unit" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -167,6 +224,26 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="library_loader_example" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="library_loader_example" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Zephyr" RUN_TARGET_NAME="library_loader_example">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="plugin_example" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="plugin_example" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="rttr_core" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="rttr_core" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="run_tests" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="run_tests" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="spdlog" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="spdlog" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -182,6 +259,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="unit_test_plugin" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="unit_test_plugin" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="update_mappings" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="update_mappings" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -193,25 +275,31 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Google Test.unit" />
-      <item itemvalue="CMake 应用程序.Core" />
+      <item itemvalue="Catch.unit_tests" />
+      <item itemvalue="CMake 应用程序.Zephyr" />
       <item itemvalue="CMake 应用程序.Editor" />
+      <item itemvalue="CMake 应用程序.Widgets" />
+      <item itemvalue="CMake 应用程序.Core" />
       <item itemvalue="CMake 应用程序.Funcation" />
       <item itemvalue="CMake 应用程序.Platform" />
       <item itemvalue="CMake 应用程序.Resource" />
       <item itemvalue="CMake 应用程序.UpdateAssimpLibsDebugSymbolsAndDLLs" />
-      <item itemvalue="CMake 应用程序.Widgets" />
-      <item itemvalue="CMake 应用程序.Zephyr" />
       <item itemvalue="CMake 应用程序.assimp" />
+      <item itemvalue="CMake 应用程序.zlibstatic" />
       <item itemvalue="CMake 应用程序.glad" />
+      <item itemvalue="CMake 应用程序.uninstall" />
       <item itemvalue="CMake 应用程序.glfw" />
+      <item itemvalue="CMake 应用程序.update_mappings" />
       <item itemvalue="CMake 应用程序.glm" />
       <item itemvalue="CMake 应用程序.imgui" />
+      <item itemvalue="CMake 应用程序.library_loader_example" />
+      <item itemvalue="CMake 应用程序.plugin_example" />
+      <item itemvalue="CMake 应用程序.rttr_core" />
+      <item itemvalue="CMake 应用程序.run_tests" />
+      <item itemvalue="CMake 应用程序.unit_test_plugin" />
       <item itemvalue="CMake 应用程序.spdlog" />
       <item itemvalue="CMake 应用程序.stbimage" />
-      <item itemvalue="CMake 应用程序.uninstall" />
-      <item itemvalue="CMake 应用程序.update_mappings" />
-      <item itemvalue="CMake 应用程序.zlibstatic" />
+      <item itemvalue="Google Test.unit" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
@@ -228,6 +316,9 @@
       <workItem from="1709800401297" duration="2073000" />
       <workItem from="1709881410580" duration="747000" />
       <workItem from="1709883346712" duration="244000" />
+      <workItem from="1710192852172" duration="3387000" />
+      <workItem from="1710196296103" duration="187000" />
+      <workItem from="1710210364146" duration="7568000" />
     </task>
     <task id="LOCAL-00001" summary="feat(Engine::Function): 封装MeshRendere">
       <option name="closed" value="true" />
