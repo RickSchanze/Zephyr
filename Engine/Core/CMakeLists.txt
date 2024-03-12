@@ -20,7 +20,6 @@ target_link_libraries(${PROJECT_NAME}
         spdlog::spdlog
         glm
         utf8cpp
-        rttr_core
 )
 
 add_library(Engine::Core ALIAS ${PROJECT_NAME})

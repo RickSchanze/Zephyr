@@ -16,5 +16,5 @@ target_link_libraries(${PROJECT_NAME}
         spdlog
         Engine::Core
         Engine::Platform
-        Engine::Funcation
+        Engine::Function
 )

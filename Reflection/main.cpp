@@ -26,6 +26,7 @@ int main(int argc, const char **argv)
   finder.addMatcher(propertyMatcher, &my_finder);
 
   tool.appendArgumentsAdjuster(getInsertArgumentAdjuster("-xc++", ArgumentInsertPosition::BEGIN));
+  tool.appendArgumentsAdjuster(getInsertArgumentAdjuster("-DREFLECT_NEEDED", ArgumentInsertPosition::BEGIN));
 
   return tool.run(newFrontendActionFactory(&finder).get());
 }

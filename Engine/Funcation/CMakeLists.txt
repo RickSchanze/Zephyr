@@ -1,4 +1,4 @@
-project(Funcation)
+project(Function)
 
 add_library(${PROJECT_NAME}
         Render/Renderer/StaticMeshRenderer.h
@@ -25,6 +25,6 @@ target_link_libraries(${PROJECT_NAME}
         imgui
 )
 
-add_library(Engine::Funcation ALIAS ${PROJECT_NAME})
+add_library(Engine::Function ALIAS ${PROJECT_NAME})
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR})

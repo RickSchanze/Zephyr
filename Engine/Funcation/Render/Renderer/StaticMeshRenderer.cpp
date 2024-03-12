@@ -19,9 +19,7 @@
 
 using namespace Platform::GL;
 
-StaticMeshRenderer::StaticMeshRenderer(Resource::Mesh *mesh) {
-  m_mesh = mesh;
-}
+StaticMeshRenderer::StaticMeshRenderer(Resource::Mesh *mesh) { m_mesh = mesh; }
 
 void StaticMeshRenderer::Draw(const Platform::GL::ShaderProgram &shader) {
   m_material->Use(shader);
@@ -38,7 +36,8 @@ void StaticMeshRenderer::InitializeObjects() {
   static int a = 0;
   if (m_mesh) {
     SetVertexBufferData(&m_mesh->GetVertices()[0], m_mesh->GetVertices().size() * sizeof(Resource::Vertex));
-    SetElementBufferData(&m_mesh->GetIndices()[0], static_cast<int>(m_mesh->GetIndices().size() * sizeof(unsigned int)));
+    SetElementBufferData(&m_mesh->GetIndices()[0],
+                         static_cast<int>(m_mesh->GetIndices().size() * sizeof(unsigned int)));
     this->BindVertexAttributePointer(3, offsetof(Resource::Vertex, position))   // position
         .BindVertexAttributePointer(3, offsetof(Resource::Vertex, normal))      // normal
         .BindVertexAttributePointer(2, offsetof(Resource::Vertex, tex_coords)); // tex_coords
@@ -47,6 +46,8 @@ void StaticMeshRenderer::InitializeObjects() {
     auto textures = m_mesh->GetTextures();
     m_material = AssetManager::Get().Request<Material>(std::to_wstring(a++));
     for (const auto &[image, usage] : textures) {
+      if (!image)
+        continue;
       switch (usage) {
       case Resource::ETextureUsage::Diffuse:
         m_material->SetDiffuseTexturePath(image->GetPath());

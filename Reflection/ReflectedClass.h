@@ -23,6 +23,9 @@ public:
 
   void Generate(const clang::ASTContext *context, llvm::raw_fd_ostream &os) const;
 
+protected:
+  void GeneratedFields(llvm::raw_fd_ostream &os, std::string class_name) const;
+
 private:
   const clang::CXXRecordDecl *m_record = nullptr;
   std::vector<const FieldDecl *> m_fields;

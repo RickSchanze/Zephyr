@@ -128,7 +128,7 @@ const Type *GetTypeImpl() noexcept;
 
 #define DELCARE_BASE_TYPE(TypeName)                      \
   template <>                                            \
-  const Type *GetType<TypeName>() noexcept {             \
+  inline const Type *GetType<TypeName>() noexcept {             \
     static const Type type(#TypeName, sizeof(TypeName)); \
     return &type;                                        \
   }
@@ -149,3 +149,4 @@ DELCARE_BASE_TYPE(bool)
 
 } // namespace Reflection
 #endif
+

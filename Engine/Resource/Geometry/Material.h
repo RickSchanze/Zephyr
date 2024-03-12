@@ -33,6 +33,7 @@ protected:
   void ActiveTexture(const std::string &texture_name, const std::wstring &texture_path, const Platform::GL::ShaderProgram& shader);
 
 private:
+  PROPERTY()
   std::wstring m_shader_path;
   std::wstring m_diffuse_texture_path1;
   std::wstring m_normal_texture_path1;
