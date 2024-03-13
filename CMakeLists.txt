@@ -14,7 +14,7 @@ set(REFLECTION_EXE "C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Reflection/
 
 # 生成反射文件
 foreach (HEADER ${REFLECTED_HEADERS})
-    execute_process(COMMAND ${REFLECTION_EXE} ${HEADER} --)
+#    execute_process(COMMAND ${REFLECTION_EXE} ${HEADER} --)
 endforeach ()
 
 set(CMAKE_CXX_STANDARD 20)

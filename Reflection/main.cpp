@@ -40,7 +40,11 @@ int main(int argc, const char **argv) {
   tool.appendArgumentsAdjuster(getInsertArgumentAdjuster("-xc++", ArgumentInsertPosition::BEGIN));
   tool.appendArgumentsAdjuster(getInsertArgumentAdjuster("-std=c++20", ArgumentInsertPosition::BEGIN));
   tool.appendArgumentsAdjuster(getInsertArgumentAdjuster("-DREFLECTION", ArgumentInsertPosition::BEGIN));
+  GeneratorDiagnosticConsumer consumer;
+  tool.setDiagnosticConsumer(&consumer);
   AddIncludePaths(tool);
-  return tool.run(newFrontendActionFactory(&finder).get());
+  const int result = tool.run(newFrontendActionFactory(&finder).get());
+  std::cout <<"result: " << result << "\n";
+  return result;
 }
 

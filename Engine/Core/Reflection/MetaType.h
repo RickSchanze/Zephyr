@@ -47,7 +47,7 @@ protected:
 class Class : public Type {
 public:
   Class() noexcept = default;
-  Class(Class *base, Field *field_begin, Field *field_end, const char *name, const uint32_t size) noexcept
+  Class(const Class *base, Field *field_begin, Field *field_end, const char *name, const uint32_t size) noexcept
       : Type(name, size), m_base_class(base), m_fields(field_begin), m_fields_end(field_end) {}
 
   Field *GetField(const std::string &name) const {
@@ -59,35 +59,32 @@ public:
     return nullptr;
   }
 
-  template <typename R, typename T>
-  R GetValue(T *object, const std::string &name) const {
+  template <typename R, typename T> R GetValue(T *object, const std::string &name) const {
     auto field = GetField(name);
     return GetValue<R>(object, field);
   }
 
-  template <typename R, typename T>
-  R GetValue(T *object, Field *field) const {
+  template <typename R, typename T> R GetValue(T *object, Field *field) const {
     if (object && IsFieldValid(field)) {
       return *reinterpret_cast<R *>(reinterpret_cast<uintptr_t>(object) + field->GetOffset());
     }
     return R();
   }
 
-  template <typename T1, typename T2>
-  void SetValue(T1 *object, Field *field, T2 value) const {
+  template <typename T1, typename T2> void SetValue(T1 *object, Field *field, T2 value) const {
     if (object && IsFieldValid(field)) {
       *reinterpret_cast<T2 *>(reinterpret_cast<uintptr_t>(object) + field->GetOffset()) = value;
     }
   }
 
-  template <typename T1, typename T2>
-  void SetValue(T1 *object, const std::string &name, T2 value) const {
+  template <typename T1, typename T2> void SetValue(T1 *object, const std::string &name, T2 value) const {
     auto field = GetField(name);
     SetValue(object, field, value);
   }
 
-  bool IsFieldValid(const Field * field) const {
-    if (field == nullptr) return false;
+  bool IsFieldValid(const Field *field) const {
+    if (field == nullptr)
+      return false;
     for (auto it = m_fields; it != m_fields_end; ++it) {
       if (it == field) {
         return true;
@@ -96,16 +93,29 @@ public:
     return false;
   }
 
+  const Class *GetBaseClass() const { return m_base_class; }
+
+  // 用于遍历字段的清量迭代器
+  struct FieldTraversal {
+    explicit FieldTraversal(Field *begin, Field *end) : iterator_begin(begin), iterator_end(end) {}
+
+    Field *begin() const { return iterator_begin; }
+    Field *end() const { return iterator_end; }
+
+    Field *iterator_begin{nullptr};
+    Field *iterator_end{nullptr};
+  };
+
+  FieldTraversal GetFieldTraversal() const { return FieldTraversal(m_fields, m_fields_end); }
+
 private:
-  Class *m_base_class = nullptr;
+  const Class *m_base_class = nullptr;
   Field *m_fields = nullptr;
   Field *m_fields_end = nullptr;
 };
 
-template <typename Type, size_t NFields, size_t NFunctions>
-struct ClassBuilder {
-  template <typename Lambda>
-  explicit ClassBuilder(Lambda &&ctor) noexcept { ctor(this); }
+template <typename Type, size_t NFields, size_t NFunctions> struct ClassBuilder {
+  template <typename Lambda> explicit ClassBuilder(Lambda &&ctor) noexcept { ctor(this); }
 
   const size_t num_fields = NFields;
   const size_t num_functions = NFunctions;
@@ -113,24 +123,19 @@ struct ClassBuilder {
   /** 零长数组是未定义行为 */
   Field fields[NFields];
 };
-template <class T>
-const Class *GetClass() noexcept;
+template <class T> const Class *GetClass() noexcept;
 
-template <class T>
-const Type *GetType() noexcept;
+template <class T> const Type *GetType() noexcept;
 
 namespace Detail {
-template <class T>
-const Class *GetClassImpl() noexcept;
-template <class T>
-const Type *GetTypeImpl() noexcept;
+template <class T> const Class *GetClassImpl() noexcept;
+template <class T> const Type *GetTypeImpl() noexcept;
 } // namespace Detail
 
-#define DELCARE_BASE_TYPE(TypeName)                      \
-  template <>                                            \
-  inline const Type *GetType<TypeName>() noexcept {             \
-    static const Type type(#TypeName, sizeof(TypeName)); \
-    return &type;                                        \
+#define DELCARE_BASE_TYPE(TypeName)                                                                                    \
+  template <> inline const Type *GetType<TypeName>() noexcept {                                                        \
+    static const Type type(#TypeName, sizeof(TypeName));                                                               \
+    return &type;                                                                                                      \
   }
 
 DELCARE_BASE_TYPE(int)
@@ -149,4 +154,3 @@ DELCARE_BASE_TYPE(bool)
 
 } // namespace Reflection
 #endif
-

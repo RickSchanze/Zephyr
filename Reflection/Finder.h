@@ -31,6 +31,10 @@ private:
   std::string m_filename;
 };
 
+class GeneratorDiagnosticConsumer : public clang::DiagnosticConsumer {
+public:
+  void HandleDiagnostic(clang::DiagnosticsEngine::Level DiagLevel, const clang::Diagnostic &Info) override;
+};
 
 
 #endif //FINDER_H
