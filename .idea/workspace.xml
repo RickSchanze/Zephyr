@@ -39,16 +39,25 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="feat(Reflection): 测试一下自动化反射代码生成">
-      <change afterPath="$PROJECT_DIR$/IncludePath.txt" afterDir="false" />
+    <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="feat(Reflection): 自动反射添加了头文件 下一步要做把文件生成到合适的位置">
       <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Core/CommonMacro.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/CommonMacro.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Resource/Geometry/Material.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Resource/Geometry/Material.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Resource/Geometry/Material.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Resource/Geometry/Material.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reflection/Finder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Reflection/Finder.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reflection/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Reflection/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Funcation/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Function/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Components/ComponentBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Function/Components/ComponentBase.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Components/ComponentBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Function/Components/ComponentBase.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Components/RendererComponentBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Function/Components/RendererComponentBase.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Components/RendererComponentBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Function/Components/RendererComponentBase.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Components/StaticModelRendererComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Function/Components/StaticModelRendererComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Components/StaticModelRendererComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Function/Components/StaticModelRendererComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Object/Object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Function/Object/Object.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Object/Object.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Function/Object/Object.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/BaseRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Function/Render/Renderer/BaseRenderer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/BaseRenderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Function/Render/Renderer/BaseRenderer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/FrameRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Function/Render/Renderer/FrameRenderer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/FrameRenderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Function/Render/Renderer/FrameRenderer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/StaticMeshRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Function/Render/Renderer/StaticMeshRenderer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/StaticMeshRenderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Function/Render/Renderer/StaticMeshRenderer.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,8 +94,8 @@
     <setting file="file://$PROJECT_DIR$/Engine/Core/CommonMacro.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/MetaType.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Engine/Funcation/Render/Renderer/BaseRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Engine/Funcation/Render/Renderer/StaticMeshRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Function/Render/Renderer/BaseRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Function/Render/Renderer/StaticMeshRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Platform/OpenGL/Texture.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Resource/AssetBase.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Resource/Geometry/Image.h" root0="FORCE_HIGHLIGHTING" />
@@ -289,7 +298,7 @@
       <workItem from="1710231264882" duration="1505000" />
       <workItem from="1710254362526" duration="8383000" />
       <workItem from="1710322100416" duration="8000" />
-      <workItem from="1710322711756" duration="3340000" />
+      <workItem from="1710322711756" duration="3712000" />
     </task>
     <task id="LOCAL-00001" summary="feat(Engine::Function): 封装MeshRendere">
       <option name="closed" value="true" />
@@ -331,7 +340,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710261137857</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat(Reflection): 自动反射添加了头文件 下一步要做把文件生成到合适的位置">
+      <option name="closed" value="true" />
+      <created>1710326225478</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710326225478</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VCPKGProject">
@@ -357,7 +374,8 @@
     <MESSAGE value="fix(Engine::Function): 修补贴图漏洞" />
     <MESSAGE value="feat(Reflection): 构建反射基础元类型" />
     <MESSAGE value="feat(Reflection): 测试一下自动化反射代码生成" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Reflection): 测试一下自动化反射代码生成" />
+    <MESSAGE value="feat(Reflection): 自动反射添加了头文件 下一步要做把文件生成到合适的位置" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(Reflection): 自动反射添加了头文件 下一步要做把文件生成到合适的位置" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -368,7 +386,7 @@
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Engine/Funcation/Render/Renderer/BaseRenderer.cpp</url>
+          <url>file://$PROJECT_DIR$/Engine/Function/Render/Renderer/BaseRenderer.cpp</url>
           <line>51</line>
           <option name="timeStamp" value="71" />
         </line-breakpoint>
