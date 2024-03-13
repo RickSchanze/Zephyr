@@ -8,14 +8,14 @@ if (MSVC)
     add_compile_options("/wd4312")
 endif ()
 
-file(GLOB_RECURSE SOURCES Engine/*.h Editor/*.h)
+file(GLOB_RECURSE REFLECTED_HEADERS Engine/*.h Editor/*.h)
 
 set(REFLECTION_EXE "C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Reflection/Release/Reflection.exe")
-set(INCLUDE_PATH "C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Engine/Core;C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Engine/Funcation;C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Engine/Platform;C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Engine/Platform;C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr/Editor")
 
-string(PREPEND INCLUDE_PATH "-extra-arg=-I")
-message(${REFLECTION_MACRO_DEFINE_FOLDER})
-execute_process(COMMAND ${REFLECTION_EXE}  ${INCLUDE_PATH} ${SOURCES})
+# 生成反射文件
+foreach (HEADER ${REFLECTED_HEADERS})
+    execute_process(COMMAND ${REFLECTION_EXE} ${HEADER} --)
+endforeach ()
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)

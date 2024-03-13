@@ -8,7 +8,7 @@
 #ifndef MATERIAL_H
 #define MATERIAL_H
 #include "AssetBase.h"
-
+#include "CommonMacro.h"
 namespace Platform::GL {
 class ShaderProgram;
 }
@@ -35,8 +35,14 @@ protected:
 private:
   PROPERTY()
   std::wstring m_shader_path;
+
+  PROPERTY()
   std::wstring m_diffuse_texture_path1;
+
+  PROPERTY()
   std::wstring m_normal_texture_path1;
+
+  PROPERTY()
   std::wstring m_specular_texture_path1;
   int32_t m_texture_enable_count = 0;
 };

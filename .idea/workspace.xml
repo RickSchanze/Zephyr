@@ -11,24 +11,24 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="Zephyr" targetName="Platform" />
-      <config projectName="Zephyr" targetName="glfw" />
-      <config projectName="Zephyr" targetName="zlibstatic" />
-      <config projectName="Zephyr" targetName="Function" />
-      <config projectName="Zephyr" targetName="imgui" />
-      <config projectName="Zephyr" targetName="uninstall" />
-      <config projectName="Zephyr" targetName="spdlog" />
       <config projectName="Zephyr" targetName="Core" />
       <config projectName="Zephyr" targetName="Editor" />
+      <config projectName="Zephyr" targetName="Platform" />
       <config projectName="Zephyr" targetName="glm" />
       <config projectName="Zephyr" targetName="stbimage" />
+      <config projectName="Zephyr" targetName="glfw" />
+      <config projectName="Zephyr" targetName="zlibstatic" />
       <config projectName="Zephyr" targetName="Widgets" />
+      <config projectName="Zephyr" targetName="Function" />
       <config projectName="Zephyr" targetName="UpdateAssimpLibsDebugSymbolsAndDLLs" />
       <config projectName="Zephyr" targetName="unit" />
       <config projectName="Zephyr" targetName="update_mappings" />
       <config projectName="Zephyr" targetName="Resource" />
       <config projectName="Zephyr" targetName="assimp" />
       <config projectName="Zephyr" targetName="glad" />
+      <config projectName="Zephyr" targetName="imgui" />
+      <config projectName="Zephyr" targetName="uninstall" />
+      <config projectName="Zephyr" targetName="spdlog" />
       <config projectName="Zephyr" targetName="Zephyr" />
     </generated>
   </component>
@@ -39,24 +39,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="feat(Reflection): 构建反射基础元类型">
-      <change beforePath="$PROJECT_DIR$/.clang-format" beforeDir="false" afterPath="$PROJECT_DIR$/.clang-format" afterDir="false" />
+    <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="feat(Reflection): 测试一下自动化反射代码生成">
+      <change afterPath="$PROJECT_DIR$/IncludePath.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Editor/Widgets/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Editor/Widgets/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Core/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Core/CommonMacro.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/CommonMacro.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Core/Types.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Funcation/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Funcation/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/StaticMeshRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Funcation/Render/Renderer/StaticMeshRenderer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Platform/OpenGL/VertexBufferObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Platform/OpenGL/VertexBufferObject.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Resource/Geometry/Material.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Resource/Geometry/Material.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Resource/Geometry/Material.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Resource/Geometry/Material.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Reflection/Finder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Reflection/Finder.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reflection/ReflectedClass.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Reflection/ReflectedClass.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reflection/ReflectedClass.h" beforeDir="false" afterPath="$PROJECT_DIR$/Reflection/ReflectedClass.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Reflection/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Reflection/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,18 +72,24 @@
   <component name="GithubPullRequestsUISettings">{}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files (x86)/LLVM/include/clang/ASTMatchers/ASTMatchFinder.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../../Program Files (x86)/LLVM/include/clang/Tooling/CompilationDatabase.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files (x86)/LLVM/include/clang/Tooling/Tooling.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../../Program Files (x86)/LLVM/include/llvm/ADT/Twine.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/filesystem" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/utility" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/vector" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/xmemory" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/xstring" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/xutility" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Editor/Application.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/CommonMacro.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/MetaType.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Funcation/Render/Renderer/BaseRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Funcation/Render/Renderer/StaticMeshRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Platform/OpenGL/Texture.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Resource/AssetBase.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Resource/Geometry/Image.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Resource/Geometry/Material.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Resource/Geometry/Material.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Resource/Geometry/Mesh.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -103,9 +100,8 @@
     <setting file="file://$PROJECT_DIR$/Reflection/ReflectedClass.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Release/Test.generated.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Release/Test.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Reflection/Release/Test1.generated.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Release/Test1.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Reflection/main.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/main.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ThirdParty/glfw/deps/glad/gles2.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ThirdParty/glfw/src/wl_window.c" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/main.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -124,24 +120,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;CMake 应用程序.Zephyr.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;cf.advertisement.text.overridden&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "CMake 应用程序.Zephyr.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.advertisement.text.overridden": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Echo\BaiduSyncDisk\Work\Projects\Zephyr" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Echo\BaiduSyncDisk\Work\Projects\Zephyr\Engine\Core" />
     </key>
@@ -288,7 +287,9 @@
       <workItem from="1710196296103" duration="187000" />
       <workItem from="1710210364146" duration="7637000" />
       <workItem from="1710231264882" duration="1505000" />
-      <workItem from="1710254362526" duration="6300000" />
+      <workItem from="1710254362526" duration="8383000" />
+      <workItem from="1710322100416" duration="8000" />
+      <workItem from="1710322711756" duration="3340000" />
     </task>
     <task id="LOCAL-00001" summary="feat(Engine::Function): 封装MeshRendere">
       <option name="closed" value="true" />
@@ -322,7 +323,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710218047314</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat(Reflection): 测试一下自动化反射代码生成">
+      <option name="closed" value="true" />
+      <created>1710261137857</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710261137857</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VCPKGProject">
@@ -347,7 +356,8 @@
     <MESSAGE value="feat(Engine::Function): texture现在贴上去了" />
     <MESSAGE value="fix(Engine::Function): 修补贴图漏洞" />
     <MESSAGE value="feat(Reflection): 构建反射基础元类型" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Reflection): 构建反射基础元类型" />
+    <MESSAGE value="feat(Reflection): 测试一下自动化反射代码生成" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(Reflection): 测试一下自动化反射代码生成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

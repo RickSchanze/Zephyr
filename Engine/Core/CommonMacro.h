@@ -12,10 +12,10 @@
 #define OUT
 
 // 是否是MSVC编译器
-//#ifndef REFLECT_NEEDED
-//#define PROPERTY()
-//#else
+#ifndef REFLECTION
+#define PROPERTY()
+#else
 #define PROPERTY() __attribute__((annotate("property-reflect")))
-//#endif
+#endif
 
 #endif //COMMONMACRO_H

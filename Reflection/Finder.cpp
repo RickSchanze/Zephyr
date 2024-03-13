@@ -11,7 +11,6 @@
 using namespace clang;
 
 void Finder::run(const ast_matchers::MatchFinder::MatchResult &Result) {
-  std::cout << "match!";
   const auto *decl = Result.Nodes.getNodeAs<FieldDecl>("id");
   m_context = Result.Context;
   m_sourceman = Result.SourceManager;

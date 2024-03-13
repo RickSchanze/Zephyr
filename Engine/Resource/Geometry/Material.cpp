@@ -9,6 +9,7 @@
 
 #include "OpenGL/ShaderProgram.h"
 #include "OpenGL/Texture.h"
+#include "Material.generated.h"
 
 void Resource::Material::Use(const Platform::GL::ShaderProgram &shader) {
   // shader.Use();
