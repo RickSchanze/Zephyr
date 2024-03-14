@@ -24,7 +24,7 @@ void ReflectedClass::Generate(const clang::ASTContext *context, llvm::raw_fd_ost
   os << "namespace Reflection {\n";
   os << "namespace Detail{\n\n";
   os << "template <>\n";
-  os << "const Class *GetClassImpl<" << class_name << ">() noexcept {\n";
+  os << "Class *GetClassImpl<" << class_name << ">() noexcept {\n";
   os << std::vformat("  static ClassBuilder<{}, {}, {}> class_builder([](auto* builder) {{\n",
                      std::make_format_args(class_name, filed_count, 0));
   GeneratedFields(os, class_name);
@@ -40,20 +40,16 @@ void ReflectedClass::Generate(const clang::ASTContext *context, llvm::raw_fd_ost
                          "class_builder.num_fields, \"{}\", sizeof({}));\n",
                          std::make_format_args(class_name, class_name));
     }
+    os << "  class_builder.SetFieldsOwner(&cache);\n";
     os << "  return &cache;\n";
     os << "}\n\n";
-    os << "}\n\n";
-    // 模板GetClass
+    // 模板GetTypeImpl
     os << "template <>\n";
-    os << "const Class *GetClass<" << class_name << ">() noexcept {\n";
-    os << "  return Detail::GetClassImpl<" << class_name << ">();\n";
-    os << "}\n\n";
-    // 模板GetType
-    os << "template <>\n";
-    os << "const Type* GetType<" << class_name << ">() noexcept {\n";
-    os << "return GetClass<" << class_name << ">();\n";
+    os << "Type *GetTypeImpl<" << class_name << ">() noexcept {\n";
+    os << "  return GetClassImpl<" << class_name << ">();\n";
     os << "}\n\n";
   }
+  os << "}\n";
   os << "}\n\n";
 }
 
@@ -62,7 +58,7 @@ void ReflectedClass::GeneratedFields(llvm::raw_fd_ostream &os, std::string class
     auto *field = m_fields[i];
     std::string field_name = field->getNameAsString();
     std::string field_type_name = field->getType().getAsString();
-    os << std::vformat("    builder->fields[{}] = Field(GetType<{}>(), \"{}\", offsetof({}, {}));\n",
+    os << std::vformat("    builder->fields[{}] = Field::MakeField<{}>(\"{}\", offsetof({}, {}));\n",
                        std::make_format_args(i, field_type_name, field_name, class_name, field_name));
   }
 }
