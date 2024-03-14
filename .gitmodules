@@ -16,3 +16,6 @@
 [submodule "ThirdParty/utfcpp"]
 	path = ThirdParty/utfcpp
 	url = https://github.com/nemtrif/utfcpp
+[submodule "ThirdParty/jsoncpp"]
+	path = ThirdParty/jsoncpp
+	url = https://github.com/open-source-parsers/jsoncpp
