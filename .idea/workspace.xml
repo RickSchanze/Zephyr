@@ -39,12 +39,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="feat(Reflection): 反射支持单文件多类型，支持继承&#10;TODO: 字段迭代器">
+    <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="feat(Reflection): 支持迭代本类成员已经迭代父类成员，支持对与const pointer reference的识别">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reflection/ReflectedClass.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Reflection/ReflectedClass.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -294,7 +291,7 @@
       <workItem from="1710322100416" duration="8000" />
       <workItem from="1710322711756" duration="3838000" />
       <workItem from="1710345543911" duration="5456000" />
-      <workItem from="1710378365698" duration="7720000" />
+      <workItem from="1710378365698" duration="7935000" />
     </task>
     <task id="LOCAL-00001" summary="feat(Engine::Function): 封装MeshRendere">
       <option name="closed" value="true" />
@@ -360,7 +357,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710351160074</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat(Reflection): 支持迭代本类成员已经迭代父类成员，支持对与const pointer reference的识别">
+      <option name="closed" value="true" />
+      <created>1710389636416</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1710389636416</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VCPKGProject">
@@ -389,7 +394,8 @@
     <MESSAGE value="feat(Reflection): 自动反射添加了头文件 下一步要做把文件生成到合适的位置" />
     <MESSAGE value="fix(Function): fix typo: Funcation -&gt; Function" />
     <MESSAGE value="feat(Reflection): 反射支持单文件多类型，支持继承&#10;TODO: 字段迭代器" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Reflection): 反射支持单文件多类型，支持继承&#10;TODO: 字段迭代器" />
+    <MESSAGE value="feat(Reflection): 支持迭代本类成员已经迭代父类成员，支持对与const pointer reference的识别" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(Reflection): 支持迭代本类成员已经迭代父类成员，支持对与const pointer reference的识别" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
