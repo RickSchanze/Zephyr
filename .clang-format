@@ -1,4 +1,5 @@
 # Generated from CLion C/C++ Code Style settings
-BasedOnStyle: LLVM
-ColumnLimit: 120
-AlignTrailingComments: true
+BasedOnStyle: Microsoft
+AccessModifierOffset: -4
+AlwaysBreakTemplateDeclarations: Yes
+

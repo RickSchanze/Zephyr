@@ -26,7 +26,7 @@ add_executable(Reflection
 )
 
 target_link_libraries(Reflection
-    clangAST
-    clangBasic
-    clangTooling
-    clangASTMatchers)
+        clangAST
+        clangBasic
+        clangTooling
+        clangASTMatchers)

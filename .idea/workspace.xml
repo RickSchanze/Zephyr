@@ -11,25 +11,59 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
+      <config projectName="Zephyr" targetName="NightlyCoverage" />
+      <config projectName="Zephyr" targetName="jsoncpp_object" />
       <config projectName="Zephyr" targetName="Platform" />
+      <config projectName="Zephyr" targetName="imgui" />
+      <config projectName="Zephyr" targetName="ContinuousStart" />
+      <config projectName="Zephyr" targetName="jsoncpp_readerwriter_tests" />
+      <config projectName="Zephyr" targetName="Core" />
+      <config projectName="Zephyr" targetName="NightlyMemoryCheck" />
+      <config projectName="Zephyr" targetName="Editor" />
+      <config projectName="Zephyr" targetName="stbimage" />
+      <config projectName="Zephyr" targetName="ExperimentalCoverage" />
+      <config projectName="Zephyr" targetName="jsoncpp_static" />
+      <config projectName="Zephyr" targetName="jsoncpp_test" />
+      <config projectName="Zephyr" targetName="update_mappings" />
+      <config projectName="Zephyr" targetName="ExperimentalTest" />
+      <config projectName="Zephyr" targetName="NightlyConfigure" />
+      <config projectName="Zephyr" targetName="glad" />
+      <config projectName="Zephyr" targetName="NightlyMemCheck" />
+      <config projectName="Zephyr" targetName="NightlyTest" />
+      <config projectName="Zephyr" targetName="ContinuousBuild" />
+      <config projectName="Zephyr" targetName="ContinuousCoverage" />
+      <config projectName="Zephyr" targetName="ExperimentalStart" />
+      <config projectName="Zephyr" targetName="Continuous" />
+      <config projectName="Zephyr" targetName="ContinuousUpdate" />
+      <config projectName="Zephyr" targetName="ExperimentalBuild" />
+      <config projectName="Zephyr" targetName="jsoncpp_check" />
+      <config projectName="Zephyr" targetName="ExperimentalConfigure" />
       <config projectName="Zephyr" targetName="glfw" />
       <config projectName="Zephyr" targetName="zlibstatic" />
+      <config projectName="Zephyr" targetName="ContinuousConfigure" />
+      <config projectName="Zephyr" targetName="NightlyUpdate" />
       <config projectName="Zephyr" targetName="Function" />
-      <config projectName="Zephyr" targetName="imgui" />
+      <config projectName="Zephyr" targetName="ContinuousMemCheck" />
+      <config projectName="Zephyr" targetName="ExperimentalUpdate" />
+      <config projectName="Zephyr" targetName="ExperimentalMemCheck" />
+      <config projectName="Zephyr" targetName="NightlyStart" />
+      <config projectName="Zephyr" targetName="jsontestrunner_exe" />
+      <config projectName="Zephyr" targetName="ContinuousTest" />
+      <config projectName="Zephyr" targetName="ContinuousSubmit" />
       <config projectName="Zephyr" targetName="uninstall" />
       <config projectName="Zephyr" targetName="spdlog" />
-      <config projectName="Zephyr" targetName="Core" />
-      <config projectName="Zephyr" targetName="Editor" />
+      <config projectName="Zephyr" targetName="NightlyBuild" />
       <config projectName="Zephyr" targetName="glm" />
-      <config projectName="Zephyr" targetName="stbimage" />
       <config projectName="Zephyr" targetName="Widgets" />
       <config projectName="Zephyr" targetName="UpdateAssimpLibsDebugSymbolsAndDLLs" />
       <config projectName="Zephyr" targetName="unit" />
-      <config projectName="Zephyr" targetName="update_mappings" />
       <config projectName="Zephyr" targetName="Resource" />
       <config projectName="Zephyr" targetName="assimp" />
-      <config projectName="Zephyr" targetName="glad" />
+      <config projectName="Zephyr" targetName="ExperimentalSubmit" />
+      <config projectName="Zephyr" targetName="Nightly" />
       <config projectName="Zephyr" targetName="Zephyr" />
+      <config projectName="Zephyr" targetName="NightlySubmit" />
+      <config projectName="Zephyr" targetName="Experimental" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -40,8 +74,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="feat(Reflection): 支持迭代本类成员已经迭代父类成员，支持对与const pointer reference的识别">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Core/Reflection/Interface/ISerializable.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Core/Reflection/Serialization.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.clang-format" beforeDir="false" afterPath="$PROJECT_DIR$/.clang-format" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Editor/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Editor/Application.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Editor/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Editor/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/Event/Event.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Event/Event.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/Logger/Formatter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Logger/Formatter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Resource/Geometry/Material.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Resource/Geometry/Material.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Resource/Shaders/test.frag" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Resource/Shaders/test.frag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Resource/Shaders/test.vert" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Resource/Shaders/test.vert" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reflection/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Reflection/CMakeLists.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +114,7 @@
   <component name="GithubPullRequestsUISettings">{}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files (x86)/LLVM/include/clang/AST/Decl.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../../Program Files (x86)/LLVM/include/clang/AST/Type.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../../Program Files (x86)/LLVM/include/clang/AST/Type.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files (x86)/LLVM/include/clang/ASTMatchers/ASTMatchFinder.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files (x86)/LLVM/include/clang/Basic/Diagnostic.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files (x86)/LLVM/include/clang/Tooling/CompilationDatabase.h" root0="FORCE_HIGHLIGHTING" />
@@ -80,31 +128,33 @@
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/xmemory" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/xstring" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/xutility" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Editor/Application.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Editor/Application.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/CommonMacro.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/MetaType.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/Interface/ISerializable.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/MetaType.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/Serialization.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Function/Components/ComponentBase.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Function/Render/Renderer/BaseRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Function/Render/Renderer/StaticMeshRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Platform/OpenGL/Texture.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Resource/AssetBase.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Resource/Geometry/Image.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Engine/Resource/Geometry/Material.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Resource/Geometry/Material.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Resource/Geometry/Material.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Resource/Geometry/Mesh.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Resource/Geometry/Model.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Finder.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Finder.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Reflection/ReflectedClass.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/ReflectedClass.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/ReflectedClass.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Release/Test.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Reflection/Release/Test1.generated.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/Release/Test1.generated.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Release/Test1.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Reflection/main.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/main.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ThirdParty/glfw/deps/glad/gles2.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ThirdParty/glfw/src/wl_window.c" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/main.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/main.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -145,7 +195,7 @@
       <recent name="C:\Users\Echo\BaiduSyncDisk\Work\Projects\Zephyr\Engine\Core" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake 应用程序.Core">
+  <component name="RunManager" selected="CMake 应用程序.Zephyr">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
@@ -248,24 +298,24 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake 应用程序.Zephyr" />
-      <item itemvalue="CMake 应用程序.Editor" />
-      <item itemvalue="CMake 应用程序.Widgets" />
       <item itemvalue="CMake 应用程序.Core" />
+      <item itemvalue="CMake 应用程序.Editor" />
       <item itemvalue="CMake 应用程序.Function" />
       <item itemvalue="CMake 应用程序.Platform" />
       <item itemvalue="CMake 应用程序.Resource" />
       <item itemvalue="CMake 应用程序.UpdateAssimpLibsDebugSymbolsAndDLLs" />
+      <item itemvalue="CMake 应用程序.Widgets" />
+      <item itemvalue="CMake 应用程序.Zephyr" />
       <item itemvalue="CMake 应用程序.assimp" />
-      <item itemvalue="CMake 应用程序.zlibstatic" />
       <item itemvalue="CMake 应用程序.glad" />
-      <item itemvalue="CMake 应用程序.uninstall" />
       <item itemvalue="CMake 应用程序.glfw" />
-      <item itemvalue="CMake 应用程序.update_mappings" />
       <item itemvalue="CMake 应用程序.glm" />
       <item itemvalue="CMake 应用程序.imgui" />
       <item itemvalue="CMake 应用程序.spdlog" />
       <item itemvalue="CMake 应用程序.stbimage" />
+      <item itemvalue="CMake 应用程序.uninstall" />
+      <item itemvalue="CMake 应用程序.update_mappings" />
+      <item itemvalue="CMake 应用程序.zlibstatic" />
       <item itemvalue="Google Test.unit" />
     </list>
   </component>
@@ -292,6 +342,8 @@
       <workItem from="1710322711756" duration="3838000" />
       <workItem from="1710345543911" duration="5456000" />
       <workItem from="1710378365698" duration="7935000" />
+      <workItem from="1710416736321" duration="53000" />
+      <workItem from="1710416800285" duration="8138000" />
     </task>
     <task id="LOCAL-00001" summary="feat(Engine::Function): 封装MeshRendere">
       <option name="closed" value="true" />

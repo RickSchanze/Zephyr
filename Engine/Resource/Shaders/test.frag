@@ -8,6 +8,6 @@ uniform sampler2D texture_diffuse0;
 
 void main()
 {
-   FragColor = texture(texture_diffuse0, TexCoords);
-//   FragColor = Pos;
+    FragColor = texture(texture_diffuse0, TexCoords);
+    //   FragColor = Pos;
 }

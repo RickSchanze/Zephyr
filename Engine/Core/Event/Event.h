@@ -40,12 +40,9 @@ public:
      * @param func 对象的方法
      */
     template <typename ObjectType, typename FuncType>
-    Delegate(std::string id, ObjectType *object, FuncType func)
-        : m_id(std::move(id))
+    Delegate(std::string id, ObjectType *object, FuncType func) : m_id(std::move(id))
     {
-        m_function = [object, func](Args... args) {
-            (object->*func)(args...);
-        };
+        m_function = [object, func](Args... args) { (object->*func)(args...); };
         m_valid = true;
     }
 
@@ -53,8 +50,7 @@ public:
      * 构造一个Delegate,id由GUID生成
      * @param func
      */
-    explicit Delegate(std::function<void(Args...)> func)
-        : m_id(Guid().ToString())
+    explicit Delegate(std::function<void(Args...)> func) : m_id(Guid().ToString())
     {
         m_function = std::move(func);
         m_valid = true;
@@ -72,12 +68,9 @@ public:
      */
     template <typename ObjectType, typename FuncType>
         requires(!std::is_same_v<ObjectType, const char>)
-    Delegate(ObjectType *object, FuncType func)
-        : m_id(Guid().ToString())
+    Delegate(ObjectType *object, FuncType func) : m_id(Guid().ToString())
     {
-        m_function = [object, func](Args... args) {
-            (object->*func)(args...);
-        };
+        m_function = [object, func](Args... args) { (object->*func)(args...); };
         m_valid = true;
     }
 

@@ -6,6 +6,7 @@
     <mapping directory="$PROJECT_DIR$/ThirdParty/glfw" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ThirdParty/glm" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ThirdParty/imgui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ThirdParty/jsoncpp" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ThirdParty/spdlog" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ThirdParty/utfcpp" vcs="Git" />
   </component>
