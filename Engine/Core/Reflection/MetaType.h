@@ -7,7 +7,6 @@
 
 #ifndef METATYPE_H
 #define METATYPE_H
-#include "json/json.h"
 #include <algorithm>
 #include <cstddef>
 #include <cstdint>
@@ -20,6 +19,12 @@ namespace Reflection
 {
 class Class;
 class Type;
+
+/** 用于处理函数模板偏特化问题 */
+template <typename T>
+struct ClassTag
+{
+};
 
 /** 获取包含反射信息的T的Class */
 template <class T>
@@ -42,20 +47,37 @@ const Type *GetType(T) noexcept
 
 namespace Detail
 {
-/** 获得类反射信息的具体实现,代码生成器必须实现此函数 */
+/**
+ * 获得类反射信息的具体实现,代码生成器必须实现此函数
+ * @note 加一层ClassTag是为了实现模板偏特化,比如
+ * template <class T>
+ * Class* GetClassImpl(ClassTag<std::vector<T>>() noexcept;
+ * */
 template <class T>
-Class *GetClassImpl() noexcept;
+Class *GetClassImpl(ClassTag<T>) noexcept;
+
 /** 获得类反射信息的具体实现,代码生成器必须实现此函数 */
 template <class T>
 Type *GetTypeImpl() noexcept;
 } // namespace Detail
+
+/**
+ * 表示一个Type的Flag
+ * 只支持有限的模板
+ */
+enum class TypeFlag : uint8_t
+{
+    IsBaseType, /** 是一个基础类型，int,float,char... */
+    IsClass,    /** 是一个类 */
+    IsVector,   /** 是一个Vector */
+};
 
 class Type
 {
 
 public:
     template <class T>
-    friend Class * ::Reflection::Detail::GetClassImpl() noexcept;
+    friend Class * ::Reflection::Detail::GetClassImpl(ClassTag<T>) noexcept;
 
     Type() noexcept = default;
 
@@ -63,8 +85,10 @@ public:
      * 构造Type
      * @param name 类型名
      * @param size 大小
+     * @param flag 表示这个类型是一个基础类型、类还是模板
      */
-    Type(const char *name, const uint32_t size) noexcept : m_size(size), m_name(name)
+    Type(const char *name, const uint32_t size, const TypeFlag flag = TypeFlag::IsBaseType) noexcept
+        : m_size(size), m_flag(flag), m_name(name)
     {
     }
 
@@ -79,8 +103,15 @@ public:
         return m_size;
     }
 
+    /** 获取类型的Flag */
+    TypeFlag GetFlag() const noexcept
+    {
+        return m_flag;
+    }
+
 protected:
     uint32_t m_size = 0;
+    TypeFlag m_flag = TypeFlag::IsBaseType;
     const char *m_name = nullptr;
 };
 
@@ -88,7 +119,7 @@ class Field
 {
 
 public:
-    template <typename Type, size_t NFields, size_t NFunctions>
+    template <typename Type, size_t NFields, size_t NFunctions, size_t NTemplateArgs>
     friend struct ClassBuilder;
 
     Field() noexcept = default;
@@ -197,9 +228,11 @@ public:
      * @param field_end 本类字段末尾指针
      * @param name 类型名
      * @param size 类型大小
+     * @param flag 类型Flag
      */
-    Class(const Class *base, Field *field_begin, Field *field_end, const char *name, const uint32_t size) noexcept
-        : Type(name, size), m_base_class(base), m_fields(field_begin), m_fields_end(field_end)
+    Class(const Class *base, Field *field_begin, Field *field_end, const char *name, const uint32_t size,
+          TypeFlag flag = TypeFlag::IsClass) noexcept
+        : Type(name, size, flag), m_base_class(base), m_fields(field_begin), m_fields_end(field_end)
     {
     }
 
@@ -447,7 +480,28 @@ private:
     Field *m_fields_end = nullptr;
 };
 
-template <typename Type, size_t NFields, size_t NFunctions>
+struct TemplateArgument
+{
+    const Type *type;
+};
+
+class ClassTemplate : public Class
+{
+public:
+    ClassTemplate(const Class *base, Field *field_begin, Field *field_end, const char *name, const uint32_t size,
+                  const TypeFlag flag, TemplateArgument *template_begin, TemplateArgument *template_end)
+        : Class(base, field_begin, field_end, name, size, flag), m_t_args_begin(template_begin),
+          m_t_args_end(template_end)
+    {
+    }
+
+protected:
+    TemplateArgument *m_t_args_begin;
+    TemplateArgument *m_t_args_end;
+};
+
+/** 用于存储类的字段等信息的代码 */
+template <typename Type, size_t NFields, size_t NFunctions, size_t NTemplateArgs = 0>
 struct ClassBuilder
 {
     template <typename Lambda>
@@ -458,6 +512,7 @@ struct ClassBuilder
 
     const size_t num_fields = NFields;
     const size_t num_functions = NFunctions;
+    const size_t num_template_args = NTemplateArgs;
 
     void SetFieldsOwner(Class *owner)
     {
@@ -468,20 +523,24 @@ struct ClassBuilder
     }
 
     /** 零长数组是未定义行为 */
-    Field fields[NFields];
+    /** 所有类字段 */
+    Field fields[NFields + 1];
+    /** 所有模板参数 */
+    TemplateArgument template_args[NFields + 1];
 };
 
 template <class T>
 const Class *GetClass() noexcept
 {
-    Class *rtn_class = Detail::GetClassImpl<std::remove_cv_t<std::remove_pointer_t<T>>>();
+    using type = std::remove_cv_t<std::remove_pointer_t<T>>;
+    const Class *rtn_class = Detail::GetClassImpl<>(ClassTag<type>{});
     return rtn_class;
 }
 
 template <class T>
 const Type *GetType() noexcept
 {
-    Type *type = Detail::GetTypeImpl<std::remove_cv_t<std::remove_pointer_t<T>>>();
+    const Type *type = Detail::GetTypeImpl<std::remove_cv_t<std::remove_pointer_t<T>>>();
     return type;
 }
 
@@ -505,4 +564,6 @@ DECLARE_BASE_TYPE(short)
 DECLARE_BASE_TYPE(bool)
 
 } // namespace Reflection
+
+#include "TemplateType.h"
 #endif
