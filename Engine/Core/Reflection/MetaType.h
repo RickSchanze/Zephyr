@@ -26,6 +26,11 @@ struct ClassTag
 {
 };
 
+template <typename T>
+struct TypeTag
+{
+};
+
 /** 获取包含反射信息的T的Class */
 template <class T>
 const Class *GetClass() noexcept;
@@ -58,7 +63,7 @@ Class *GetClassImpl(ClassTag<T>) noexcept;
 
 /** 获得类反射信息的具体实现,代码生成器必须实现此函数 */
 template <class T>
-Type *GetTypeImpl() noexcept;
+Type *GetTypeImpl(TypeTag<T>) noexcept;
 } // namespace Detail
 
 /**
@@ -495,6 +500,11 @@ public:
     {
     }
 
+    TemplateArgument *GetTemplateArgsBegin() const
+    {
+        return m_t_args_begin;
+    }
+
 protected:
     TemplateArgument *m_t_args_begin;
     TemplateArgument *m_t_args_end;
@@ -529,27 +539,14 @@ struct ClassBuilder
     TemplateArgument template_args[NFields + 1];
 };
 
-template <class T>
-const Class *GetClass() noexcept
-{
-    using type = std::remove_cv_t<std::remove_pointer_t<T>>;
-    const Class *rtn_class = Detail::GetClassImpl<>(ClassTag<type>{});
-    return rtn_class;
-}
 
-template <class T>
-const Type *GetType() noexcept
-{
-    const Type *type = Detail::GetTypeImpl<std::remove_cv_t<std::remove_pointer_t<T>>>();
-    return type;
-}
 
 #define DECLARE_BASE_TYPE(TypeName)                                                                                    \
-    template <> inline const Type *GetType<TypeName>() noexcept                                                        \
-    {                                                                                                                  \
-        static const Type type(#TypeName, sizeof(TypeName));                                                           \
-        return &type;                                                                                                  \
-    }
+template <> inline const Type *GetType<TypeName>() noexcept                                                        \
+{                                                                                                                  \
+static const Type type(#TypeName, sizeof(TypeName));                                                           \
+return &type;                                                                                                  \
+}
 
 DECLARE_BASE_TYPE(int)
 DECLARE_BASE_TYPE(double)
@@ -563,7 +560,27 @@ DECLARE_BASE_TYPE(long long)
 DECLARE_BASE_TYPE(short)
 DECLARE_BASE_TYPE(bool)
 
+#include "TemplateType.h"
+
+template <class T>
+const Class *GetClass() noexcept
+{
+    using type = std::remove_cv_t<std::remove_pointer_t<T>>;
+    const Class *rtn_class = Detail::GetClassImpl<>(ClassTag<type>{});
+    return rtn_class;
+}
+
+template <class T>
+const Type *GetType() noexcept
+{
+    using type = std::remove_cv_t<std::remove_pointer_t<T>>;
+    const Type *rtn_type = Detail::GetTypeImpl(TypeTag<type>{});
+    return rtn_type;
+}
+
 } // namespace Reflection
 
-#include "TemplateType.h"
+// #include "TemplateType.h"
+
+// #include "TemplateType.h"
 #endif

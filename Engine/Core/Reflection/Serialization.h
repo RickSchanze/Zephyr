@@ -1,17 +1,78 @@
+#pragma once
 #include "../CommonMacro.h"
 #include "Interface/ISerializable.h"
 #include "MetaType.h"
+#include "Reflection/TemplateType.h"
 
-#define JSON_SERIALIZE_VALUE_FROM_CLASS(json, type_name, field, class_, object)                                        \
-    if (strcmp(field->GetType()->GetName(), #type_name) == 0)                                                          \
-    {                                                                                                                  \
-        auto value = class_->template GetValue<type_name>(object, field);                                              \
-        if (value)                                                                                                     \
-        {                                                                                                              \
-            json[field->GetName()] = value.value();                                                                    \
-            continue;                                                                                                  \
-        }                                                                                                              \
+#define JSON_SERIALIZE_VALUE_FROM_CLASS(type_name)                 \
+    if (strcmp(obj_type->GetName(), #type_name) == 0)              \
+    {                                                              \
+        out_json = *static_cast<type_name *>(object);              \
+        return;                                                    \
     }
+
+
+void Serialize(void *object, const Reflection::Class *obj_class, OUT Json::Value &out_json);
+
+/**
+ * 序列化一个vector
+ * @param obj vector地址
+ * @param vec_class vector模板类型
+ * @param out_json 输出
+ */
+static void SerializeVector(void *obj, const Reflection::ClassTemplate *vec_class, OUT Json::Value &out_json)
+{
+    using namespace Reflection;
+    const auto element_type = vec_class->GetTemplateArgsBegin()->type;
+    if (element_type == nullptr)
+    {
+        out_json = Json::nullValue;
+        return;
+    }
+    const auto element_class = static_cast<const Class *>(element_type);
+    auto container_t_class = static_cast<const Class *>(vec_class);
+    // 提取出数组的每一个元素
+    auto *vec = static_cast<std::vector<char> *>(obj);
+    size_t size = vec->size() * sizeof(char);
+    uint32_t type_size = element_class->GetSize();
+    uint32_t step_size = type_size / sizeof(char);
+    uint32_t loop_count = size / type_size;
+    auto data = vec->data();
+    for (int i = 0; i < loop_count; i++)
+    {
+        void *vec_element_addr = data + step_size * i;
+        Json::Value sub_json;
+        Serialize(vec_element_addr, element_class, sub_json);
+        out_json.append(sub_json);
+    }
+}
+
+/**
+ * 序列化基础类型
+ * @param object 基础类型变量地址
+ * @param obj_type 类型
+ * @param out_json 输出元素
+ */
+static void SerializeBaseType(void *object, const Reflection::Type *obj_type, OUT Json::Value &out_json)
+{
+    using namespace Reflection;
+    if (obj_type == nullptr || obj_type->GetFlag() != TypeFlag::IsBaseType)
+    {
+        out_json = Json::nullValue;
+        return;
+    }
+    JSON_SERIALIZE_VALUE_FROM_CLASS(int)
+    JSON_SERIALIZE_VALUE_FROM_CLASS(double)
+    JSON_SERIALIZE_VALUE_FROM_CLASS(float)
+    JSON_SERIALIZE_VALUE_FROM_CLASS(short)
+    JSON_SERIALIZE_VALUE_FROM_CLASS(char)
+    JSON_SERIALIZE_VALUE_FROM_CLASS(unsigned int)
+    JSON_SERIALIZE_VALUE_FROM_CLASS(unsigned short)
+    JSON_SERIALIZE_VALUE_FROM_CLASS(unsigned char)
+    JSON_SERIALIZE_VALUE_FROM_CLASS(bool)
+    JSON_SERIALIZE_VALUE_FROM_CLASS(long long)
+    JSON_SERIALIZE_VALUE_FROM_CLASS(unsigned long long)
+}
 
 /**
  * 序列化任意对象
@@ -20,49 +81,31 @@
  * @param out_json 输出的json值
  * @return
  */
-bool Serialize(void *object, const Reflection::Class *obj_class, OUT Json::Value &out_json)
+void Serialize(void *object, const Reflection::Class *obj_class, OUT Json::Value &out_json)
 {
     using namespace Reflection;
     if (object == nullptr || obj_class == nullptr)
     {
         out_json = Json::nullValue;
-        return false;
+        return;
+    }
+    // obj_class是基础类型
+    if (obj_class->GetFlag() == TypeFlag::IsBaseType)
+    {
+        return SerializeBaseType(object, obj_class, out_json);
+    }
+    // obj_class是一个vector
+    if (obj_class->GetFlag() == TypeFlag::IsVector)
+    {
+        const auto *f_class = static_cast<const ClassTemplate *>(obj_class);
+        return SerializeVector(object, f_class, out_json);
     }
     const auto all_fields = obj_class->GetAllFields();
     for (const auto field : all_fields)
     {
-        // 判断Field是不是基础类型
-        if (field->GetType()->GetFlag() == TypeFlag::IsBaseType)
-        {
-            // clang-format off
-            JSON_SERIALIZE_VALUE_FROM_CLASS(out_json, int, field, obj_class, object)
-            JSON_SERIALIZE_VALUE_FROM_CLASS(out_json, unsigned int, field, obj_class, object)
-            JSON_SERIALIZE_VALUE_FROM_CLASS(out_json, char, field, obj_class, object)
-            JSON_SERIALIZE_VALUE_FROM_CLASS(out_json, unsigned char, field, obj_class, object)
-            JSON_SERIALIZE_VALUE_FROM_CLASS(out_json, short, field, obj_class, object)
-            JSON_SERIALIZE_VALUE_FROM_CLASS(out_json, unsigned short, field, obj_class, object)
-            JSON_SERIALIZE_VALUE_FROM_CLASS(out_json, long long, field, obj_class, object)
-            JSON_SERIALIZE_VALUE_FROM_CLASS(out_json, unsigned long long, field, obj_class, object)
-            JSON_SERIALIZE_VALUE_FROM_CLASS(out_json, float, field, obj_class, object)
-            JSON_SERIALIZE_VALUE_FROM_CLASS(out_json, double, field, obj_class, object)
-            JSON_SERIALIZE_VALUE_FROM_CLASS(out_json, bool, field, obj_class, object)
-            // clang-format on
-        }
-        // TODO: 编写std::vector<T>的序列化代码，需要考虑T是不是指针
-        if (field->GetType()->GetFlag() == TypeFlag::IsVector)
-        {
-            const auto *f_class = static_cast<const ClassTemplate *>(field->GetType());
-        }
-
-        Json::Value sub_json;
-        if (!Serialize(obj_class->GetFieldAddress(object, field),
-                       static_cast<const Reflection::Class *>(field->GetType()), sub_json))
-        {
-            sub_json = Json::nullValue;
-        }
-        out_json[field->GetName()] = sub_json;
+        Serialize(obj_class->GetFieldAddress(object, field), static_cast<const Class *>(field->GetType()),
+                  out_json[field->GetName()]);
     }
-    return true;
 }
 
 /**
@@ -73,12 +116,12 @@ bool Serialize(void *object, const Reflection::Class *obj_class, OUT Json::Value
  * @return
  */
 template <typename T>
-bool Serialize(T *object, OUT Json::Value &out_json)
+void Serialize(T *object, OUT Json::Value &out_json)
 {
     if (object == nullptr)
     {
         out_json = Json::nullValue;
-        return false;
+        return;
     }
     // 如果对象自己能序列化，那就调用它的序列化方法
     if constexpr (std::is_base_of_v<ISerializable, T>)
@@ -91,7 +134,7 @@ bool Serialize(T *object, OUT Json::Value &out_json)
     if (t_class == nullptr)
     {
         out_json = Json::nullValue;
-        return false;
+        return;
     }
     return Serialize(object, t_class, out_json);
 }
