@@ -11,12 +11,25 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="Reflection" targetName="acc_gen" />
-      <config projectName="Reflection" targetName="intrinsics_gen" />
-      <config projectName="Reflection" targetName="RISCVTargetParserTableGen" />
-      <config projectName="Reflection" targetName="Reflection" />
-      <config projectName="Reflection" targetName="omp_gen" />
-      <config projectName="Reflection" targetName="clang-tablegen-targets" />
+      <config projectName="Zephyr" targetName="Platform" />
+      <config projectName="Zephyr" targetName="glfw" />
+      <config projectName="Zephyr" targetName="zlibstatic" />
+      <config projectName="Zephyr" targetName="Function" />
+      <config projectName="Zephyr" targetName="imgui" />
+      <config projectName="Zephyr" targetName="uninstall" />
+      <config projectName="Zephyr" targetName="spdlog" />
+      <config projectName="Zephyr" targetName="Core" />
+      <config projectName="Zephyr" targetName="Editor" />
+      <config projectName="Zephyr" targetName="glm" />
+      <config projectName="Zephyr" targetName="stbimage" />
+      <config projectName="Zephyr" targetName="Widgets" />
+      <config projectName="Zephyr" targetName="UpdateAssimpLibsDebugSymbolsAndDLLs" />
+      <config projectName="Zephyr" targetName="unit" />
+      <config projectName="Zephyr" targetName="update_mappings" />
+      <config projectName="Zephyr" targetName="Resource" />
+      <config projectName="Zephyr" targetName="assimp" />
+      <config projectName="Zephyr" targetName="glad" />
+      <config projectName="Zephyr" targetName="Zephyr" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -26,12 +39,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="feat(Reflection): 添加对std::vector&lt;T&gt;的反射支持">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/Serialization.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/Serialization.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/TemplateType.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/TemplateType.h" afterDir="false" />
-    </list>
+    <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="feat(Reflection): 提供对std::vector的序列化支持" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +83,7 @@
     <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/MetaType.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/Serialization.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/TemplateType.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/TemplateType.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Function/Components/ComponentBase.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Function/Render/Renderer/BaseRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Function/Render/Renderer/StaticMeshRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -88,12 +96,12 @@
     <setting file="file://$PROJECT_DIR$/Engine/Resource/Geometry/Model.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Finder.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Finder.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Reflection/ReflectedClass.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/ReflectedClass.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/ReflectedClass.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Release/Test.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Release/Test1.generated.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Release/Test1.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Reflection/main.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/main.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ThirdParty/glfw/deps/glad/gles2.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ThirdParty/glfw/src/wl_window.c" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/main.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -180,11 +188,6 @@
       </method>
     </configuration>
     <configuration name="Zephyr" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="Zephyr" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Zephyr" RUN_TARGET_NAME="Zephyr">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -289,7 +292,8 @@
       <workItem from="1710548266253" duration="2000" />
       <workItem from="1710548599907" duration="2826000" />
       <workItem from="1710554625197" duration="473000" />
-      <workItem from="1710643136560" duration="40000" />
+      <workItem from="1710643136560" duration="120000" />
+      <workItem from="1710727086338" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="feat(Engine::Function): 封装MeshRendere">
       <option name="closed" value="true" />
@@ -387,7 +391,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710555100956</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat(Reflection): 提供对std::vector的序列化支持">
+      <option name="closed" value="true" />
+      <created>1710643243833</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1710643243833</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VCPKGProject">
@@ -420,7 +432,8 @@
     <MESSAGE value="feat(Reflection): 添加序列化功能" />
     <MESSAGE value="style(git): 将jsoncpp添加至submodule" />
     <MESSAGE value="feat(Reflection): 添加对std::vector&lt;T&gt;的反射支持" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Reflection): 添加对std::vector&lt;T&gt;的反射支持" />
+    <MESSAGE value="feat(Reflection): 提供对std::vector的序列化支持" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(Reflection): 提供对std::vector的序列化支持" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

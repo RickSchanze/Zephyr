@@ -14,7 +14,6 @@ add_library(${PROJECT_NAME}
         Logger/Formatter.h
         Math/BasicType.h
         Reflection/MetaType.h
-        Reflection/MetaType.cpp
         Reflection/Interface/ISerializable.h
         Reflection/Serialization.h
         CommonMacro.h

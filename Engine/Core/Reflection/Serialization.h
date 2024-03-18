@@ -4,13 +4,12 @@
 #include "MetaType.h"
 #include "Reflection/TemplateType.h"
 
-#define JSON_SERIALIZE_VALUE_FROM_CLASS(type_name)                 \
-    if (strcmp(obj_type->GetName(), #type_name) == 0)              \
-    {                                                              \
-        out_json = *static_cast<type_name *>(object);              \
-        return;                                                    \
+#define JSON_SERIALIZE_VALUE_FROM_CLASS(type_name)                                                                     \
+    if (strcmp(obj_type->GetName(), #type_name) == 0)                                                                  \
+    {                                                                                                                  \
+        out_json = *static_cast<type_name *>(object);                                                                  \
+        return;                                                                                                        \
     }
-
 
 void Serialize(void *object, const Reflection::Class *obj_class, OUT Json::Value &out_json);
 
@@ -74,6 +73,26 @@ static void SerializeBaseType(void *object, const Reflection::Type *obj_type, OU
     JSON_SERIALIZE_VALUE_FROM_CLASS(unsigned long long)
 }
 
+// 序列化指针类型的变量 具体想法就是将object*转换为void** 看是不是空
+// 如果是空，那么就是null
+// 如果不是那么把指针指向对象的地址再传递给Serlize
+static void SerializePointer(void *object, const Reflection::Class *obj_class, OUT Json::Value &out_json)
+{
+    using namespace Reflection;
+    if (object == nullptr || obj_class == nullptr)
+    {
+        out_json = Json::nullValue;
+        return;
+    }
+    const auto *ptr = static_cast<void **>(object);
+    if (*ptr == nullptr)
+    {
+        out_json = Json::nullValue;
+        return;
+    }
+    Serialize(*ptr, obj_class, out_json);
+}
+
 /**
  * 序列化任意对象
  * @param object 一个对象
@@ -103,8 +122,19 @@ void Serialize(void *object, const Reflection::Class *obj_class, OUT Json::Value
     const auto all_fields = obj_class->GetAllFields();
     for (const auto field : all_fields)
     {
-        Serialize(obj_class->GetFieldAddress(object, field), static_cast<const Class *>(field->GetType()),
-                  out_json[field->GetName()]);
+        if (field)
+        {
+            if (field->IsPointer())
+            {
+                SerializePointer(obj_class->GetFieldAddress(object, field),
+                                 static_cast<const Class *>(field->GetType()), out_json[field->GetName()]);
+            }
+            else
+            {
+                Serialize(obj_class->GetFieldAddress(object, field), static_cast<const Class *>(field->GetType()),
+                          out_json[field->GetName()]);
+            }
+        }
     }
 }
 

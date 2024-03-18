@@ -50,6 +50,8 @@ const Type *GetType(T) noexcept
     return GetType<T>();
 }
 
+
+
 namespace Detail
 {
 /**
@@ -539,27 +541,7 @@ struct ClassBuilder
     TemplateArgument template_args[NFields + 1];
 };
 
-
-
-#define DECLARE_BASE_TYPE(TypeName)                                                                                    \
-template <> inline const Type *GetType<TypeName>() noexcept                                                        \
-{                                                                                                                  \
-static const Type type(#TypeName, sizeof(TypeName));                                                           \
-return &type;                                                                                                  \
-}
-
-DECLARE_BASE_TYPE(int)
-DECLARE_BASE_TYPE(double)
-DECLARE_BASE_TYPE(float)
-DECLARE_BASE_TYPE(char)
-DECLARE_BASE_TYPE(unsigned int)
-DECLARE_BASE_TYPE(unsigned char)
-DECLARE_BASE_TYPE(unsigned short)
-DECLARE_BASE_TYPE(unsigned long long)
-DECLARE_BASE_TYPE(long long)
-DECLARE_BASE_TYPE(short)
-DECLARE_BASE_TYPE(bool)
-
+#include "BaseType.h"
 #include "TemplateType.h"
 
 template <class T>
