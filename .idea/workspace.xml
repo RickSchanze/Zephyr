@@ -39,8 +39,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="feat(Reflection): 添加对指针成员变量的支持">
+    <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="feat(Reflection): 添加对vector指针的序列化支持例如vector&lt;int*&gt;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/Serialization.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/Serialization.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/TemplateType.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/TypeTraits.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/TypeTraits.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +90,6 @@
     <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/Interface/ISerializable.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/Serialization.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/TemplateType.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Function/Components/ComponentBase.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Function/Render/Renderer/BaseRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Function/Render/Renderer/StaticMeshRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -299,6 +303,8 @@
       <workItem from="1710727086338" duration="171000" />
       <workItem from="1710812535159" duration="673000" />
       <workItem from="1710815315234" duration="8000" />
+      <workItem from="1710815354411" duration="74000" />
+      <workItem from="1710817494330" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary="feat(Engine::Function): 封装MeshRendere">
       <option name="closed" value="true" />
@@ -412,7 +418,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710727225981</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="feat(Reflection): 添加对vector指针的序列化支持例如vector&lt;int*&gt;">
+      <option name="closed" value="true" />
+      <created>1710815395912</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1710815395912</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VCPKGProject">
@@ -447,7 +461,8 @@
     <MESSAGE value="feat(Reflection): 添加对std::vector&lt;T&gt;的反射支持" />
     <MESSAGE value="feat(Reflection): 提供对std::vector的序列化支持" />
     <MESSAGE value="feat(Reflection): 添加对指针成员变量的支持" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Reflection): 添加对指针成员变量的支持" />
+    <MESSAGE value="feat(Reflection): 添加对vector指针的序列化支持例如vector&lt;int*&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(Reflection): 添加对vector指针的序列化支持例如vector&lt;int*&gt;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

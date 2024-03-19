@@ -1,6 +1,3 @@
-#ifndef REFLECTION_TEMPLATE_TYPE_H
-#define REFLECTION_TEMPLATE_TYPE_H
-#include <vector>
 namespace Detail
 {
 /** Vector类型 手动重载 */
@@ -22,6 +19,24 @@ inline Type* GetTypeImpl(TypeTag<std::vector<T>>) noexcept
     return GetClassImpl(ClassTag<std::vector<T>>{});
 }
 
+/** 重载std::string */
+template <>
+inline Class *GetClassImpl(ClassTag<std::string>) noexcept
+{
+    static ClassBuilder<char, 0, 0, 1> builder([](auto self) {
+        self->template_args[0] = TemplateArgument{GetType<char>()};
+    });
+    static ClassTemplate cache(nullptr, builder.fields, builder.fields + builder.num_fields, "std::string",
+                               sizeof(std::string), TypeFlag::IsString, builder.template_args,
+                               builder.template_args + builder.num_template_args);
+    return &cache;
+}
+
+template <>
+inline Type* GetTypeImpl(TypeTag<std::string>) noexcept
+{
+    return GetClassImpl(ClassTag<std::string>{});
+}
+
 } // namespace Reflection::Detail
 
-#endif

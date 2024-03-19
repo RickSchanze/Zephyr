@@ -16,6 +16,7 @@ add_library(${PROJECT_NAME}
         Reflection/MetaType.h
         Reflection/Interface/ISerializable.h
         Reflection/Serialization.h
+        Reflection/TypeTraits.h
         CommonMacro.h
 )
 

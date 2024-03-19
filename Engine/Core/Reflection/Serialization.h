@@ -2,7 +2,6 @@
 #include "../CommonMacro.h"
 #include "Interface/ISerializable.h"
 #include "MetaType.h"
-#include "Reflection/TemplateType.h"
 
 #define JSON_SERIALIZE_VALUE_FROM_CLASS(type_name)                                                                     \
     if (strcmp(obj_type->GetName(), #type_name) == 0)                                                                  \
@@ -135,6 +134,19 @@ private:
         }
     }
 
+    static void SerializeString(void *object, const Reflection::Class *obj_class, const Reflection::Field *in_field,
+                                OUT Json::Value &out_json)
+    {
+        using namespace Reflection;
+        if (object == nullptr || obj_class == nullptr)
+        {
+            out_json = Json::nullValue;
+            return;
+        }
+        const auto *str = static_cast<std::string *>(object);
+        out_json = *str;
+    }
+
     /**
      * 序列化任意对象
      * @param object 一个对象
@@ -163,15 +175,24 @@ private:
             const auto *f_class = static_cast<const ClassTemplate *>(obj_class);
             return SerializeVector(object, f_class, in_field, out_json);
         }
+        // 序列化std::string
+        if (obj_class->GetFlag() == TypeFlag::IsString)
+        {
+            return SerializeString(object, obj_class,
+                      in_field, out_json);
+        }
         const auto all_fields = obj_class->GetAllFields();
         for (const auto field : all_fields)
         {
             if (field)
             {
                 // 如果是指针类型，那么就调用SerializePointer
+                // 这里加判断是因为判断的是Field的类型
+                // 而对于类型为vector的field来说,其field的IsPointer标志由vector
+                // 的模板类型决定，因此需要在这里再加一层
                 if (field->GetType()->GetFlag() == TypeFlag::IsVector)
                 {
-                    Serialize(obj_class->GetFieldAddress(object, field), static_cast<const Class *>(field->GetType()),
+                    SerializeVector(obj_class->GetFieldAddress(object, field), static_cast<const ClassTemplate *>(field->GetType()),
                               field, out_json[field->GetName()]);
                 }
                 else

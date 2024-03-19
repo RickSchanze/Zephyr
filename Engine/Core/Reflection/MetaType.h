@@ -79,6 +79,7 @@ enum class TypeFlag : uint8_t
     IsBaseType, /** 是一个基础类型，int,float,char... */
     IsClass,    /** 是一个类 */
     IsVector,   /** 是一个Vector */
+    IsString,   /** 是一个String */
 };
 
 class Type
@@ -86,7 +87,7 @@ class Type
 
 public:
     template <class T>
-    friend Class * ::Reflection::Detail::GetClassImpl(ClassTag<T>) noexcept;
+    friend Class * Detail::GetClassImpl(ClassTag<T>) noexcept;
 
     Type() noexcept = default;
 
@@ -190,7 +191,7 @@ public:
         return m_owner;
     }
     /** 设置字段的const reference pointer信息 */
-    void SetQualifier(bool is_const, bool is_reference, bool is_pointer)
+    void SetQualifier(const bool is_const, const bool is_reference, const bool is_pointer)
     {
         m_is_const = is_const;
         m_is_reference = is_reference;
@@ -554,7 +555,7 @@ struct ClassBuilder
 };
 
 #include "BaseType.h"
-#include "TemplateType.h"
+#include "TemplateType.h.inl"
 
 template <class T>
 const Class *GetClass() noexcept
