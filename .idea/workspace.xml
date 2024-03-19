@@ -11,24 +11,24 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="Zephyr" targetName="Platform" />
-      <config projectName="Zephyr" targetName="glfw" />
-      <config projectName="Zephyr" targetName="zlibstatic" />
-      <config projectName="Zephyr" targetName="Function" />
-      <config projectName="Zephyr" targetName="imgui" />
-      <config projectName="Zephyr" targetName="uninstall" />
-      <config projectName="Zephyr" targetName="spdlog" />
       <config projectName="Zephyr" targetName="Core" />
       <config projectName="Zephyr" targetName="Editor" />
+      <config projectName="Zephyr" targetName="Platform" />
       <config projectName="Zephyr" targetName="glm" />
       <config projectName="Zephyr" targetName="stbimage" />
+      <config projectName="Zephyr" targetName="glfw" />
+      <config projectName="Zephyr" targetName="zlibstatic" />
       <config projectName="Zephyr" targetName="Widgets" />
+      <config projectName="Zephyr" targetName="Function" />
       <config projectName="Zephyr" targetName="UpdateAssimpLibsDebugSymbolsAndDLLs" />
       <config projectName="Zephyr" targetName="unit" />
       <config projectName="Zephyr" targetName="update_mappings" />
       <config projectName="Zephyr" targetName="Resource" />
       <config projectName="Zephyr" targetName="assimp" />
       <config projectName="Zephyr" targetName="glad" />
+      <config projectName="Zephyr" targetName="imgui" />
+      <config projectName="Zephyr" targetName="uninstall" />
+      <config projectName="Zephyr" targetName="spdlog" />
       <config projectName="Zephyr" targetName="Zephyr" />
     </generated>
   </component>
@@ -39,7 +39,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="feat(Reflection): 提供对std::vector的序列化支持" />
+    <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="feat(Reflection): 添加对指针成员变量的支持">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,11 +81,11 @@
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/xutility" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Editor/Application.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/CommonMacro.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/BaseType.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/Interface/ISerializable.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/MetaType.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/Serialization.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/TemplateType.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/TemplateType.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Function/Components/ComponentBase.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Function/Render/Renderer/BaseRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Function/Render/Renderer/StaticMeshRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -96,12 +98,12 @@
     <setting file="file://$PROJECT_DIR$/Engine/Resource/Geometry/Model.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Finder.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Finder.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Reflection/ReflectedClass.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/ReflectedClass.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/ReflectedClass.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Release/Test.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Release/Test1.generated.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Release/Test1.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Reflection/main.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/main.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ThirdParty/glfw/deps/glad/gles2.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ThirdParty/glfw/src/wl_window.c" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/main.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -133,6 +135,7 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
@@ -243,25 +246,25 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake 应用程序.Zephyr" />
-      <item itemvalue="CMake 应用程序.Editor" />
-      <item itemvalue="CMake 应用程序.Widgets" />
+      <item itemvalue="Google Test.unit" />
       <item itemvalue="CMake 应用程序.Core" />
+      <item itemvalue="CMake 应用程序.Editor" />
       <item itemvalue="CMake 应用程序.Function" />
       <item itemvalue="CMake 应用程序.Platform" />
       <item itemvalue="CMake 应用程序.Resource" />
       <item itemvalue="CMake 应用程序.UpdateAssimpLibsDebugSymbolsAndDLLs" />
+      <item itemvalue="CMake 应用程序.Widgets" />
+      <item itemvalue="CMake 应用程序.Zephyr" />
       <item itemvalue="CMake 应用程序.assimp" />
-      <item itemvalue="CMake 应用程序.zlibstatic" />
       <item itemvalue="CMake 应用程序.glad" />
-      <item itemvalue="CMake 应用程序.uninstall" />
       <item itemvalue="CMake 应用程序.glfw" />
-      <item itemvalue="CMake 应用程序.update_mappings" />
       <item itemvalue="CMake 应用程序.glm" />
       <item itemvalue="CMake 应用程序.imgui" />
       <item itemvalue="CMake 应用程序.spdlog" />
       <item itemvalue="CMake 应用程序.stbimage" />
-      <item itemvalue="Google Test.unit" />
+      <item itemvalue="CMake 应用程序.uninstall" />
+      <item itemvalue="CMake 应用程序.update_mappings" />
+      <item itemvalue="CMake 应用程序.zlibstatic" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
@@ -293,7 +296,9 @@
       <workItem from="1710548599907" duration="2826000" />
       <workItem from="1710554625197" duration="473000" />
       <workItem from="1710643136560" duration="120000" />
-      <workItem from="1710727086338" duration="1000" />
+      <workItem from="1710727086338" duration="171000" />
+      <workItem from="1710812535159" duration="673000" />
+      <workItem from="1710815315234" duration="8000" />
     </task>
     <task id="LOCAL-00001" summary="feat(Engine::Function): 封装MeshRendere">
       <option name="closed" value="true" />
@@ -399,7 +404,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710643243833</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="feat(Reflection): 添加对指针成员变量的支持">
+      <option name="closed" value="true" />
+      <created>1710727225981</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1710727225981</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VCPKGProject">
@@ -433,7 +446,8 @@
     <MESSAGE value="style(git): 将jsoncpp添加至submodule" />
     <MESSAGE value="feat(Reflection): 添加对std::vector&lt;T&gt;的反射支持" />
     <MESSAGE value="feat(Reflection): 提供对std::vector的序列化支持" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Reflection): 提供对std::vector的序列化支持" />
+    <MESSAGE value="feat(Reflection): 添加对指针成员变量的支持" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(Reflection): 添加对指针成员变量的支持" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

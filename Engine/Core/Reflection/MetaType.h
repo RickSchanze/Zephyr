@@ -7,6 +7,8 @@
 
 #ifndef METATYPE_H
 #define METATYPE_H
+#include "TypeTraits.h"
+
 #include <algorithm>
 #include <cstddef>
 #include <cstdint>
@@ -122,6 +124,7 @@ protected:
     const char *m_name = nullptr;
 };
 
+// TODO: 将bool表示Qualifier变为使用enum表示
 class Field
 {
 
@@ -153,7 +156,16 @@ public:
     static Field MakeField(const char *name, const uint32_t offset)
     {
         auto rtn = Field(::Reflection::GetType<T>(), name, offset);
-        rtn.SetQualifier<T>();
+        // 如果检测出T是一个std::vector,则其Qualifier将会设置为vector元素类型对应的Qualifier
+        if constexpr (IsStdVector<T>::value)
+        {
+            using element_type = typename ExtractStdVectorType<T>::type;
+            rtn.SetQualifier<element_type>();
+        }
+        else
+        {
+            rtn.SetQualifier<T>();
+        }
         return rtn;
     }
 
