@@ -52,8 +52,6 @@ const Type *GetType(T) noexcept
     return GetType<T>();
 }
 
-
-
 namespace Detail
 {
 /**
@@ -70,24 +68,12 @@ template <class T>
 Type *GetTypeImpl(TypeTag<T>) noexcept;
 } // namespace Detail
 
-/**
- * 表示一个Type的Flag
- * 只支持有限的模板
- */
-enum class TypeFlag : uint8_t
-{
-    IsBaseType, /** 是一个基础类型，int,float,char... */
-    IsClass,    /** 是一个类 */
-    IsVector,   /** 是一个Vector */
-    IsString,   /** 是一个String */
-};
-
 class Type
 {
 
 public:
     template <class T>
-    friend Class * Detail::GetClassImpl(ClassTag<T>) noexcept;
+    friend Class *Detail::GetClassImpl(ClassTag<T>) noexcept;
 
     Type() noexcept = default;
 
@@ -95,10 +81,8 @@ public:
      * 构造Type
      * @param name 类型名
      * @param size 大小
-     * @param flag 表示这个类型是一个基础类型、类还是模板
      */
-    Type(const char *name, const uint32_t size, const TypeFlag flag = TypeFlag::IsBaseType) noexcept
-        : m_size(size), m_flag(flag), m_name(name)
+    Type(const char *name, const uint32_t size) noexcept : m_size(size), m_name(name)
     {
     }
 
@@ -113,23 +97,52 @@ public:
         return m_size;
     }
 
-    /** 获取类型的Flag */
-    TypeFlag GetFlag() const noexcept
-    {
-        return m_flag;
-    }
-
 protected:
     uint32_t m_size = 0;
-    TypeFlag m_flag = TypeFlag::IsBaseType;
     const char *m_name = nullptr;
 };
 
+class JsonSerializer;
 // TODO: 将bool表示Qualifier变为使用enum表示
 class Field
 {
-
 public:
+    /**
+     * 标识这个字段的属性信息，可以进行组合，例如
+     * FQ_Vector | FQ_Pointer表示此字段是一个vector,元素是指针
+     * 注意：不能输入容器指针
+     */
+    enum FieldQualifier
+    {
+        // clang-format off
+        FQ_Pointer      = 0b00000001,
+        FQ_Const        = 0b00000010,
+        FQ_Reference    = 0b00000100,
+        // clang-format on
+    };
+
+    /**
+     * 表示特殊重载类型,Normal,Vector,String...
+     */
+    enum class TypeQualifier : uint8_t
+    {
+        Normal, // 普通类型
+        Vector, // std::vector
+        String, // std::string
+        // 接下来是最基础的类型
+        Int8,   // int8_t
+        Int16,  // int16_t
+        Int32,  // int32_t
+        Int64,  // int64_t
+        UInt8,  // uint8_t
+        UInt16, // uint16_t
+        UInt32, // uint32_t
+        UInt64, // uint64_t
+        Float,  // float
+        Double, // double
+        Bool,   // bool
+    };
+
     template <typename Type, size_t NFields, size_t NFunctions, size_t NTemplateArgs>
     friend struct ClassBuilder;
 
@@ -142,8 +155,20 @@ public:
      * @param offset 字段类内偏移
      */
     Field(const Type *type, const char *name, const uint32_t offset) noexcept
-        : m_type(type), m_name(name), m_offset(offset)
+        : m_type(type), m_name(name), m_offset(offset), m_field_qualifier(0)
     {
+    }
+
+    Field(const Field &another)
+        : m_type(another.m_type), m_name(another.m_name), m_owner(another.m_owner), m_offset(another.m_offset),
+          m_field_qualifier(another.m_field_qualifier), m_type_qualifier(another.m_type_qualifier)
+    {
+    }
+
+#define BASE_TYPE_QUALIFIER(type_name, enum_name)                                                                      \
+    else if constexpr (std::is_same_v<std::remove_pointer_t<std::decay_t<T>>, type_name>)                              \
+    {                                                                                                                  \
+        rtn.m_type_qualifier = TypeQualifier::enum_name;                                                               \
     }
 
     /**
@@ -156,19 +181,44 @@ public:
     template <typename T>
     static Field MakeField(const char *name, const uint32_t offset)
     {
-        auto rtn = Field(::Reflection::GetType<T>(), name, offset);
-        // 如果检测出T是一个std::vector,则其Qualifier将会设置为vector元素类型对应的Qualifier
-        if constexpr (IsStdVector<T>::value)
+        using vec_element_type = typename ExtractStdVectorType<T>::type;
+        auto rtn = Field(::Reflection::GetType<vec_element_type>(), name, offset);
+        // 指定TypeQualifier
         {
-            using element_type = typename ExtractStdVectorType<T>::type;
-            rtn.SetQualifier<element_type>();
+            // 如果检测出T是一个std::vector,则其Qualifier将会设置为vector元素类型对应的Qualifier
+            if constexpr (IsStdVector<T>::value)
+            {
+                // 容器为最顶层元素
+                rtn.m_type_qualifier = TypeQualifier::Vector;
+            }
+            // 判断是不是string
+            else if constexpr (IsStdString<std::remove_pointer_t<std::decay_t<T>>>::value)
+            {
+                rtn.m_type_qualifier = TypeQualifier::String;
+            }
+            BASE_TYPE_QUALIFIER(int8_t, Int8)
+            BASE_TYPE_QUALIFIER(int16_t, Int16)
+            BASE_TYPE_QUALIFIER(int32_t, Int32)
+            BASE_TYPE_QUALIFIER(int64_t, Int64)
+            BASE_TYPE_QUALIFIER(uint8_t, UInt8)
+            BASE_TYPE_QUALIFIER(uint16_t, UInt16)
+            BASE_TYPE_QUALIFIER(uint32_t, UInt32)
+            BASE_TYPE_QUALIFIER(uint64_t, UInt64)
+            BASE_TYPE_QUALIFIER(float, Float)
+            BASE_TYPE_QUALIFIER(double, Double)
+            BASE_TYPE_QUALIFIER(bool, Bool)
         }
-        else
+        // 指定FieldQualifier
         {
-            rtn.SetQualifier<T>();
+            // 判断是不是基础类型
+            rtn.m_field_qualifier |= std::is_const_v<vec_element_type> ? FQ_Const : 0;
+            rtn.m_field_qualifier |= std::is_reference_v<vec_element_type> ? FQ_Reference : 0;
+            rtn.m_field_qualifier |= std::is_pointer_v<vec_element_type> ? FQ_Pointer : 0;
         }
         return rtn;
     }
+
+#undef BASE_TYPE_QUALIFIER
 
     /** 获得这个字段的类型 */
     const Type *GetType() const noexcept
@@ -190,33 +240,41 @@ public:
     {
         return m_owner;
     }
-    /** 设置字段的const reference pointer信息 */
-    void SetQualifier(const bool is_const, const bool is_reference, const bool is_pointer)
-    {
-        m_is_const = is_const;
-        m_is_reference = is_reference;
-        m_is_pointer = is_pointer;
-    }
-    /** 自动设置字段的const reference pointer信息 */
-    template <typename T>
-    void SetQualifier()
-    {
-        SetQualifier(std::is_const_v<T>, std::is_reference_v<T>, std::is_pointer_v<T>);
-    }
-    /** 字段被生命为const? */
+
+    /** 字段被声明为const? */
     bool IsConst() const noexcept
     {
-        return m_is_const;
+        return m_field_qualifier & FQ_Const;
     }
-    /** 字段被生命为reference? */
+    /** 字段被声明为reference? */
     bool IsReference() const noexcept
     {
-        return m_is_reference;
+        return m_field_qualifier & FQ_Reference;
     }
-    /** 字段被生命为pointer? */
+    /** 字段被声明为pointer? */
     bool IsPointer() const noexcept
     {
-        return m_is_pointer;
+        return m_field_qualifier & FQ_Pointer;
+    }
+
+    TypeQualifier GetTypeQualifier() const noexcept
+    {
+        return m_type_qualifier;
+    }
+
+    int32_t GetFieldQualifier() const noexcept
+    {
+        return m_field_qualifier;
+    }
+
+    void SetFieldQualifier(const int32_t Field_qualifier) noexcept
+    {
+        m_field_qualifier = Field_qualifier;
+    }
+
+    void SetTypeQualifier(const TypeQualifier type_qualifier) noexcept
+    {
+        m_type_qualifier = type_qualifier;
     }
 
 private:
@@ -231,9 +289,9 @@ protected:
     Class *m_owner{};
     uint32_t m_offset{};
 
-    bool m_is_const = false;
-    bool m_is_reference = false;
-    bool m_is_pointer = false;
+    // 字段标志
+    int32_t m_field_qualifier = 0;
+    TypeQualifier m_type_qualifier = TypeQualifier::Normal;
 };
 
 class Class : public Type
@@ -248,11 +306,9 @@ public:
      * @param field_end 本类字段末尾指针
      * @param name 类型名
      * @param size 类型大小
-     * @param flag 类型Flag
      */
-    Class(const Class *base, Field *field_begin, Field *field_end, const char *name, const uint32_t size,
-          TypeFlag flag = TypeFlag::IsClass) noexcept
-        : Type(name, size, flag), m_base_class(base), m_fields(field_begin), m_fields_end(field_end)
+    Class(const Class *base, Field *field_begin, Field *field_end, const char *name, const uint32_t size) noexcept
+        : Type(name, size), m_base_class(base), m_fields(field_begin), m_fields_end(field_end)
     {
     }
 
@@ -509,9 +565,8 @@ class ClassTemplate : public Class
 {
 public:
     ClassTemplate(const Class *base, Field *field_begin, Field *field_end, const char *name, const uint32_t size,
-                  const TypeFlag flag, TemplateArgument *template_begin, TemplateArgument *template_end)
-        : Class(base, field_begin, field_end, name, size, flag), m_t_args_begin(template_begin),
-          m_t_args_end(template_end)
+                  TemplateArgument *template_begin, TemplateArgument *template_end)
+        : Class(base, field_begin, field_end, name, size), m_t_args_begin(template_begin), m_t_args_end(template_end)
     {
     }
 
@@ -555,7 +610,6 @@ struct ClassBuilder
 };
 
 #include "BaseType.h"
-#include "TemplateType.h.inl"
 
 template <class T>
 const Class *GetClass() noexcept

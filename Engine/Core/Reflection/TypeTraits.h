@@ -36,6 +36,7 @@ struct IsStdString
     static constexpr bool value = false;
 };
 
+
 template <>
 struct IsStdString<std::string>
 {
