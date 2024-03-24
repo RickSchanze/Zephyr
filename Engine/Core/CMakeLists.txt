@@ -18,6 +18,7 @@ add_library(${PROJECT_NAME}
         Reflection/JsonSerializer.cpp
         Reflection/TypeTraits.h
         CommonMacro.h
+        Coroutine/Test.h
 )
 
 target_link_libraries(${PROJECT_NAME}
@@ -25,6 +26,7 @@ target_link_libraries(${PROJECT_NAME}
         glm
         utf8cpp
         jsoncpp_lib
+        Asio
 )
 
 get_target_property(JSON_INC_PATH jsoncpp_lib INTERFACE_INCLUDE_DIRECTORIES)

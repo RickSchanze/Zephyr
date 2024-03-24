@@ -39,17 +39,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="feat(Reflection): 添加对std::string的序列化支持">
-      <change afterPath="$PROJECT_DIR$/Engine/Core/Reflection/JsonSerializer.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Core/Reflection/JsonSerializer.h" afterDir="false" />
+    <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="refactor(Reflection): 重构序列化代码，将所有标志信息记录在Field而不是Class">
+      <change afterPath="$PROJECT_DIR$/Engine/Core/Coroutine/Coroutine.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ThirdParty/asio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ThirdParty/asio/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Editor/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Editor/Application.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Editor/Application.h" beforeDir="false" afterPath="$PROJECT_DIR$/Editor/Application.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Core/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/BaseType.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/BaseType.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/Interface/ISerializable.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/Serialization.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/TemplateType.h.inl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/TypeTraits.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/TypeTraits.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThirdParty/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ThirdParty/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +91,8 @@
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/xutility" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Editor/Application.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/CommonMacro.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/BaseType.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Coroutine/Test.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/BaseType.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Function/Components/ComponentBase.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Function/Render/Renderer/BaseRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -110,6 +112,8 @@
     <setting file="file://$PROJECT_DIR$/Reflection/Release/Test1.generated.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Release/Test1.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/main.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ThirdParty/asio/asio/src/examples/cpp20/coroutines/chat_server.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ThirdParty/asio/asio/src/examples/cpp20/coroutines/timeout.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ThirdParty/glfw/deps/glad/gles2.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ThirdParty/glfw/src/wl_window.c" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/main.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -158,7 +162,12 @@
       <recent name="C:\Users\Echo\BaiduSyncDisk\Work\Projects\Zephyr\Engine\Core" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake 应用程序.Core">
+  <component name="RunManager" selected="CMake 应用程序.Zephyr">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="unit" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="unit" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Zephyr" RUN_TARGET_NAME="unit" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -256,7 +265,6 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Google Test.unit" />
       <item itemvalue="CMake 应用程序.Core" />
       <item itemvalue="CMake 应用程序.Editor" />
       <item itemvalue="CMake 应用程序.Function" />
@@ -275,6 +283,7 @@
       <item itemvalue="CMake 应用程序.uninstall" />
       <item itemvalue="CMake 应用程序.update_mappings" />
       <item itemvalue="CMake 应用程序.zlibstatic" />
+      <item itemvalue="Google Test.unit" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
@@ -313,6 +322,8 @@
       <workItem from="1710817494330" duration="59000" />
       <workItem from="1710817572067" duration="89000" />
       <workItem from="1711125444161" duration="93000" />
+      <workItem from="1711253569958" duration="2000" />
+      <workItem from="1711254058952" duration="1876000" />
     </task>
     <task id="LOCAL-00001" summary="feat(Engine::Function): 封装MeshRendere">
       <option name="closed" value="true" />

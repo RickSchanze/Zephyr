@@ -19,3 +19,6 @@
 [submodule "ThirdParty/jsoncpp"]
 	path = ThirdParty/jsoncpp
 	url = https://github.com/open-source-parsers/jsoncpp
+[submodule "ThirdParty/asio"]
+	path = ThirdParty/asio
+	url = https://github.com/RickSchanze/asio.git
