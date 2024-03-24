@@ -1,5 +1,6 @@
 #ifndef BASETYPE_H
 #define BASETYPE_H
+#include <cstdint>
 namespace Detail
 {
 

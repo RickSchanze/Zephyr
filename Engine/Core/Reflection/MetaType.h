@@ -609,7 +609,7 @@ struct ClassBuilder
     TemplateArgument template_args[NFields + 1];
 };
 
-#include "BaseType.h"
+#include "BaseType.h.inl"
 
 template <class T>
 const Class *GetClass() noexcept

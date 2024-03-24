@@ -4,7 +4,6 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ThirdParty/asio" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ThirdParty/assimp" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/ThirdParty/doctest" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ThirdParty/glfw" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ThirdParty/glm" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ThirdParty/imgui" vcs="Git" />

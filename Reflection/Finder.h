@@ -11,6 +11,8 @@
 
 #include "clang/ASTMatchers/ASTMatchFinder.h"
 
+#include <filesystem>
+
 class Finder : public clang::ast_matchers::MatchFinder::MatchCallback
 {
     using SourceManager = clang::SourceManager;
@@ -20,6 +22,7 @@ public:
     using MatchFinder = clang::ast_matchers::MatchFinder;
     void run(const MatchFinder::MatchResult &Result) override;
     void onEndOfTranslationUnit() override;
+    static inline std::filesystem::path output_file_path = "./";
 
 protected:
     void FoundField(const clang::FieldDecl *field);

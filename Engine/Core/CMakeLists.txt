@@ -17,6 +17,9 @@ set(LIB_FILES
         Reflection/JsonSerializer.cpp
         Reflection/TypeTraits.h
         Coroutine/Coroutine.h
+
+        ReflectionClasses.h
+        ReflectionClasses.cpp
 )
 
 add_library(${PROJECT_NAME}

@@ -1,3 +1,7 @@
 Debug
 Release
 .idea/copilot
+cmake-build-debug
+cmake-build-release
+Generated
+cmake-build--relwithdebinfo

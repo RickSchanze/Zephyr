@@ -5,6 +5,8 @@
  * @brief
  */
 #include "Finder.h"
+
+#include <filesystem>
 #include <iostream>
 #include <ranges>
 
@@ -27,7 +29,8 @@ void Finder::onEndOfTranslationUnit()
     std::error_code ec;
     if (m_classes.empty())
         return;
-    llvm::raw_fd_ostream os(m_filename, ec);
+    const auto path = output_file_path / m_filename;
+    llvm::raw_fd_ostream os(path.string(), ec);
     assert(!ec && "error opening file");
     os << "#pragma once\n";
     os << "#include \"Reflection/MetaType.h\"\n";
@@ -40,6 +43,9 @@ void Finder::onEndOfTranslationUnit()
 void Finder::FoundField(const FieldDecl *field)
 {
     m_filename = m_sourceman->getFilename(field->getLocation()).str();
+    if (m_filename.ends_with(".generated.h")) return;
+    const auto file_path = std::filesystem::path(m_filename);
+    m_filename = file_path.filename().string();
     m_filename.erase(m_filename.end() - 2, m_filename.end());
     m_filename.append(".generated.h");
     const auto parent_class = static_cast<const CXXRecordDecl *>(field->getParent());

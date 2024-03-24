@@ -1,4 +1,5 @@
-#pragma once
+#ifndef REFLECTION_CLASSES_H
+#define REFLECTION_CLASSES_H
 #include "CommonMacro.h"
 
 #include <string>
@@ -16,6 +17,8 @@ public:
     float a4 = 4;
     PROPERTY()
     double a5 = 5;
+    PROPERTY()
+    std::string a6 = "Hello";
 };
 
 class B : public A {
@@ -54,3 +57,4 @@ public:
     PROPERTY() C d4{};
     PROPERTY() std::vector<std::string*> d5;
 };
+#endif

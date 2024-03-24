@@ -1,6 +1,0 @@
-C:\Users\Echo\BaiduSyncDisk\Work\Projects\Zephyr\Engine\Core
-C:\Users\Echo\BaiduSyncDisk\Work\Projects\Zephyr\Engine\Resource
-C:\Users\Echo\BaiduSyncDisk\Work\Projects\Zephyr\Engine\Platform
-C:\Users\Echo\BaiduSyncDisk\Work\Projects\Zephyr\Engine\Funcation
-C:\Users\Echo\BaiduSyncDisk\Work\Projects\Zephyr\Editor
-C:\Users\Echo\BaiduSyncDisk\Work\Projects\Zephyr\Editor\Widgets
