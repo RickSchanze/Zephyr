@@ -14,7 +14,6 @@
     }
 
 void JsonSerializer::SerializePointer(void *object, const Reflection::Field *in_field, Json::Value &out_json)
-
 {
     using namespace Reflection;
     if (object == nullptr || in_field == nullptr)

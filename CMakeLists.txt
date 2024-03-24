@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.26)
 project(Zephyr)
 
+#find_package(jsoncpp CONFIG REQUIRED)
+
 if (MSVC)
     add_compile_options("/source-charset:utf-8" "/execution-charset:utf-8")
     add_compile_options("/wd4996")
@@ -24,8 +26,12 @@ add_subdirectory(Editor)
 add_subdirectory(Engine)
 add_subdirectory(ThirdParty)
 
+include_directories(${JSON_INC_PATH})#通过这个来添加库
+
 add_executable(Zephyr
-        "main.cpp"
+        main.cpp
+        ReflectionClasses.h
+        ReflectionClasses.cpp
 )
 
-target_link_libraries(${PROJECT_NAME} Engine::Core Editor)
+target_link_libraries(${PROJECT_NAME} Engine::Core Editor jsoncpp_static)

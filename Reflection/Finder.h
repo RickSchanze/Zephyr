@@ -1,8 +1,8 @@
 /**
  * @file Finder.h
- * @author Echo 
+ * @author Echo
  * @Date 24-3-12
- * @brief 
+ * @brief
  */
 
 #ifndef FINDER_H
@@ -11,30 +11,30 @@
 
 #include "clang/ASTMatchers/ASTMatchFinder.h"
 
-
-class Finder : public clang::ast_matchers::MatchFinder::MatchCallback {
-  using SourceManager = clang::SourceManager;
-  using ASTContext = clang::ASTContext;
+class Finder : public clang::ast_matchers::MatchFinder::MatchCallback
+{
+    using SourceManager = clang::SourceManager;
+    using ASTContext = clang::ASTContext;
 
 public:
-  using MatchFinder = clang::ast_matchers::MatchFinder;
-  void run(const MatchFinder::MatchResult &Result) override;
-  void onEndOfTranslationUnit() override;
+    using MatchFinder = clang::ast_matchers::MatchFinder;
+    void run(const MatchFinder::MatchResult &Result) override;
+    void onEndOfTranslationUnit() override;
 
 protected:
-  void FoundField(const clang::FieldDecl *field);
+    void FoundField(const clang::FieldDecl *field);
 
 private:
-  std::map<std::string, ReflectedClass> m_classes;
-  ASTContext *m_context = nullptr;
-  SourceManager *m_sourceman = nullptr;
-  std::string m_filename;
+    std::map<std::string, ReflectedClass> m_classes;
+    ASTContext *m_context = nullptr;
+    SourceManager *m_sourceman = nullptr;
+    std::string m_filename;
 };
 
-class GeneratorDiagnosticConsumer : public clang::DiagnosticConsumer {
+class GeneratorDiagnosticConsumer : public clang::DiagnosticConsumer
+{
 public:
-  void HandleDiagnostic(clang::DiagnosticsEngine::Level DiagLevel, const clang::Diagnostic &Info) override;
+    void HandleDiagnostic(clang::DiagnosticsEngine::Level DiagLevel, const clang::Diagnostic &Info) override;
 };
 
-
-#endif //FINDER_H
+#endif // FINDER_H

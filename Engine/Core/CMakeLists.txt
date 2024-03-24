@@ -1,8 +1,7 @@
 project(Core)
 
-find_package(jsoncpp REQUIRED CONFIG)
-
-add_library(${PROJECT_NAME}
+set(LIB_FILES
+        CommonMacro.h
         Event/Event.h
         Utils/Guid.h
         Utils/Guid.cpp
@@ -17,24 +16,21 @@ add_library(${PROJECT_NAME}
         Reflection/JsonSerializer.h
         Reflection/JsonSerializer.cpp
         Reflection/TypeTraits.h
-        CommonMacro.h
-        Coroutine/Test.h
+        Coroutine/Coroutine.h
+)
+
+add_library(${PROJECT_NAME}
+    ${LIB_FILES}
 )
 
 target_link_libraries(${PROJECT_NAME}
         spdlog::spdlog
         glm
         utf8cpp
-        jsoncpp_lib
+        jsoncpp_static
         Asio
 )
 
-get_target_property(JSON_INC_PATH jsoncpp_lib INTERFACE_INCLUDE_DIRECTORIES)
-include_directories(${JSON_INC_PATH})
-
 add_library(Engine::Core ALIAS ${PROJECT_NAME})
-
 target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR})
-
-target_link_libraries(${PROJECT_NAME} jsoncpp_lib)
 

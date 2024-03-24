@@ -11,25 +11,59 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="Zephyr" targetName="Core" />
-      <config projectName="Zephyr" targetName="Editor" />
+      <config projectName="Zephyr" targetName="NightlyCoverage" />
+      <config projectName="Zephyr" targetName="jsoncpp_object" />
       <config projectName="Zephyr" targetName="Platform" />
-      <config projectName="Zephyr" targetName="glm" />
+      <config projectName="Zephyr" targetName="imgui" />
+      <config projectName="Zephyr" targetName="ContinuousStart" />
+      <config projectName="Zephyr" targetName="jsoncpp_readerwriter_tests" />
+      <config projectName="Zephyr" targetName="Core" />
+      <config projectName="Zephyr" targetName="NightlyMemoryCheck" />
+      <config projectName="Zephyr" targetName="Editor" />
       <config projectName="Zephyr" targetName="stbimage" />
+      <config projectName="Zephyr" targetName="ExperimentalCoverage" />
+      <config projectName="Zephyr" targetName="jsoncpp_static" />
+      <config projectName="Zephyr" targetName="jsoncpp_test" />
+      <config projectName="Zephyr" targetName="update_mappings" />
+      <config projectName="Zephyr" targetName="ExperimentalTest" />
+      <config projectName="Zephyr" targetName="NightlyConfigure" />
+      <config projectName="Zephyr" targetName="glad" />
+      <config projectName="Zephyr" targetName="NightlyMemCheck" />
+      <config projectName="Zephyr" targetName="NightlyTest" />
+      <config projectName="Zephyr" targetName="ContinuousBuild" />
+      <config projectName="Zephyr" targetName="ContinuousCoverage" />
+      <config projectName="Zephyr" targetName="ExperimentalStart" />
+      <config projectName="Zephyr" targetName="Continuous" />
+      <config projectName="Zephyr" targetName="ContinuousUpdate" />
+      <config projectName="Zephyr" targetName="ExperimentalBuild" />
+      <config projectName="Zephyr" targetName="jsoncpp_check" />
+      <config projectName="Zephyr" targetName="ExperimentalConfigure" />
       <config projectName="Zephyr" targetName="glfw" />
       <config projectName="Zephyr" targetName="zlibstatic" />
-      <config projectName="Zephyr" targetName="Widgets" />
+      <config projectName="Zephyr" targetName="ContinuousConfigure" />
+      <config projectName="Zephyr" targetName="NightlyUpdate" />
       <config projectName="Zephyr" targetName="Function" />
-      <config projectName="Zephyr" targetName="UpdateAssimpLibsDebugSymbolsAndDLLs" />
-      <config projectName="Zephyr" targetName="unit" />
-      <config projectName="Zephyr" targetName="update_mappings" />
-      <config projectName="Zephyr" targetName="Resource" />
-      <config projectName="Zephyr" targetName="assimp" />
-      <config projectName="Zephyr" targetName="glad" />
-      <config projectName="Zephyr" targetName="imgui" />
+      <config projectName="Zephyr" targetName="ContinuousMemCheck" />
+      <config projectName="Zephyr" targetName="ExperimentalUpdate" />
+      <config projectName="Zephyr" targetName="ExperimentalMemCheck" />
+      <config projectName="Zephyr" targetName="NightlyStart" />
+      <config projectName="Zephyr" targetName="jsontestrunner_exe" />
+      <config projectName="Zephyr" targetName="ContinuousTest" />
+      <config projectName="Zephyr" targetName="ContinuousSubmit" />
       <config projectName="Zephyr" targetName="uninstall" />
       <config projectName="Zephyr" targetName="spdlog" />
+      <config projectName="Zephyr" targetName="NightlyBuild" />
+      <config projectName="Zephyr" targetName="glm" />
+      <config projectName="Zephyr" targetName="Widgets" />
+      <config projectName="Zephyr" targetName="UpdateAssimpLibsDebugSymbolsAndDLLs" />
+      <config projectName="Zephyr" targetName="unit" />
+      <config projectName="Zephyr" targetName="Resource" />
+      <config projectName="Zephyr" targetName="assimp" />
+      <config projectName="Zephyr" targetName="ExperimentalSubmit" />
+      <config projectName="Zephyr" targetName="Nightly" />
       <config projectName="Zephyr" targetName="Zephyr" />
+      <config projectName="Zephyr" targetName="NightlySubmit" />
+      <config projectName="Zephyr" targetName="Experimental" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -39,16 +73,24 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="refactor(Reflection): 重构序列化代码，将所有标志信息记录在Field而不是Class">
-      <change afterPath="$PROJECT_DIR$/Engine/Core/Coroutine/Coroutine.h" afterDir="false" />
+    <list default="true" id="d5fa55ce-acb0-4289-b494-028755409ed6" name="更改" comment="feat(ThirdParty): 引入asio 主要为了协程">
+      <change afterPath="$PROJECT_DIR$/ReflectionClasses.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReflectionClasses.generated.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReflectionClasses.h" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ThirdParty/asio" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ThirdParty/asio/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Editor/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Editor/Application.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Editor/Application.h" beforeDir="false" afterPath="$PROJECT_DIR$/Editor/Application.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Core/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/CommonMacro.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/CommonMacro.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/JsonSerializer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/JsonSerializer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reflection/Finder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Reflection/Finder.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reflection/Finder.h" beforeDir="false" afterPath="$PROJECT_DIR$/Reflection/Finder.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reflection/ReflectedClass.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Reflection/ReflectedClass.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reflection/ReflectedClass.h" beforeDir="false" afterPath="$PROJECT_DIR$/Reflection/ReflectedClass.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reflection/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Reflection/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ThirdParty/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ThirdParty/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
@@ -57,7 +99,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -83,17 +125,30 @@
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files (x86)/LLVM/include/llvm/ADT/Twine.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files (x86)/LLVM/include/llvm/Support/FileSystem.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files (x86)/LLVM/include/llvm/Support/raw_ostream.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../../Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/combaseapi.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/filesystem" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/utility" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/vector" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/xmemory" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/xstring" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/xutility" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Editor/Application.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Editor/Application.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Editor/Widgets/BaseWindow.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Editor/Widgets/ConsoleWindow.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/CommonMacro.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Engine/Core/Coroutine/Test.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Coroutine/Coroutine.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Logger/Logger.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Math/BasicType.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/BaseType.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/JsonSerializer.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/JsonSerializer.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/TypeTraits.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Utils/Guid.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Utils/Guid.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Utils/Singleton.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Utils/TypeConverter.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Function/Components/ComponentBase.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Function/Render/Renderer/BaseRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Function/Render/Renderer/StaticMeshRenderer.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -104,18 +159,23 @@
     <setting file="file://$PROJECT_DIR$/Engine/Resource/Geometry/Material.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Resource/Geometry/Mesh.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Resource/Geometry/Model.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Reflection/Finder.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Reflection/Finder.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Reflection/ReflectedClass.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Reflection/ReflectedClass.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/Finder.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/Finder.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/ReflectedClass.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/ReflectedClass.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Release/Test.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Release/Test1.generated.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Release/Test1.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Reflection/main.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/main.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ReflectionClasses.generated.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ReflectionClasses.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ThirdParty/asio/asio/src/examples/cpp20/coroutines/chat_server.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ThirdParty/asio/asio/src/examples/cpp20/coroutines/timeout.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ThirdParty/glfw/deps/glad/gles2.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ThirdParty/glfw/src/win32_init.c" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ThirdParty/glfw/src/wl_window.c" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ThirdParty/glm/test/gtx/gtx_matrix_interpolation.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ThirdParty/spdlog/example/example.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/main.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectApplicationVersion">
@@ -135,43 +195,101 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;CMake 应用程序.Zephyr.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;cf.advertisement.text.overridden&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Echo/BaiduSyncDisk/Work/Projects/Zephyr&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "CMake 应用程序.Zephyr.executor": "Run",
+    "Doctest.FirstTest.executor": "Run",
+    "Doctest.ReflectionClass.executor": "Debug",
+    "Doctest.Unnamed.executor": "Run",
+    "Google Test.FirstTest.BasicAssertions.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "bazel.project.detector.is.bazel.project": "true",
+    "cf.advertisement.text.overridden": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Echo/BaiduSyncDisk/Work/Projects/untitled1",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Echo\BaiduSyncDisk\Work\Projects\Zephyr" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Echo\BaiduSyncDisk\Work\Projects\Zephyr\Engine\Core\Test\Reflection" />
       <recent name="C:\Users\Echo\BaiduSyncDisk\Work\Projects\Zephyr\Engine\Core" />
     </key>
   </component>
   <component name="RunManager" selected="CMake 应用程序.Zephyr">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="ReflectionClass" type="CMakeDoctestTestRunConfigurationType" factoryName="doctest Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="TestCore" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Zephyr" RUN_TARGET_NAME="TestCore" TEST_METHOD="ReflectionClass" TEST_MODE="SUITE_TEST">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReflectionClasses" type="CMakeDoctestTestRunConfigurationType" factoryName="doctest Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="TestCore" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Zephyr" RUN_TARGET_NAME="TestCore" TEST_METHOD="ReflectionClasses" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="unit" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="unit" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Zephyr" RUN_TARGET_NAME="unit" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Continuous" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="Continuous" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContinuousBuild" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="ContinuousBuild" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContinuousConfigure" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="ContinuousConfigure" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContinuousCoverage" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="ContinuousCoverage" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContinuousMemCheck" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="ContinuousMemCheck" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContinuousStart" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="ContinuousStart" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContinuousSubmit" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="ContinuousSubmit" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContinuousTest" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="ContinuousTest" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContinuousUpdate" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="ContinuousUpdate" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="Core" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="Core" CONFIG_NAME="Debug">
@@ -184,7 +302,102 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Experimental" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="Experimental" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExperimentalBuild" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="ExperimentalBuild" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExperimentalConfigure" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="ExperimentalConfigure" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExperimentalCoverage" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="ExperimentalCoverage" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExperimentalMemCheck" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="ExperimentalMemCheck" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExperimentalStart" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="ExperimentalStart" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExperimentalSubmit" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="ExperimentalSubmit" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExperimentalTest" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="ExperimentalTest" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExperimentalUpdate" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="ExperimentalUpdate" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Function" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="Function" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Nightly" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="Nightly" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NightlyBuild" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="NightlyBuild" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NightlyConfigure" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="NightlyConfigure" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NightlyCoverage" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="NightlyCoverage" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NightlyMemCheck" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="NightlyMemCheck" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NightlyMemoryCheck" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="NightlyMemoryCheck" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NightlyStart" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="NightlyStart" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NightlySubmit" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="NightlySubmit" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NightlyTest" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="NightlyTest" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NightlyUpdate" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="NightlyUpdate" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -214,6 +427,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="assimp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="assimp" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -235,6 +453,36 @@
       </method>
     </configuration>
     <configuration name="imgui" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="imgui" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="jsoncpp_check" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="jsoncpp_check" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="jsoncpp_object" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="jsoncpp_object" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="jsoncpp_readerwriter_tests" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="jsoncpp_readerwriter_tests" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="jsoncpp_static" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="jsoncpp_static" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="jsoncpp_test" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="jsoncpp_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Zephyr" RUN_TARGET_NAME="jsoncpp_test">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="jsontestrunner_exe" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="jsontestrunner_exe" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Zephyr" RUN_TARGET_NAME="jsontestrunner_exe">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -265,26 +513,68 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake 应用程序.Core" />
+      <item itemvalue="CMake 应用程序.Zephyr" />
       <item itemvalue="CMake 应用程序.Editor" />
+      <item itemvalue="CMake 应用程序.Widgets" />
+      <item itemvalue="CMake 应用程序.Core" />
       <item itemvalue="CMake 应用程序.Function" />
       <item itemvalue="CMake 应用程序.Platform" />
       <item itemvalue="CMake 应用程序.Resource" />
       <item itemvalue="CMake 应用程序.UpdateAssimpLibsDebugSymbolsAndDLLs" />
-      <item itemvalue="CMake 应用程序.Widgets" />
-      <item itemvalue="CMake 应用程序.Zephyr" />
       <item itemvalue="CMake 应用程序.assimp" />
+      <item itemvalue="CMake 应用程序.zlibstatic" />
       <item itemvalue="CMake 应用程序.glad" />
+      <item itemvalue="CMake 应用程序.uninstall" />
       <item itemvalue="CMake 应用程序.glfw" />
+      <item itemvalue="CMake 应用程序.update_mappings" />
       <item itemvalue="CMake 应用程序.glm" />
       <item itemvalue="CMake 应用程序.imgui" />
+      <item itemvalue="CMake 应用程序.Continuous" />
+      <item itemvalue="CMake 应用程序.ContinuousBuild" />
+      <item itemvalue="CMake 应用程序.ContinuousConfigure" />
+      <item itemvalue="CMake 应用程序.ContinuousCoverage" />
+      <item itemvalue="CMake 应用程序.ContinuousMemCheck" />
+      <item itemvalue="CMake 应用程序.ContinuousStart" />
+      <item itemvalue="CMake 应用程序.ContinuousSubmit" />
+      <item itemvalue="CMake 应用程序.ContinuousTest" />
+      <item itemvalue="CMake 应用程序.ContinuousUpdate" />
+      <item itemvalue="CMake 应用程序.Experimental" />
+      <item itemvalue="CMake 应用程序.ExperimentalBuild" />
+      <item itemvalue="CMake 应用程序.ExperimentalConfigure" />
+      <item itemvalue="CMake 应用程序.ExperimentalCoverage" />
+      <item itemvalue="CMake 应用程序.ExperimentalMemCheck" />
+      <item itemvalue="CMake 应用程序.ExperimentalStart" />
+      <item itemvalue="CMake 应用程序.ExperimentalSubmit" />
+      <item itemvalue="CMake 应用程序.ExperimentalTest" />
+      <item itemvalue="CMake 应用程序.ExperimentalUpdate" />
+      <item itemvalue="CMake 应用程序.Nightly" />
+      <item itemvalue="CMake 应用程序.NightlyBuild" />
+      <item itemvalue="CMake 应用程序.NightlyConfigure" />
+      <item itemvalue="CMake 应用程序.NightlyCoverage" />
+      <item itemvalue="CMake 应用程序.NightlyMemCheck" />
+      <item itemvalue="CMake 应用程序.NightlyMemoryCheck" />
+      <item itemvalue="CMake 应用程序.NightlyStart" />
+      <item itemvalue="CMake 应用程序.NightlySubmit" />
+      <item itemvalue="CMake 应用程序.NightlyTest" />
+      <item itemvalue="CMake 应用程序.NightlyUpdate" />
+      <item itemvalue="CMake 应用程序.jsoncpp_check" />
+      <item itemvalue="CMake 应用程序.jsoncpp_readerwriter_tests" />
+      <item itemvalue="CMake 应用程序.jsontestrunner_exe" />
+      <item itemvalue="CMake 应用程序.jsoncpp_object" />
+      <item itemvalue="CMake 应用程序.jsoncpp_static" />
+      <item itemvalue="CMake 应用程序.jsoncpp_test" />
       <item itemvalue="CMake 应用程序.spdlog" />
       <item itemvalue="CMake 应用程序.stbimage" />
-      <item itemvalue="CMake 应用程序.uninstall" />
-      <item itemvalue="CMake 应用程序.update_mappings" />
-      <item itemvalue="CMake 应用程序.zlibstatic" />
+      <item itemvalue="Doctest.ReflectionClass" />
+      <item itemvalue="Doctest.ReflectionClasses" />
       <item itemvalue="Google Test.unit" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Doctest.ReflectionClass" />
+        <item itemvalue="Doctest.ReflectionClasses" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -323,7 +613,10 @@
       <workItem from="1710817572067" duration="89000" />
       <workItem from="1711125444161" duration="93000" />
       <workItem from="1711253569958" duration="2000" />
-      <workItem from="1711254058952" duration="1876000" />
+      <workItem from="1711254058952" duration="2095000" />
+      <workItem from="1711264492619" duration="653000" />
+      <workItem from="1711265217456" duration="2821000" />
+      <workItem from="1711268108725" duration="4255000" />
     </task>
     <task id="LOCAL-00001" summary="feat(Engine::Function): 封装MeshRendere">
       <option name="closed" value="true" />
@@ -453,7 +746,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710817551028</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="feat(ThirdParty): 引入asio 主要为了协程">
+      <option name="closed" value="true" />
+      <created>1711256154484</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1711256154484</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VCPKGProject">
@@ -491,7 +792,9 @@
     <MESSAGE value="feat(Reflection): 添加对指针成员变量的支持" />
     <MESSAGE value="feat(Reflection): 添加对vector指针的序列化支持例如vector&lt;int*&gt;" />
     <MESSAGE value="feat(Reflection): 添加对std::string的序列化支持" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Reflection): 添加对std::string的序列化支持" />
+    <MESSAGE value="refactor(Reflection): 重构序列化代码，将所有标志信息记录在Field而不是Class" />
+    <MESSAGE value="feat(ThirdParty): 引入asio 主要为了协程" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ThirdParty): 引入asio 主要为了协程" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

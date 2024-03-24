@@ -615,7 +615,7 @@ template <class T>
 const Class *GetClass() noexcept
 {
     using type = std::remove_cv_t<std::remove_pointer_t<T>>;
-    const Class *rtn_class = Detail::GetClassImpl<>(ClassTag<type>{});
+    const Class *rtn_class = Detail::GetClassImpl(ClassTag<type>{});
     return rtn_class;
 }
 

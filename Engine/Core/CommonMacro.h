@@ -8,6 +8,7 @@
 #ifndef COMMONMACRO_H
 #define COMMONMACRO_H
 
+#undef interface
 #define interface class
 #define OUT
 
