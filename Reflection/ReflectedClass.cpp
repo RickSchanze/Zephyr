@@ -48,6 +48,7 @@ void ReflectedClass::Generate(const clang::ASTContext *context, llvm::raw_fd_ost
                                std::make_format_args(class_name, class_name));
         }
         os << "class_builder.SetFieldsOwner(&cache);\n";
+        os << "Object::SetClassDefaultObject(&cache, new " << class_name << "());\n";
         os << "return &cache;\n";
         os << "}\n\n";
         // 模板GetTypeImpl
@@ -55,6 +56,9 @@ void ReflectedClass::Generate(const clang::ASTContext *context, llvm::raw_fd_ost
         os << "Type *GetTypeImpl(TypeTag<" << class_name << ">) noexcept {\n";
         os << "return GetClassImpl(ClassTag<" << class_name << ">{});\n";
         os << "}\n\n";
+
+        os << "// register this type cdo to object\n";
+        os << "const Class* _init_" << class_name << " = GetClass<" << class_name << ">();\n";
     }
     os << "}\n";
     os << "}\n\n";

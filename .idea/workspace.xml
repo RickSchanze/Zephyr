@@ -3,72 +3,71 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="CMakePresetLoader"><![CDATA[{
-  "useNewFormat": true
-}]]></component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
   <component name="CMakeReloadState">
     <option name="reloaded" value="true" />
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="Zephyr" targetName="NightlyCoverage" />
-      <config projectName="Zephyr" targetName="jsoncpp_object" />
-      <config projectName="Zephyr" targetName="Platform" />
-      <config projectName="Zephyr" targetName="intrinsics_gen" />
-      <config projectName="Zephyr" targetName="imgui" />
-      <config projectName="Zephyr" targetName="ContinuousStart" />
-      <config projectName="Zephyr" targetName="jsoncpp_readerwriter_tests" />
-      <config projectName="Zephyr" targetName="Core" />
-      <config projectName="Zephyr" targetName="NightlyMemoryCheck" />
-      <config projectName="Zephyr" targetName="Editor" />
-      <config projectName="Zephyr" targetName="stbimage" />
-      <config projectName="Zephyr" targetName="ExperimentalCoverage" />
-      <config projectName="Zephyr" targetName="jsoncpp_static" />
-      <config projectName="Zephyr" targetName="jsoncpp_test" />
-      <config projectName="Zephyr" targetName="update_mappings" />
-      <config projectName="Zephyr" targetName="ExperimentalTest" />
-      <config projectName="Zephyr" targetName="RISCVTargetParserTableGen" />
-      <config projectName="Zephyr" targetName="NightlyConfigure" />
-      <config projectName="Zephyr" targetName="glad" />
-      <config projectName="Zephyr" targetName="NightlyMemCheck" />
-      <config projectName="Zephyr" targetName="NightlyTest" />
-      <config projectName="Zephyr" targetName="ContinuousBuild" />
-      <config projectName="Zephyr" targetName="ContinuousCoverage" />
-      <config projectName="Zephyr" targetName="ExperimentalStart" />
-      <config projectName="Zephyr" targetName="Continuous" />
-      <config projectName="Zephyr" targetName="acc_gen" />
-      <config projectName="Zephyr" targetName="ContinuousUpdate" />
-      <config projectName="Zephyr" targetName="ExperimentalBuild" />
-      <config projectName="Zephyr" targetName="jsoncpp_check" />
-      <config projectName="Zephyr" targetName="ExperimentalConfigure" />
-      <config projectName="Zephyr" targetName="glfw" />
-      <config projectName="Zephyr" targetName="zlibstatic" />
-      <config projectName="Zephyr" targetName="ContinuousConfigure" />
-      <config projectName="Zephyr" targetName="NightlyUpdate" />
-      <config projectName="Zephyr" targetName="clang-tablegen-targets" />
-      <config projectName="Zephyr" targetName="Function" />
-      <config projectName="Zephyr" targetName="ContinuousMemCheck" />
-      <config projectName="Zephyr" targetName="omp_gen" />
-      <config projectName="Zephyr" targetName="ExperimentalUpdate" />
-      <config projectName="Zephyr" targetName="ExperimentalMemCheck" />
-      <config projectName="Zephyr" targetName="NightlyStart" />
-      <config projectName="Zephyr" targetName="jsontestrunner_exe" />
-      <config projectName="Zephyr" targetName="ContinuousTest" />
-      <config projectName="Zephyr" targetName="ContinuousSubmit" />
-      <config projectName="Zephyr" targetName="uninstall" />
-      <config projectName="Zephyr" targetName="spdlog" />
-      <config projectName="Zephyr" targetName="NightlyBuild" />
-      <config projectName="Zephyr" targetName="glm" />
-      <config projectName="Zephyr" targetName="Widgets" />
-      <config projectName="Zephyr" targetName="UpdateAssimpLibsDebugSymbolsAndDLLs" />
-      <config projectName="Zephyr" targetName="unit" />
-      <config projectName="Zephyr" targetName="Resource" />
-      <config projectName="Zephyr" targetName="assimp" />
-      <config projectName="Zephyr" targetName="ExperimentalSubmit" />
-      <config projectName="Zephyr" targetName="Nightly" />
-      <config projectName="Zephyr" targetName="Zephyr" />
-      <config projectName="Zephyr" targetName="NightlySubmit" />
-      <config projectName="Zephyr" targetName="Experimental" />
+      <config projectName="Reflection" targetName="ExperimentalStart" />
+      <config projectName="Reflection" targetName="ContinuousUpdate" />
+      <config projectName="Reflection" targetName="acc_gen" />
+      <config projectName="Reflection" targetName="ExperimentalBuild" />
+      <config projectName="Reflection" targetName="Continuous" />
+      <config projectName="Reflection" targetName="ExperimentalConfigure" />
+      <config projectName="Reflection" targetName="jsoncpp_check" />
+      <config projectName="Reflection" targetName="update_mappings" />
+      <config projectName="Reflection" targetName="glfw" />
+      <config projectName="Reflection" targetName="Function" />
+      <config projectName="Reflection" targetName="zlibstatic" />
+      <config projectName="Reflection" targetName="RISCVTargetParserTableGen" />
+      <config projectName="Reflection" targetName="jsoncpp_test" />
+      <config projectName="Reflection" targetName="NightlyConfigure" />
+      <config projectName="Reflection" targetName="Experimental" />
+      <config projectName="Reflection" targetName="ExperimentalSubmit" />
+      <config projectName="Reflection" targetName="Nightly" />
+      <config projectName="Reflection" targetName="NightlySubmit" />
+      <config projectName="Reflection" targetName="Resource" />
+      <config projectName="Reflection" targetName="NightlyMemCheck" />
+      <config projectName="Reflection" targetName="Core" />
+      <config projectName="Reflection" targetName="jsoncpp_readerwriter_tests" />
+      <config projectName="Reflection" targetName="NightlyMemoryCheck" />
+      <config projectName="Reflection" targetName="assimp" />
+      <config projectName="Reflection" targetName="ExperimentalMemCheck" />
+      <config projectName="Reflection" targetName="ContinuousMemCheck" />
+      <config projectName="Reflection" targetName="ContinuousStart" />
+      <config projectName="Reflection" targetName="jsontestrunner_exe" />
+      <config projectName="Reflection" targetName="spdlog" />
+      <config projectName="Reflection" targetName="NightlyCoverage" />
+      <config projectName="Reflection" targetName="jsoncpp_object" />
+      <config projectName="Reflection" targetName="Platform" />
+      <config projectName="Reflection" targetName="intrinsics_gen" />
+      <config projectName="Reflection" targetName="ExperimentalTest" />
+      <config projectName="Reflection" targetName="Widgets" />
+      <config projectName="Reflection" targetName="UpdateAssimpLibsDebugSymbolsAndDLLs" />
+      <config projectName="Reflection" targetName="Reflection" />
+      <config projectName="Reflection" targetName="glad" />
+      <config projectName="Reflection" targetName="ContinuousBuild" />
+      <config projectName="Reflection" targetName="ContinuousCoverage" />
+      <config projectName="Reflection" targetName="NightlyTest" />
+      <config projectName="Reflection" targetName="NightlyBuild" />
+      <config projectName="Reflection" targetName="glm" />
+      <config projectName="Reflection" targetName="ContinuousTest" />
+      <config projectName="Reflection" targetName="stbimage" />
+      <config projectName="Reflection" targetName="Editor" />
+      <config projectName="Reflection" targetName="jsoncpp_static" />
+      <config projectName="Reflection" targetName="ExperimentalCoverage" />
+      <config projectName="Reflection" targetName="ContinuousConfigure" />
+      <config projectName="Reflection" targetName="NightlyUpdate" />
+      <config projectName="Reflection" targetName="ContinuousSubmit" />
+      <config projectName="Reflection" targetName="ExperimentalUpdate" />
+      <config projectName="Reflection" targetName="NightlyStart" />
+      <config projectName="Reflection" targetName="omp_gen" />
+      <config projectName="Reflection" targetName="uninstall" />
+      <config projectName="Reflection" targetName="imgui" />
+      <config projectName="Reflection" targetName="clang-tablegen-targets" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -78,27 +77,22 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f109335-5e3d-455b-8378-f935158e6af9" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/GenerateReflectionFiles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Zephyr.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Zephyr.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
+    <list default="true" id="7f109335-5e3d-455b-8378-f935158e6af9" name="更改" comment="feat(Reflection): 添加自定义编译流程，将生成反射信息加入到编译前">
+      <change afterPath="$PROJECT_DIR$/Engine/Core/Object/Object.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Core/Reflection/JsonDeserializer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Core/Reflection/JsonDeserializer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Core/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/BaseType.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/BaseType.h.inl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/JsonSerializer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/JsonSerializer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IncludePath.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reflection/Finder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Reflection/Finder.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reflection/Finder.h" beforeDir="false" afterPath="$PROJECT_DIR$/Reflection/Finder.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reflection/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Reflection/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReflectionClasses.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/ReflectionClasses.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReflectionClasses.generated.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReflectionClasses.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/ReflectionClasses.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/ReflectionClasses.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/ReflectionClasses.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Function/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Function/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Function/Object/Object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Object/Object.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Function/Object/Object.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reflection/ReflectedClass.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Reflection/ReflectedClass.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,37 +100,46 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "RickSchanze"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;RickSchanze&quot;
   }
-}]]></component>
-  <component name="GitHubPullRequestState"><![CDATA[{
-  "prStates": []
-}]]></component>
-  <component name="GitLabMergeRequestsSettings"><![CDATA[{}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/RickSchanze/Zephyr.git",
-    "accountId": "7def9595-2966-4a75-820b-1515dd435743"
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: []
+}</component>
+  <component name="GitLabMergeRequestsSettings">{}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/RickSchanze/Zephyr.git&quot;,
+    &quot;accountId&quot;: &quot;7def9595-2966-4a75-820b-1515dd435743&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Engine/Core/CommonMacro.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Object/Object.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Object/Object.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/JsonDeserializer.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/JsonDeserializer.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/JsonSerializer.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/MetaType.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/ReflectionClasses.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Engine/Core/ReflectionClasses.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Generated/Material.generated.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/ReflectionClasses.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Generated/Material.generated.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Generated/ReflectionClasses.generated.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Finder.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Finder.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Reflection/ReflectedClass.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/ReflectedClass.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/main.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/cmake-build-debug/generated/ReflectionClasses.generated.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/cmake-build-release/generated/ReflectionClasses.generated.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/main.cpp" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -144,10 +147,10 @@
     <option name="minorVersion" value="1" />
     <option name="productBranch" value="Nova" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2e8XLDUh9G5IaFNP4Ree6VinXQi" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -156,7 +159,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "CMake 应用程序.Zephyr.executor": "Run",
+    "CMake 应用程序.Zephyr.executor": "Debug",
     "Python.GenerateReflectionFiles.executor": "Debug",
     "RunOnceActivity.RadMigrateCodeStyle": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -167,22 +170,16 @@
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RunManager" selected="CMake 应用程序.Zephyr">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="unit" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="unit" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Zephyr" RUN_TARGET_NAME="unit" TEST_MODE="SUITE_TEST">
+  <component name="RunManager" selected="CMake 应用程序.Reflection">
+    <configuration name="Reflection" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Reflection" TARGET_NAME="Reflection" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Reflection" RUN_TARGET_NAME="Reflection">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-        <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Zephyr" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="Zephyr" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Zephyr" RUN_TARGET_NAME="Zephyr">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -210,8 +207,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="CMake 应用程序.Zephyr" />
-      <item itemvalue="Google Test.unit" />
+      <item itemvalue="CMake 应用程序.Reflection" />
       <item itemvalue="Python.GenerateReflectionFiles" />
     </list>
     <recent_temporary>
@@ -228,13 +224,27 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711287121870</updated>
-      <workItem from="1711287123292" duration="2239000" />
+      <workItem from="1711287123292" duration="2375000" />
+      <workItem from="1711354155247" duration="6301000" />
     </task>
+    <task id="LOCAL-00001" summary="feat(Reflection): 添加自定义编译流程，将生成反射信息加入到编译前">
+      <option name="closed" value="true" />
+      <created>1711289450481</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711289450481</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VCPKGProject">
     <isAutomaticCheckingOnLaunch value="false" />
     <isAutomaticFoundErrors value="true" />
     <isAutomaticReloadCMake value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat(Reflection): 添加自定义编译流程，将生成反射信息加入到编译前" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(Reflection): 添加自定义编译流程，将生成反射信息加入到编译前" />
   </component>
 </project>

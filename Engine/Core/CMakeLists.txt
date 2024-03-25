@@ -13,10 +13,15 @@ set(LIB_FILES
         Logger/Formatter.h
         Math/BasicType.h
         Reflection/MetaType.h
+        Reflection/MetaType.cpp
         Reflection/JsonSerializer.h
         Reflection/JsonSerializer.cpp
         Reflection/TypeTraits.h
+        Reflection/JsonDeserializer.cpp
+        Reflection/JsonDeserializer.h
         Coroutine/Coroutine.h
+        Object/Object.h
+        Object/Object.cpp
 
         ReflectionClasses.h
         ReflectionClasses.cpp

@@ -3,10 +3,12 @@
 #include "MetaType.h"
 #include "json/json.h"
 
+class Object;
 namespace Json
 {
 class Value;
 }
+
 class JsonSerializer
 {
     friend class Reflection::Field;
@@ -19,7 +21,7 @@ public:
      * @param out_json 输出的序列化的json
      * @return
      */
-    template <typename T>
+    template <typename T> requires std::is_base_of_v<Object, T>
     static void Serialize(T *object, OUT Json::Value &out_json)
     {
         if (object == nullptr)

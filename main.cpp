@@ -1,5 +1,7 @@
+#include "Reflection/JsonDeserializer.h"
 #include "Reflection/JsonSerializer.h"
 #include "ReflectionClasses.h"
+
 #include <iostream>
 
 int main() {
@@ -8,7 +10,7 @@ int main() {
   // app.Run();
   // return 0;
     D d;
-    d.a7 = 15;
+    // d.a7 = 15;
     Json::Value value;
     JsonSerializer::Serialize(&d, value);
     std::cout << value;

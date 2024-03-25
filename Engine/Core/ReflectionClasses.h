@@ -1,11 +1,12 @@
 #ifndef REFLECTION_CLASSES_H
 #define REFLECTION_CLASSES_H
 #include "CommonMacro.h"
+#include "Object/Object.h"
 
 #include <string>
 #include <vector>
 
-class A {
+class A : public Object {
 public:
     PROPERTY()
     int32_t a1 = 1;
@@ -49,12 +50,12 @@ public:
     B* c5 = nullptr;
 };
 
-class D : public A {
+class D : public Object {
 public:
     PROPERTY() std::vector<int32_t*> d1;
     PROPERTY() std::vector<int32_t> d2 = {1,2,3,4,5};
     PROPERTY() std::string d3;
     PROPERTY() C d4{};
-    PROPERTY() std::vector<std::string*> d5;
+    PROPERTY() std::vector<std::string*> d6;
 };
 #endif

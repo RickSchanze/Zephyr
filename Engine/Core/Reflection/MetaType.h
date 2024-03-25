@@ -550,34 +550,19 @@ public:
         return fields;
     }
 
+    /**
+     * 分配这个类对应的对象需要的内存
+     * @return 对应内存指针
+     */
+    void* New() const
+    {
+        return std::malloc(GetSize());
+    }
+
 private:
     const Class *m_base_class = nullptr;
     Field *m_fields = nullptr;
     Field *m_fields_end = nullptr;
-};
-
-struct TemplateArgument
-{
-    const Type *type;
-};
-
-class ClassTemplate : public Class
-{
-public:
-    ClassTemplate(const Class *base, Field *field_begin, Field *field_end, const char *name, const uint32_t size,
-                  TemplateArgument *template_begin, TemplateArgument *template_end)
-        : Class(base, field_begin, field_end, name, size), m_t_args_begin(template_begin), m_t_args_end(template_end)
-    {
-    }
-
-    TemplateArgument *GetTemplateArgsBegin() const
-    {
-        return m_t_args_begin;
-    }
-
-protected:
-    TemplateArgument *m_t_args_begin;
-    TemplateArgument *m_t_args_end;
 };
 
 /** 用于存储类的字段等信息的代码 */
@@ -605,8 +590,6 @@ struct ClassBuilder
     /** 零长数组是未定义行为 */
     /** 所有类字段 */
     Field fields[NFields + 1];
-    /** 所有模板参数 */
-    TemplateArgument template_args[NFields + 1];
 };
 
 #include "BaseType.h.inl"

@@ -7,8 +7,6 @@ add_library(${PROJECT_NAME}
         Render/Renderer/BaseRenderer.cpp
         Render/Renderer/FrameRenderer.h
         Render/Renderer/FrameRenderer.cpp
-        Object/Object.cpp
-        Object/Object.h
         Components/ComponentBase.h
         Components/ComponentBase.cpp
         Components/RendererComponentBase.h
