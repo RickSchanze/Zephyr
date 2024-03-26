@@ -27,10 +27,17 @@ public:
     static R *Deserialize(const Json::Value &value);
 
 private:
-    static void InternalDeserialize(const Json::Value &value, const Reflection::Class *R_class, void *address);
+    /** 反序列化真正的入口 */
+    static void InternalDeserialize(const Json::Value &value, void *address, const Reflection::Class *R_class);
 
-    static void InternalDeserializeVector(const Json::Value &value, const Reflection::Class *R_class, void *address,
-                                          const Reflection::Field *field);
+    /** 反序列化一个字段 */
+    static void InternalDeserializeField(const Json::Value &value, void *address, const Reflection::Field *field);
+
+    /** 反序列化vector */
+    static void InternalDeserializeVector(const Json::Value &value, void *address, const Reflection::Field *in_field);
+
+    /** 反序列化指针 */
+    static void InternalDeserializePointer(const Json::Value &value, void *address, const Reflection::Field *field);
 };
 
 template <typename R>
@@ -42,8 +49,8 @@ R *JsonDeserializer::Deserialize(const Json::Value &value)
     {
         return nullptr;
     }
-    R* obj = New<R>();
-    InternalDeserialize(value, R_class, obj);
+    R *obj = New<R>();
+    InternalDeserialize(value, obj, R_class);
     return obj;
 }
 

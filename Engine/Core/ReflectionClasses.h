@@ -6,7 +6,11 @@
 #include <string>
 #include <vector>
 
-class A : public Object {
+class A : public Object
+{
+public:
+    GENERATED_BODY()
+
 public:
     PROPERTY()
     int32_t a1 = 1;
@@ -22,7 +26,10 @@ public:
     std::string a6 = "Hello";
 };
 
-class B : public A {
+class B : public A
+{
+    GENERATED_BODY()
+
 public:
     PROPERTY()
     int32_t b1 = 6;
@@ -36,7 +43,10 @@ public:
     double b5 = 10;
 };
 
-class C : public B {
+class C : public B
+{
+    GENERATED_BODY()
+
 public:
     PROPERTY()
     int32_t c1 = 11;
@@ -47,15 +57,18 @@ public:
     PROPERTY()
     float c4 = 14;
     PROPERTY()
-    B* c5 = nullptr;
+    B *c5 = nullptr;
 };
 
-class D : public Object {
+class D : public Object
+{
+    GENERATED_BODY()
+
 public:
-    PROPERTY() std::vector<int32_t*> d1;
-    PROPERTY() std::vector<int32_t> d2 = {1,2,3,4,5};
-    PROPERTY() std::string d3;
-    PROPERTY() C d4{};
-    PROPERTY() std::vector<std::string*> d6;
+    PROPERTY() std::vector<int32_t *> d1;
+    PROPERTY() std::vector<int32_t> d2 = {1, 2, 3, 4, 5};
+    PROPERTY() std::string d3 = "d3";
+    PROPERTY() std::vector<C> d4{};
+    PROPERTY() std::vector<std::string> d6;
 };
 #endif

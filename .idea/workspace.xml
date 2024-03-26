@@ -11,63 +11,64 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="Reflection" targetName="ExperimentalStart" />
-      <config projectName="Reflection" targetName="ContinuousUpdate" />
-      <config projectName="Reflection" targetName="acc_gen" />
-      <config projectName="Reflection" targetName="ExperimentalBuild" />
-      <config projectName="Reflection" targetName="Continuous" />
-      <config projectName="Reflection" targetName="ExperimentalConfigure" />
-      <config projectName="Reflection" targetName="jsoncpp_check" />
-      <config projectName="Reflection" targetName="update_mappings" />
-      <config projectName="Reflection" targetName="glfw" />
-      <config projectName="Reflection" targetName="Function" />
-      <config projectName="Reflection" targetName="zlibstatic" />
-      <config projectName="Reflection" targetName="RISCVTargetParserTableGen" />
-      <config projectName="Reflection" targetName="jsoncpp_test" />
-      <config projectName="Reflection" targetName="NightlyConfigure" />
-      <config projectName="Reflection" targetName="Experimental" />
-      <config projectName="Reflection" targetName="ExperimentalSubmit" />
-      <config projectName="Reflection" targetName="Nightly" />
-      <config projectName="Reflection" targetName="NightlySubmit" />
-      <config projectName="Reflection" targetName="Resource" />
-      <config projectName="Reflection" targetName="NightlyMemCheck" />
-      <config projectName="Reflection" targetName="Core" />
-      <config projectName="Reflection" targetName="jsoncpp_readerwriter_tests" />
-      <config projectName="Reflection" targetName="NightlyMemoryCheck" />
-      <config projectName="Reflection" targetName="assimp" />
-      <config projectName="Reflection" targetName="ExperimentalMemCheck" />
-      <config projectName="Reflection" targetName="ContinuousMemCheck" />
-      <config projectName="Reflection" targetName="ContinuousStart" />
-      <config projectName="Reflection" targetName="jsontestrunner_exe" />
-      <config projectName="Reflection" targetName="spdlog" />
-      <config projectName="Reflection" targetName="NightlyCoverage" />
-      <config projectName="Reflection" targetName="jsoncpp_object" />
-      <config projectName="Reflection" targetName="Platform" />
-      <config projectName="Reflection" targetName="intrinsics_gen" />
-      <config projectName="Reflection" targetName="ExperimentalTest" />
-      <config projectName="Reflection" targetName="Widgets" />
-      <config projectName="Reflection" targetName="UpdateAssimpLibsDebugSymbolsAndDLLs" />
-      <config projectName="Reflection" targetName="Reflection" />
-      <config projectName="Reflection" targetName="glad" />
-      <config projectName="Reflection" targetName="ContinuousBuild" />
-      <config projectName="Reflection" targetName="ContinuousCoverage" />
-      <config projectName="Reflection" targetName="NightlyTest" />
-      <config projectName="Reflection" targetName="NightlyBuild" />
-      <config projectName="Reflection" targetName="glm" />
-      <config projectName="Reflection" targetName="ContinuousTest" />
-      <config projectName="Reflection" targetName="stbimage" />
-      <config projectName="Reflection" targetName="Editor" />
-      <config projectName="Reflection" targetName="jsoncpp_static" />
-      <config projectName="Reflection" targetName="ExperimentalCoverage" />
-      <config projectName="Reflection" targetName="ContinuousConfigure" />
-      <config projectName="Reflection" targetName="NightlyUpdate" />
-      <config projectName="Reflection" targetName="ContinuousSubmit" />
-      <config projectName="Reflection" targetName="ExperimentalUpdate" />
-      <config projectName="Reflection" targetName="NightlyStart" />
-      <config projectName="Reflection" targetName="omp_gen" />
-      <config projectName="Reflection" targetName="uninstall" />
-      <config projectName="Reflection" targetName="imgui" />
-      <config projectName="Reflection" targetName="clang-tablegen-targets" />
+      <config projectName="Zephyr" targetName="NightlyCoverage" />
+      <config projectName="Zephyr" targetName="jsoncpp_object" />
+      <config projectName="Zephyr" targetName="Platform" />
+      <config projectName="Zephyr" targetName="intrinsics_gen" />
+      <config projectName="Zephyr" targetName="imgui" />
+      <config projectName="Zephyr" targetName="ContinuousStart" />
+      <config projectName="Zephyr" targetName="jsoncpp_readerwriter_tests" />
+      <config projectName="Zephyr" targetName="Core" />
+      <config projectName="Zephyr" targetName="NightlyMemoryCheck" />
+      <config projectName="Zephyr" targetName="Editor" />
+      <config projectName="Zephyr" targetName="stbimage" />
+      <config projectName="Zephyr" targetName="jsoncpp_static" />
+      <config projectName="Zephyr" targetName="ExperimentalCoverage" />
+      <config projectName="Zephyr" targetName="jsoncpp_test" />
+      <config projectName="Zephyr" targetName="update_mappings" />
+      <config projectName="Zephyr" targetName="ExperimentalTest" />
+      <config projectName="Zephyr" targetName="RISCVTargetParserTableGen" />
+      <config projectName="Zephyr" targetName="NightlyConfigure" />
+      <config projectName="Zephyr" targetName="glad" />
+      <config projectName="Zephyr" targetName="NightlyMemCheck" />
+      <config projectName="Zephyr" targetName="NightlyTest" />
+      <config projectName="Zephyr" targetName="ContinuousBuild" />
+      <config projectName="Zephyr" targetName="ContinuousCoverage" />
+      <config projectName="Zephyr" targetName="ExperimentalStart" />
+      <config projectName="Zephyr" targetName="Continuous" />
+      <config projectName="Zephyr" targetName="ContinuousUpdate" />
+      <config projectName="Zephyr" targetName="acc_gen" />
+      <config projectName="Zephyr" targetName="ExperimentalBuild" />
+      <config projectName="Zephyr" targetName="jsoncpp_check" />
+      <config projectName="Zephyr" targetName="ExperimentalConfigure" />
+      <config projectName="Zephyr" targetName="glfw" />
+      <config projectName="Zephyr" targetName="zlibstatic" />
+      <config projectName="Zephyr" targetName="ContinuousConfigure" />
+      <config projectName="Zephyr" targetName="NightlyUpdate" />
+      <config projectName="Zephyr" targetName="Function" />
+      <config projectName="Zephyr" targetName="clang-tablegen-targets" />
+      <config projectName="Zephyr" targetName="ContinuousMemCheck" />
+      <config projectName="Zephyr" targetName="ExperimentalUpdate" />
+      <config projectName="Zephyr" targetName="omp_gen" />
+      <config projectName="Zephyr" targetName="ExperimentalMemCheck" />
+      <config projectName="Zephyr" targetName="jsontestrunner_exe" />
+      <config projectName="Zephyr" targetName="NightlyStart" />
+      <config projectName="Zephyr" targetName="ContinuousTest" />
+      <config projectName="Zephyr" targetName="ContinuousSubmit" />
+      <config projectName="Zephyr" targetName="spdlog" />
+      <config projectName="Zephyr" targetName="uninstall" />
+      <config projectName="Zephyr" targetName="NightlyBuild" />
+      <config projectName="Zephyr" targetName="glm" />
+      <config projectName="Zephyr" targetName="Widgets" />
+      <config projectName="Zephyr" targetName="UpdateAssimpLibsDebugSymbolsAndDLLs" />
+      <config projectName="Zephyr" targetName="unit" />
+      <config projectName="Zephyr" targetName="Resource" />
+      <config projectName="Zephyr" targetName="assimp" />
+      <config projectName="Zephyr" targetName="ExperimentalSubmit" />
+      <config projectName="Zephyr" targetName="Nightly" />
+      <config projectName="Zephyr" targetName="NightlySubmit" />
+      <config projectName="Zephyr" targetName="Zephyr" />
+      <config projectName="Zephyr" targetName="Experimental" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -77,22 +78,20 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f109335-5e3d-455b-8378-f935158e6af9" name="更改" comment="feat(Reflection): 添加自定义编译流程，将生成反射信息加入到编译前">
-      <change afterPath="$PROJECT_DIR$/Engine/Core/Object/Object.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Core/Reflection/JsonDeserializer.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Core/Reflection/JsonDeserializer.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.cpp" afterDir="false" />
+    <list default="true" id="7f109335-5e3d-455b-8378-f935158e6af9" name="更改" comment="feat(Reflection;Core): 添加ClassDefaultObject并对反射生成器进行调整">
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Core/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/JsonSerializer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/JsonSerializer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/CommonMacro.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/CommonMacro.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/Object/Object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Object/Object.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/Object/Object.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Object/Object.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/JsonDeserializer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/JsonDeserializer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/JsonDeserializer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/JsonDeserializer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/JsonSerializer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/JsonSerializer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Core/ReflectionClasses.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/ReflectionClasses.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Function/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Function/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Function/Object/Object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Core/Object/Object.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Function/Object/Object.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reflection/ReflectedClass.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Reflection/ReflectedClass.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Function/Components/RendererComponentBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Function/Components/RendererComponentBase.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,25 +120,30 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/memory" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/utility" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/vector" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.38.33130/include/xmemory" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/CommonMacro.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/Object/Object.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Engine/Core/Object/Object.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/JsonDeserializer.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/JsonDeserializer.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/JsonSerializer.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/MetaType.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Object/Object.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/JsonDeserializer.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/JsonDeserializer.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/JsonSerializer.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/MetaType.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/Reflection/MetaType.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Engine/Core/ReflectionClasses.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Engine/Core/ReflectionClasses.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Engine/Core/ReflectionClasses.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Generated/Material.generated.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Generated/ReflectionClasses.generated.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Finder.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/Finder.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Reflection/ReflectedClass.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/ReflectedClass.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reflection/ReflectedClass.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Reflection/main.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/cmake-build-debug/generated/ReflectionClasses.generated.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/cmake-build-release/generated/ReflectionClasses.generated.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/main.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/main.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -173,13 +177,14 @@
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RunManager" selected="CMake 应用程序.Reflection">
-    <configuration name="Reflection" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Reflection" TARGET_NAME="Reflection" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Reflection" RUN_TARGET_NAME="Reflection">
+  <component name="RunManager" selected="CMake 应用程序.Zephyr">
+    <configuration name="unit" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="unit" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Zephyr" RUN_TARGET_NAME="unit" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="Zephyr" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Zephyr" TARGET_NAME="Zephyr" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Zephyr" RUN_TARGET_NAME="Zephyr">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -207,7 +212,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="CMake 应用程序.Reflection" />
+      <item itemvalue="CMake 应用程序.Zephyr" />
+      <item itemvalue="Google Test.unit" />
       <item itemvalue="Python.GenerateReflectionFiles" />
     </list>
     <recent_temporary>
@@ -225,7 +231,10 @@
       <option name="presentableId" value="Default" />
       <updated>1711287121870</updated>
       <workItem from="1711287123292" duration="2375000" />
-      <workItem from="1711354155247" duration="6301000" />
+      <workItem from="1711354155247" duration="6365000" />
+      <workItem from="1711360620777" duration="34000" />
+      <workItem from="1711360662460" duration="8000" />
+      <workItem from="1711416116409" duration="10359000" />
     </task>
     <task id="LOCAL-00001" summary="feat(Reflection): 添加自定义编译流程，将生成反射信息加入到编译前">
       <option name="closed" value="true" />
@@ -235,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711289450481</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat(Reflection;Core): 添加ClassDefaultObject并对反射生成器进行调整">
+      <option name="closed" value="true" />
+      <created>1711360569544</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711360569544</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VCPKGProject">
@@ -245,6 +262,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat(Reflection): 添加自定义编译流程，将生成反射信息加入到编译前" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Reflection): 添加自定义编译流程，将生成反射信息加入到编译前" />
+    <MESSAGE value="feat(Reflection;Core): 添加ClassDefaultObject并对反射生成器进行调整" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(Reflection;Core): 添加ClassDefaultObject并对反射生成器进行调整" />
   </component>
 </project>

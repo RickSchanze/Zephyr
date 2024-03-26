@@ -91,7 +91,10 @@ public:
     {
         return m_name;
     }
-    /** 获得类型大小 */
+    /**
+     * 获得此类型的大小
+     * @return
+     */
     uint32_t GetSize() const noexcept
     {
         return m_size;
@@ -277,6 +280,24 @@ public:
         m_type_qualifier = type_qualifier;
     }
 
+    /**
+     * 获取对应类型的数据，如果是指针不会返回指针大小而返回指针指向对象类型的大小
+     * @return
+     */
+    size_t GetTypeSize() const noexcept
+    {
+        return m_type->GetSize();
+    }
+
+    /**
+     * 返回字段大小 如果是指针则返回指针大小
+     * @return
+     */
+    size_t GetSize() const noexcept
+    {
+        return IsPointer() ? sizeof(void *) : GetTypeSize();
+    }
+
 private:
     void SetOwnerClass(Class *owner)
     {
@@ -306,10 +327,13 @@ public:
      * @param field_end 本类字段末尾指针
      * @param name 类型名
      * @param size 类型大小
+     * @param lambda 一个用于构造的lambda函数
      */
-    Class(const Class *base, Field *field_begin, Field *field_end, const char *name, const uint32_t size) noexcept
+    template<typename Lambda>
+    Class(const Class *base, Field *field_begin, Field *field_end, const char *name, const uint32_t size, Lambda&& lambda) noexcept
         : Type(name, size), m_base_class(base), m_fields(field_begin), m_fields_end(field_end)
     {
+        lambda(this);
     }
 
     /**
@@ -529,7 +553,7 @@ public:
     std::vector<Field *> GetAllFields() const
     {
         // 生命静态变量防止生命周期结束
-        std::vector<Field *> fields;
+        std::vector<Field *> fields{};
         // 清空但不能delete 因为这写Field都是存在Class里的
         // 向父级一层层获得Field
         std::stack<const Class *> stack;

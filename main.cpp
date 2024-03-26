@@ -10,8 +10,21 @@ int main() {
   // app.Run();
   // return 0;
     D d;
-    // d.a7 = 15;
+    d.d6.emplace_back("d6");
+    d.d6.emplace_back("d61");
+    d.d6.emplace_back("d61");
+    d.d6.emplace_back("d61");
+    d.d6.emplace_back("d61");
+    d.d1.push_back(new int32_t(1));
+    d.d1.push_back(new int32_t(1));
+    d.d4.emplace_back();
+    d.d4.back().c1 = 99;
+    d.d4.emplace_back();
+    d.d4.back().c1 = 100;
     Json::Value value;
     JsonSerializer::Serialize(&d, value);
     std::cout << value;
+
+    const D *d2 = JsonDeserializer::Deserialize<D>(value);
+    std::cout << d2->d6[0];
 }

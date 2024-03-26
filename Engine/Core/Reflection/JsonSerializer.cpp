@@ -35,6 +35,7 @@ void JsonSerializer::SerializeVector(void *obj, const Reflection::Field *in_fiel
         out_json = Json::nullValue;
         return;
     }
+    out_json = Json::arrayValue;
     const auto element_class = in_field->GetType();
     // 提取出数组的每一个元素
     auto *vec = static_cast<std::vector<char> *>(obj);
